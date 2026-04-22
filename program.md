@@ -29,6 +29,7 @@ Each experiment runs on a single GPU. The training script runs for a **fixed tim
 - Modify `prepare.py`. It is read-only. It contains the fixed evaluation, data loading, general logic, and training constants (time budget, sequence length, etc).
 - Install new packages or add dependencies. You can only use what's already in `pyproject.toml`.
 - Modify the evaluation harness. The `evaluate_f1` function in `prepare.py` is the ground truth metric.
+- Modify the test harness in `test.py`.
 
 **The goal is simple: get the lowest val_f1.** Since the time budget is fixed, you don't need to worry about training time — it's always 10 minutes. Everything is fair game: change the architecture, moderator functions, the hyperparameters, prompt strategy (can use SOTA methods from literature), prompt text, prompt strategy, convergence strategy, number of iterations, etc. The only constraint is that the code runs without crashing and finishes within the time budget.
 
