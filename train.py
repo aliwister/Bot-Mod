@@ -53,9 +53,10 @@ class ModeratorBot:
         """Sample t ~ P(t | y, M, P) via LLM."""
         feedback = "\n".join(f"Q: {p['Q']}\nA: {p['R']}" for p in self.P) or "none"
         prompt = (
+            f"Community: {self.community}\n"
             f"Content: {self.M}\n"
             f"User probe responses:\n{feedback}\n\n"
-            f"Based on the responses above, output ONLY the most likely intent from: {INTENTS}"
+            f"Based on the community context and responses above, output ONLY the most likely intent from: {INTENTS}"
         )
         self.t = self.llm_mod(INTENT_PROMPT, prompt, temp=0.1).strip()
 
@@ -74,6 +75,7 @@ class ModeratorBot:
             self.sample_label_step()
 
             critique_prompt = (
+                f"Community: {self.community}\n"
                 f"Content: {self.M}\n"
                 f"Current intent: {self.t} ({self.y})\n"
                 f"User probe responses:\n{feedback}\n\n"
@@ -86,6 +88,7 @@ class ModeratorBot:
     def _generate_probe(self, critique: str) -> str:
         """Generate a probe conditioned on current hypothesis and critique."""
         prompt = (
+            f"Community: {self.community}\n"
             f"Content: {self.M}\n"
             f"Suspected intent: {self.t}\n"
             f"Critique: {critique}\n\n"
