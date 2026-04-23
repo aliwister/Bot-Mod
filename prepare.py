@@ -37,23 +37,31 @@ def _client(model: str) -> OpenAI:
 # ── SYNC (single call) ────────────────────────────────────────────────────────
 
 def call_llm_messages(messages: list, temperature: float, model: str,
-                      max_new_tokens: int = 1024, json_mode: bool = False) -> str:
+                      max_new_tokens: int = 1024, json_mode: bool = False,
+                      base_url: str = None) -> str:
     model = resolve_model(model)
     kwargs = dict(model=model, messages=messages,
                   temperature=temperature, max_tokens=max_new_tokens)
     if json_mode:
         kwargs["response_format"] = {"type": "json_object"}
-    response = _client(model).chat.completions.create(**kwargs)
-    return response.choices[0].message.content.strip()
+    client = OpenAI(base_url=base_url, api_key="") if base_url else _client(model)
+    for attempt in range(3):
+        response = client.chat.completions.create(**kwargs)
+        content = response.choices[0].message.content
+        if content is not None:
+            return content.strip()
+        print(f"[warn] LLM returned None content (attempt {attempt+1}/3), retrying...")
+    raise RuntimeError("LLM returned None content after 3 attempts")
 
 
 def call_llm(system_prompt: str, user_message: str, temperature: float,
-             model: str, max_new_tokens: int = 1024, json_mode: bool = False) -> str:
+             model: str, max_new_tokens: int = 1024, json_mode: bool = False,
+             base_url: str = None) -> str:
     messages = [
         {"role": "system", "content": system_prompt},
         {"role": "user",   "content": user_message},
     ]
-    return call_llm_messages(messages, temperature, model, max_new_tokens, json_mode=json_mode)
+    return call_llm_messages(messages, temperature, model, max_new_tokens, json_mode=json_mode, base_url=base_url)
 
 
 # ── ASYNC BATCH ───────────────────────────────────────────────────────────────
@@ -62,11 +70,16 @@ async def call_llm_async(messages: list, temperature: float, model: str,
                          max_new_tokens: int = 1024) -> str:
     model = resolve_model(model)
     async with AsyncOpenAI(base_url=_base_url(model), api_key="") as client:
-        response = await client.chat.completions.create(
-            model=model, messages=messages,
-            temperature=temperature, max_tokens=max_new_tokens,
-        )
-        return response.choices[0].message.content.strip()
+        for attempt in range(3):
+            response = await client.chat.completions.create(
+                model=model, messages=messages,
+                temperature=temperature, max_tokens=max_new_tokens,
+            )
+            content = response.choices[0].message.content
+            if content is not None:
+                return content.strip()
+            print(f"[warn] LLM returned None content (attempt {attempt+1}/3), retrying...")
+        raise RuntimeError("LLM returned None content after 3 attempts")
 
 
 def call_llm_batch(messages_list, temperature, model: str, max_new_tokens: int = 1024) -> list[str]:
@@ -95,9 +108,11 @@ _NOTHINK_MODELS = {"Qwen/Qwen3-8B"}
 
 
 MOD_MODEL="Qwen/Qwen3-8B"
+_MOD_BASE_URL = "http://localhost:8003/v1"
+
 def llm_mod(system_prompt, user_prompt, temp=0.7):
     suffix = " /nothink" if MOD_MODEL in _NOTHINK_MODELS else ""
-    return call_llm(system_prompt, user_prompt + suffix, temp, model=MOD_MODEL)
+    return call_llm(system_prompt, user_prompt + suffix, temp, model=MOD_MODEL, base_url=_MOD_BASE_URL)
 
 
 
