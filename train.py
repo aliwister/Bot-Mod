@@ -49,14 +49,18 @@ class ModeratorBot:
         """Simple convergence check: not yet implemented."""
         return False
 
+    def _fmt_feedback(self):
+        if not self.P:
+            return "none"
+        return "\n".join(f"Moderator: {p['Q']}\nUser: {p['R']}" for p in self.P)
+
     def sample_intent_step(self):
         """Sample t ~ P(t | y, M, P) via LLM."""
-        feedback = "\n".join(f"Q: {p['Q']}\nA: {p['R']}" for p in self.P) or "none"
         prompt = (
             f"Community: {self.community}\n"
             f"Content: {self.M}\n"
-            f"User probe responses:\n{feedback}\n\n"
-            f"Based on the community context and responses above, output ONLY the most likely intent from: {INTENTS}"
+            f"Probe conversation:\n{self._fmt_feedback()}\n\n"
+            f"Based on the community context and probe conversation above, output ONLY the most likely intent from: {INTENTS}"
         )
         self.t = self.llm_mod(INTENT_PROMPT, prompt, temp=0.1).strip()
 
@@ -69,8 +73,6 @@ class ModeratorBot:
         critique: str | None = None
 
         for step in range(n_steps):
-            feedback = "\n".join(f"Q: {p['Q']}\nA: {p['R']}" for p in self.P) or "none"
-
             self.sample_intent_step()
             self.sample_label_step()
 
@@ -78,7 +80,7 @@ class ModeratorBot:
                 f"Community: {self.community}\n"
                 f"Content: {self.M}\n"
                 f"Current intent: {self.t} ({self.y})\n"
-                f"User probe responses:\n{feedback}\n\n"
+                f"Probe conversation:\n{self._fmt_feedback()}\n\n"
                 "In one sentence, what gap in intent does the user's response reveal?"
             )
             critique = self.llm_mod(CRITIQUE_PROMPT, critique_prompt, temp=0.2)
