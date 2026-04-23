@@ -15,6 +15,7 @@ To set up a new experiment, work with the user to:
 3. **Read the in-scope files**: The repo is small. Read these files for full context:
    - `README.md` — repository context.
    - `prepare.py` — fixed constants, data prep, tokenizer, dataloader, evaluation. Do not modify.
+   - `test.py` — fixed constants, data prep, tokenizer, dataloader, evaluation. Do not modify.
    - `train.py` — the file you modify. Model architecture, optimizer, training loop.
 4. **Verify data exists**: Check that `~/cache` contains data files. 
 5. **Initialize results.tsv**: Create `results.tsv` with just the header row. The baseline will be recorded after the first run.
@@ -41,7 +42,7 @@ Each experiment runs on a single GPU. The training script runs for a **fixed tim
 
 **Simplicity criterion**: All else being equal, simpler is better. A small improvement that adds ugly complexity is not worth it. Conversely, removing something and getting equal or better results is a great outcome — that's a simplification win. When evaluating whether to keep a change, weigh the complexity cost against the improvement magnitude. A 0.001 val_f1 improvement that adds 20 lines of hacky code? Probably not worth it. A 0.001 val_f1 improvement from deleting code? Definitely keep. An improvement of ~0 but much simpler code? Keep.
 
-**The first run**: Your very first run should always be to establish the baseline, so you will run the training script as is. After the baseline training completes, **immediately run the test evaluation** (`python3 evaluate_test.py > test_eval.log 2>&1`) to establish the baseline test metrics. This baseline is critical for all future acceptance decisions.
+**The first run**: Your very first run should always be to establish the baseline, so you will run the training script as is. After the baseline training completes, **immediately run the test evaluation** (`python3 test.py > test_run.log 2>&1`) to establish the baseline test metrics. This baseline is critical for all future acceptance decisions.
 
 ## Output format
 
