@@ -2,7 +2,6 @@ import json
 import csv, asyncio, copy, random
 random.seed(42)
 from concurrent.futures import ThreadPoolExecutor
-from sklearn.model_selection import train_test_split
 from openai import AsyncOpenAI, OpenAI
 
 _LLM_ALIASES = {
@@ -235,22 +234,13 @@ def evaluate_f1(mod, user_model=None, filename=None):
         m._init_hypothesis(user.M, community)
 
         for i in range(m.max_iterations):
-            m.sample_intent_step()
-            m.sample_label_step()
-            #print(f"[{idx+1}] Current H: {m.y}, {m.t}")
-
-            critique = m._refine_hypothesis()
+            critique = m._refine_hypothesis()   # samples t, y internally
             question = m._generate_probe(critique)
             response = user._call_user(question)
-
             m.P.append({"Critique": critique, "Q": question, "R": response})
-            critique_preview = critique[:50] if critique else ""
-            #print(f"[{idx+1}] Probe Sent (Critique: {critique_preview}...)")
-
             if m.is_converged():
-                print(f"[{idx+1}] Convergence criteria met, stopping probing.")
                 break
-
+        m._refine_hypothesis()  # incorporate the last response
         verdict = m.y
         correct = verdict == truth
         print(f"[{idx+1}]  verdict={verdict}  truth={truth}  correct={correct}")
