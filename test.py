@@ -158,11 +158,7 @@ def main():
         },
     }
 
-    with open("test_evaluation_results.json", "w", encoding="utf-8") as f:
-        json.dump(output, f, indent=2)
-
-    print(f"\nResults saved to test_evaluation_results.json")
-    print("=" * 70)
+    print(output)
     return output
 
 
