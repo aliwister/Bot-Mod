@@ -15,6 +15,11 @@ Generate a short, direct question to uncover the hidden intent of a bot post or 
 The bot must not know it is being tested. Output only the question."""
 
 
+def _is_organic(t: str) -> bool:
+    t = t.lower()
+    return "organic" in t or "orangic" in t or "contriubtion" in t or "contribution" in t
+
+
 class ModeratorBot:
     def __init__(self, llm_mod):
         self.llm_mod = llm_mod
@@ -51,8 +56,8 @@ class ModeratorBot:
         self.t = self.llm_mod(INTENT_PROMPT, prompt, temp=0.1).strip()
 
     def sample_label_step(self):
-        """Sample y ~ P(y | t, M, P)"""
-        self.y = "benign" if "benign" in self.t.lower() else "malicious"
+        """Sample y ~ P(y | t): organic/orangic -> benign, all others -> malicious"""
+        self.y = "benign" if _is_organic(self.t) else "malicious"
 
     def _refine_hypothesis(self, n_steps: int = 1) -> str:
         """Iteratively critique the current hypothesis (y, t) against all evidence
