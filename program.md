@@ -107,10 +107,10 @@ commit	avg_posts_val_f1	avg_comments_val_f1	avg_val_f1_all	avg_f1_bin_all	avg_f1
 Example:
 
 ```
-commit	avg_posts_val_f1	avg_comments_val_f1	avg_val_f1_all	avg_f1_bin_all	avg_f1_cat_all	status	description
-a1b2c3d	0.8150	0.7980	0.8065	0.8450	0.7120	keep	baseline
-b2c3d4e	0.8180	0.8010	0.8095	0.8480	0.7150	keep	improved probe questions
-c3d4e5f	0.8140	0.7950	0.8045	0.8420	0.7100	discard	failed to beat baseline on avg_val_f1_all
+commit	avg_posts_val_f1	avg_comments_val_f1	avg_val_f1_all	avg_f1_bin_all	avg_f1_cat_all	status	description    individual_resulsts
+a1b2c3d	0.8150	0.7980	0.8065	0.8450	0.7120	keep	baseline    0.433-0.444-0.333/....
+b2c3d4e	0.8180	0.8010	0.8095	0.8480	0.7150	keep	improved probe questions   0.433-0.444-0.333/....
+c3d4e5f	0.8140	0.7950	0.8045	0.8420	0.7100	discard	failed to beat baseline on avg_val_f1_all    0.433-0.444-0.333/....
 ```
 
 **NOTE**: Do not commit `results.tsv` or `test-results.tsv` — leave them untracked by git.
