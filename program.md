@@ -73,15 +73,15 @@ commit	val_f1	  f1_bin  f1_cat  val_f1_zs	  f1_zs_bin    f1_zs_cat  memory_gb	st
 1. git commit hash (short, 7 chars)
 2. val_bpb achieved (e.g. 1.234567) — use 0.000000 for crashes
 3. peak memory in GB, round to .1f (e.g. 12.3 — divide peak_vram_mb by 1024) — use 0.0 for crashes
-4. status: `keep`, `discard`, or `crash`
+4. status: `eval`, `keep`, `discard`, or `crash`
 5. short text description of what this experiment tried
 
 Example:
 
 ```
 commit	val_f1	  f1_bin   f1_cat   val_f1_zs	  f1_zs_bin  f1_zs_cat  memory_gb	status	description
-a1b2c3d	0.997900	  0.8738   0.8738   0.8738       0.8738     0.8738    44.0	      keep	baseline
-b2c3d4e	0.993200	  0.8638   0.8638   0.8638       0.8638     0.8638    44.2	      keep	change mod system prompt
+a1b2c3d	0.997900	  0.8738   0.8738   0.8738       0.8738     0.8738    44.0	      eval	baseline
+b2c3d4e	0.993200	  0.8638   0.8638   0.8638       0.8638     0.8638    44.2	      eval	change mod system prompt
 c3d4e5f	1.005000	  0.7738   0.7738   0.7738       0.7738     0.7738    44.0	      discard	change probe propmt
 d4e5f6g	0.000000	  0.5738   0.5738   0.5738       0.5738     0.5738    0.0	      crash	double probe iterations
 ```
@@ -96,7 +96,7 @@ Example:
 ```
 commit	val_f1	  f1_bin   f1_cat   val_f1_zs	  f1_zs_bin  f1_zs_cat  memory_gb	status	description
 a1b2c3d	0.997900	  0.8738   0.8738   0.8738       0.8738     0.8738    44.0	      keep	baseline
-b2c3d4e	0.993200	  0.8638   0.8638   0.8638       0.8638     0.8638    44.2	      keep	change mod system prompt
+b2c3d4e	0.993200	  0.8638   0.8638   0.8638       0.8638     0.8638    44.2	      discard	change mod system prompt
 d4e5f6g	0.000000	  0.5738   0.5738   0.5738       0.5738     0.5738    0.0	      crash	double probe iterations
 ```
 
@@ -115,9 +115,9 @@ LOOP FOREVER:
 4. Run the experiment: `python3 train.py > run.log 2>&1` (redirect everything — do NOT use tee or let output flood your context)
 5. Read out the results: `grep "^val_f1:\|^peak_vram_mb:" run.log`
 6. If the grep output is empty, the run crashed. Run `tail -n 50 run.log` to read the Python stack trace and attempt a fix. If you can't get things to work after more than a few attempts, give up.
-7. Record the training results in `results.tsv` (NOTE: do not commit the results.tsv file, leave it untracked by git)
-8. **Test Evaluation**: Only if the training result improves over the current best, run `python3 eval.py > eval_run.log 2>&1` to evaluate on the test set. Do NOT run eval.py if training did not improve — skip straight to discarding. Read the aggregated results from the log.
-9. **Log Test Results**: Record the test metrics in `test-results.tsv` with all averages and the commit hash.
+7. Record the training results in `results.tsv` as soon as the values are available (NOTE: do not commit the results.tsv file, leave it untracked by git)
+8. **Test Evaluation**: Only if the training result improves over the current best, mark it as `eval` then run `python3 eval.py > eval_run.log 2>&1` to evaluate on the test set. Do NOT run eval.py if training did not improve, mark it as `discard` in results.tsv.
+9. **Log Test Results**: Record the test metrics in `test-results.tsv` with all results and the commit hash.
 10. **Acceptance Criteria**: Only accept the commit if it also wins on eval.py (i.e., test metrics must also improve over the current best). If either metric decreases on the test set, mark as `discard` in test-results.tsv and revert.
 11. If both test metrics improved over the current best, mark as `keep` in test-results.tsv and "advance" the branch, keeping the git commit.
 12. If training did not improve, OR if eval.py metrics did not improve (even if training improved), git reset back to where you started.
