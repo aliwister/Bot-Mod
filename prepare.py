@@ -5,19 +5,30 @@ from concurrent.futures import ThreadPoolExecutor
 from sklearn.model_selection import train_test_split
 from openai import AsyncOpenAI, OpenAI
 
+_LLM_ALIASES = {
+    "qwen":    "Qwen/Qwen3-8B",
+    "mistral": "mistralai/Mistral-7B-Instruct-v0.3",
+    "llama":   "meta-llama/Llama-3.1-8B-Instruct",
+}
+
+def resolve_model(name: str) -> str:
+    return _LLM_ALIASES.get(name.lower(), name)
+
 _BASE_URL = {}
-_BASE_URL['Qwen/Qwen3-8B'] = "http://localhost:8000/v1" 
-_BASE_URL["mistralai/Mistral-7B-Instruct-v0.3"] = "http://localhost:8001/v1" 
-_BASE_URL["meta-llama/Llama-3.1-8B-Instruct"] = "http://localhost:8002/v1" 
+_BASE_URL['Qwen/Qwen3-8B'] = "http://localhost:8000/v1"
+_BASE_URL["mistralai/Mistral-7B-Instruct-v0.3"] = "http://localhost:8001/v1"
+_BASE_URL["meta-llama/Llama-3.1-8B-Instruct"] = "http://localhost:8002/v1"
 
 _clients: dict[str, OpenAI] = {}
 
 def _base_url(model: str) -> str:
+    model = resolve_model(model)
     if model in _BASE_URL:
         return _BASE_URL[model]
 
 
 def _client(model: str) -> OpenAI:
+    model = resolve_model(model)
     url = _base_url(model)
     if url not in _clients:
         _clients[url] = OpenAI(base_url=url, api_key="")
@@ -28,6 +39,7 @@ def _client(model: str) -> OpenAI:
 
 def call_llm_messages(messages: list, temperature: float, model: str,
                       max_new_tokens: int = 1024, json_mode: bool = False) -> str:
+    model = resolve_model(model)
     kwargs = dict(model=model, messages=messages,
                   temperature=temperature, max_tokens=max_new_tokens)
     if json_mode:
@@ -49,6 +61,7 @@ def call_llm(system_prompt: str, user_message: str, temperature: float,
 
 async def call_llm_async(messages: list, temperature: float, model: str,
                          max_new_tokens: int = 1024) -> str:
+    model = resolve_model(model)
     async with AsyncOpenAI(base_url=_base_url(model), api_key="") as client:
         response = await client.chat.completions.create(
             model=model, messages=messages,
@@ -199,7 +212,7 @@ def evaluate_f1(mod, user_model=None, filename=None):
         mode          = row.get("mode", "post").strip() or "post"
         context       = row.get("context", "")
         generated_text = row.get("text", "").strip()  # Pre-generated text
-        llm_used      = row.get("llm", "unknown")  # LLM that generated this
+        llm_used      = row.get("user_model", "unknown")  # LLM that generated this
 
         print(f"[{idx+1}/{len(rows)}]  community={community}  mode={mode}  intent={intent}  truth={truth}  llm={llm_used}")
 
