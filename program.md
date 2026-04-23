@@ -129,7 +129,7 @@ LOOP FOREVER:
 5. Read out the results: `grep "^val_f1:\|^peak_vram_mb:" run.log`
 6. If the grep output is empty, the run crashed. Run `tail -n 50 run.log` to read the Python stack trace and attempt a fix. If you can't get things to work after more than a few attempts, give up.
 7. Record the training results in `results.tsv` (NOTE: do not commit the results.tsv file, leave it untracked by git)
-8. **Test Evaluation**: If an improvement is observed on the training set, run `python3 evaluate_test.py > test_eval.log 2>&1` to evaluate on the test set. Read the aggregated results from the log.
+8. **Test Evaluation**: If an improvement is observed on the training set, run `python3 test.py > test_run.log 2>&1` to evaluate on the test set. Read the aggregated results from the log.
 9. **Log Test Results**: Record the test metrics in `test-results.tsv` with all averages and the commit hash.
 10. **Acceptance Criteria**: Only accept the improvement if it WINS on BOTH:
    - **Average Val F1 (All)** - must be HIGHER than baseline test results
