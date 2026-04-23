@@ -37,7 +37,7 @@ Each experiment runs on a single GPU. The training script runs for a **fixed tim
 
 **Simplicity criterion**: All else being equal, simpler is better. A small improvement that adds ugly complexity is not worth it. Conversely, removing something and getting equal or better results is a great outcome — that's a simplification win. When evaluating whether to keep a change, weigh the complexity cost against the improvement magnitude. A 0.001 val_f1 improvement that adds 20 lines of hacky code? Probably not worth it. A 0.001 val_f1 improvement from deleting code? Definitely keep. An improvement of ~0 but much simpler code? Keep.
 
-**The first run**: Your very first run should always be to establish the baseline, so you will run the training script as is.
+**The first run**: Your very first run should always be to establish the baseline, so you will run the training script as is. After the baseline training completes, **immediately run the test evaluation** (`python3 evaluate_test.py > test_eval.log 2>&1`) to establish the baseline test metrics. This baseline is critical for all future acceptance decisions.
 
 ## Output format
 
@@ -81,6 +81,36 @@ c3d4e5f	1.005000	  0.7738   0.7738   0.7738       0.7738     0.7738    44.0	    
 d4e5f6g	0.000000	  0.5738   0.5738   0.5738       0.5738     0.5738    0.0	      crash	double probe iterations
 ```
 
+### Test Results Logging
+
+When test evaluation is run (after an improvement on training), also log to `test-results.tsv` (tab-separated).
+
+The test TSV has a header row and these columns:
+
+```
+commit	avg_posts_val_f1	avg_comments_val_f1	avg_val_f1_all	avg_f1_bin_all	avg_f1_cat_all	status	description
+```
+
+1. git commit hash (short, 7 chars) — same as in results.tsv
+2. avg_posts_val_f1 (e.g. 0.8150)
+3. avg_comments_val_f1 (e.g. 0.7980)
+4. avg_val_f1_all (e.g. 0.8065) — ACCEPTANCE CRITERION #1
+5. avg_f1_bin_all (e.g. 0.8450) — ACCEPTANCE CRITERION #2
+6. avg_f1_cat_all (e.g. 0.7120)
+7. status: `keep` or `discard` (based on whether BOTH acceptance criteria are met)
+8. short text description of what this experiment tried
+
+Example:
+
+```
+commit	avg_posts_val_f1	avg_comments_val_f1	avg_val_f1_all	avg_f1_bin_all	avg_f1_cat_all	status	description
+a1b2c3d	0.8150	0.7980	0.8065	0.8450	0.7120	keep	baseline
+b2c3d4e	0.8180	0.8010	0.8095	0.8480	0.7150	keep	improved probe questions
+c3d4e5f	0.8140	0.7950	0.8045	0.8420	0.7100	discard	failed to beat baseline on avg_val_f1_all
+```
+
+**NOTE**: Do not commit `results.tsv` or `test-results.tsv` — leave them untracked by git.
+
 ## The experiment loop
 
 The experiment runs on a dedicated branch (e.g. `autoresearch/mar5` or `autoresearch/mar5-gpu0`).
@@ -93,14 +123,15 @@ LOOP FOREVER:
 4. Run the experiment: `uv run train.py > run.log 2>&1` (redirect everything — do NOT use tee or let output flood your context)
 5. Read out the results: `grep "^val_f1:\|^peak_vram_mb:" run.log`
 6. If the grep output is empty, the run crashed. Run `tail -n 50 run.log` to read the Python stack trace and attempt a fix. If you can't get things to work after more than a few attempts, give up.
-7. Record the results in the tsv (NOTE: do not commit the results.tsv file, leave it untracked by git)
+7. Record the training results in `results.tsv` (NOTE: do not commit the results.tsv file, leave it untracked by git)
 8. **Test Evaluation**: If an improvement is observed on the training set, run `python3 evaluate_test.py > test_eval.log 2>&1` to evaluate on the test set. Read the aggregated results from the log.
-9. **Acceptance Criteria**: Only accept the improvement if it WINS on BOTH:
+9. **Log Test Results**: Record the test metrics in `test-results.tsv` with all averages and the commit hash.
+10. **Acceptance Criteria**: Only accept the improvement if it WINS on BOTH:
    - **Average Val F1 (All)** - must be HIGHER than baseline test results
    - **Average F1 Binary (All)** - must be HIGHER than baseline test results
-   If either metric decreases on the test set, reject the improvement and revert.
-10. If both test metrics improved, you "advance" the branch, keeping the git commit
-11. If test metrics did not improve (even if training improved), you git reset back to where you started
+   If either metric decreases on the test set, mark as `discard` in test-results.tsv and revert.
+11. If both test metrics improved, mark as `keep` in test-results.tsv and "advance" the branch, keeping the git commit
+12. If test metrics did not improve (even if training improved), you git reset back to where you started
 
 The idea is that you are a completely autonomous researcher trying things out. If they work, keep. If they don't, discard. And you're advancing the branch so that you can iterate. If you feel like you're getting stuck in some way, you can rewind but you should probably do this very very sparingly (if ever).
 
