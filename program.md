@@ -15,7 +15,7 @@ To set up a new experiment, work with the user to:
 3. **Read the in-scope files**: The repo is small. Read these files for full context:
    - `README.md` — repository context.
    - `prepare.py` — fixed constants, data prep, tokenizer, dataloader, evaluation. Do not modify.
-   - `test.py` — fixed constants, data prep, tokenizer, dataloader, evaluation. Do not modify.
+   - `eval.py` — fixed constants, data prep, tokenizer, dataloader, evaluation. Do not modify.
    - `train.py` — the file you modify. Model architecture, optimizer, training loop.
 4. **Verify data exists**: Check that `~/cache` contains data files. 
 5. **Initialize results.tsv**: Create `results.tsv` with just the header row. The baseline will be recorded after the first run.
@@ -25,7 +25,7 @@ Once you get confirmation, kick off the experimentation.
 
 ## Experimentation
 
-Each experiment runs on a single GPU. The training script runs for a **fixed time budget of 30 minutes**  (wall clock training time, excluding startup/compilation). You launch it simply as: `python3 train.py`.
+Each experiment runs on a single GPU. The training script runs for a **fixed time budget of 10 minutes**  (wall clock training time, excluding startup/compilation). You launch it simply as: `python3 train.py`.
 
 **What you CAN do:**
 - Modify `train.py` — this is the only file you edit. Everything is fair game: prompt text, prompt structure, hyperparameters, training loop, prompting approach, sampling approach, etc.
@@ -34,7 +34,7 @@ Each experiment runs on a single GPU. The training script runs for a **fixed tim
 - Modify `prepare.py`. It is read-only. It contains the fixed evaluation, data loading, general logic, and training constants (time budget, sequence length, etc).
 - Install new packages or add dependencies. You can only use what's already in `pyproject.toml`.
 - Modify the evaluation harness. The `evaluate_f1` function in `prepare.py` is the ground truth metric.
-- Modify the test harness in `test.py`.
+- Modify the test harness in `eval.py`.
 
 **The goal is simple: get the lowest val_f1.** Since the time budget is fixed, you don't need to worry about training time — it's always 10 minutes. Everything is fair game: change the architecture, moderator functions, the hyperparameters, prompt strategy (can use SOTA methods from literature), prompt text, prompt strategy, convergence strategy, number of iterations, etc. The only constraint is that the code runs without crashing and finishes within the time budget.
 
@@ -42,7 +42,7 @@ Each experiment runs on a single GPU. The training script runs for a **fixed tim
 
 **Simplicity criterion**: All else being equal, simpler is better. A small improvement that adds ugly complexity is not worth it. Conversely, removing something and getting equal or better results is a great outcome — that's a simplification win. When evaluating whether to keep a change, weigh the complexity cost against the improvement magnitude. A 0.001 val_f1 improvement that adds 20 lines of hacky code? Probably not worth it. A 0.001 val_f1 improvement from deleting code? Definitely keep. An improvement of ~0 but much simpler code? Keep.
 
-**The first run**: Your very first run should always be to establish the baseline, so you will run the training script as is. After the baseline training completes, **immediately run the test evaluation** (`python3 test.py > test_run.log 2>&1`) to establish the baseline test metrics. This baseline is critical for all future acceptance decisions.
+**The first run**: Your very first run should always be to establish the baseline, so you will run the training script as is. After the baseline training completes, **immediately run the test evaluation** (`python3 eval.py > eval_run.log 2>&1`) to establish the baseline test metrics. This baseline is critical for all future acceptance decisions.
 
 ## Output format
 
@@ -92,27 +92,14 @@ When test evaluation is run (after an improvement on training), also log to `tes
 
 The test TSV has a header row and these columns:
 
-```
-commit	avg_posts_val_f1	avg_comments_val_f1	avg_val_f1_all	avg_f1_bin_all	avg_f1_cat_all	status	description
-```
-
-1. git commit hash (short, 7 chars) — same as in results.tsv
-2. avg_posts_val_f1 (e.g. 0.8150)
-3. avg_comments_val_f1 (e.g. 0.7980)
-4. avg_val_f1_all (e.g. 0.8065) — ACCEPTANCE CRITERION #1
-5. avg_f1_bin_all (e.g. 0.8450) — ACCEPTANCE CRITERION #2
-6. avg_f1_cat_all (e.g. 0.7120)
-7. status: `keep` or `discard` (based on whether BOTH acceptance criteria are met)
-8. short text description of what this experiment tried
-
 Example:
+```
+commit	val_f1	  f1_bin   f1_cat   val_f1_zs	  f1_zs_bin  f1_zs_cat  memory_gb	status	description
+a1b2c3d	0.997900	  0.8738   0.8738   0.8738       0.8738     0.8738    44.0	      keep	baseline
+b2c3d4e	0.993200	  0.8638   0.8638   0.8638       0.8638     0.8638    44.2	      keep	change mod system prompt
+d4e5f6g	0.000000	  0.5738   0.5738   0.5738       0.5738     0.5738    0.0	      crash	double probe iterations
+```
 
-```
-commit	avg_posts_val_f1	avg_comments_val_f1	avg_val_f1_all	avg_f1_bin_all	avg_f1_cat_all	status	description    individual_resulsts
-a1b2c3d	0.8150	0.7980	0.8065	0.8450	0.7120	keep	baseline    0.433-0.444-0.333/....
-b2c3d4e	0.8180	0.8010	0.8095	0.8480	0.7150	keep	improved probe questions   0.433-0.444-0.333/....
-c3d4e5f	0.8140	0.7950	0.8045	0.8420	0.7100	discard	failed to beat baseline on avg_val_f1_all    0.433-0.444-0.333/....
-```
 
 **NOTE**: Do not commit `results.tsv` or `test-results.tsv` — leave them untracked by git.
 
@@ -129,14 +116,11 @@ LOOP FOREVER:
 5. Read out the results: `grep "^val_f1:\|^peak_vram_mb:" run.log`
 6. If the grep output is empty, the run crashed. Run `tail -n 50 run.log` to read the Python stack trace and attempt a fix. If you can't get things to work after more than a few attempts, give up.
 7. Record the training results in `results.tsv` (NOTE: do not commit the results.tsv file, leave it untracked by git)
-8. **Test Evaluation**: If an improvement is observed on the training set, run `python3 test.py > test_run.log 2>&1` to evaluate on the test set. Read the aggregated results from the log.
+8. **Test Evaluation**: Only if the training result improves over the current best, run `python3 eval.py > eval_run.log 2>&1` to evaluate on the test set. Do NOT run eval.py if training did not improve — skip straight to discarding. Read the aggregated results from the log.
 9. **Log Test Results**: Record the test metrics in `test-results.tsv` with all averages and the commit hash.
-10. **Acceptance Criteria**: Only accept the improvement if it WINS on BOTH:
-   - **Average Val F1 (All)** - must be HIGHER than baseline test results
-   - **Average F1 Binary (All)** - must be HIGHER than baseline test results
-   If either metric decreases on the test set, mark as `discard` in test-results.tsv and revert.
-11. If both test metrics improved, mark as `keep` in test-results.tsv and "advance" the branch, keeping the git commit
-12. If test metrics did not improve (even if training improved), you git reset back to where you started
+10. **Acceptance Criteria**: Only accept the commit if it also wins on eval.py (i.e., test metrics must also improve over the current best). If either metric decreases on the test set, mark as `discard` in test-results.tsv and revert.
+11. If both test metrics improved over the current best, mark as `keep` in test-results.tsv and "advance" the branch, keeping the git commit.
+12. If training did not improve, OR if eval.py metrics did not improve (even if training improved), git reset back to where you started.
 
 The idea is that you are a completely autonomous researcher trying things out. If they work, keep. If they don't, discard. And you're advancing the branch so that you can iterate. If you feel like you're getting stuck in some way, you can rewind but you should probably do this very very sparingly (if ever).
 

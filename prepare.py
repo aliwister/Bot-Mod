@@ -70,15 +70,6 @@ def call_llm_batch(messages_list, temperature, model: str, max_new_tokens: int =
     return asyncio.run(_gather())
 
 
-POST_TEMPLATE = """
-    {
-        "submolt": "<name-of-community>",
-        "title": "<post-title>",
-        "content": "<post body text with markdown and emojis.>"
-    }
-"""
-COMMENT_TEMPLATE = '{\n    "content": "<the content of your comment, which should be a direct response to the user\'s post>"\n    }'
-
 INTENTS = [
     "subtle_promotion", #    (product/service persuasion) ~ ex found in m/cryoto m/usdc for external wallet, website, exchange, etc.
     "narrative_pushing", #   (ideological/political agenda) ~ actually found in m/tech or relevant like why these agent setup too use, blah blah
@@ -109,36 +100,23 @@ class UserBot:
         ]
 
         # If pre-generated text is provided, use it directly
-        if pregenerated_text is not None:
-            self.M = pregenerated_text
-            # Add the initial prompt and response to message history for consistency
-            if mode == "comment":
-                prompt = (
-                    f"Post:\n{context}\n\n"
-                    f"Comment on the post"
-                )
-            else:
-                action = "Post to"
-                prompt = (
-                    f"{action} {sub}"
-                )
-            self._user_messages.append({"role": "user", "content": prompt})
-            self._user_messages.append({"role": "assistant", "content": pregenerated_text})
+        if pregenerated_text is None:
+            raise Exception("Pre-generated text must be provided for UserBot.")
+        self.M = pregenerated_text
+        # Add the initial prompt and response to message history for consistency
+        if mode == "comment":
+            prompt = (
+                f"Post:\n{context}\n\n"
+                f"Comment on the post"
+            )
         else:
-            # Generate new content (original behavior)
-            if mode == "comment":
-                prompt = (
-                    f"Context:\n{context}\n\n"
-                    f"Comment on the post. Return comment in this format and nothing else: "
-                    f"{COMMENT_TEMPLATE}"
-                )
-            else:
-                action = "Post to"
-                prompt = (
-                    f"{action} {sub}. Return post\/ in this format and nothing else: "
-                    f"{POST_TEMPLATE}"
-                )
-            self.M = self.user_message(prompt)
+            action = "Post to"
+            prompt = (
+                f"{action} {sub}"
+            )
+        self._user_messages.append({"role": "user", "content": prompt})
+        self._user_messages.append({"role": "assistant", "content": pregenerated_text})
+
 
 
     def _call_user(self, prompt: str, temp: float = 0.3) -> str:
@@ -158,9 +136,8 @@ class UserBot:
         return msg.strip()
 
 # --- CSV Evaluation ---
-POSTS_DATA = "cache/posts-train.csv"  # Path to your dataset CSV file
-COMMENTS_DATA = "cache/comments-train.json"  # Path to your dataset CSV file
-TRAIN_GENERATED_MERGED = "cache/train_generated_merged.json"  # Pre-generated merged data
+TRAIN_DATA = "cache/train-generated.json"  # Pre-generated merged data
+TEST_DATA = "cache/test-generated.json"  # Pre-generated merged data
 
 def metric(results):
     # Binary F1: malicious vs benign
@@ -193,9 +170,15 @@ def _save_results_csv(results, filename):
         for r in results:
             writer.writerow([r["intent"], r["t"], r["intent_type"], r["verdict"], r["community"], r["M"], r["context"]])
 
+def evaluate_f1_train(mod, user_model=None, filename=None):
+    return evaluate_f1(mod, user_model=user_model, filename=TRAIN_DATA)
+
+def evaluate_f1_test(mod, user_model=None, filename=None):
+    return evaluate_f1(mod, user_model=user_model, filename=TEST_DATA)
+
 def evaluate_f1(mod, user_model=None, filename=None):
     # Load pre-generated merged data
-    with open(TRAIN_GENERATED_MERGED, encoding="utf-8") as f:
+    with open(filename, encoding="utf-8") as f:
         rows = json.load(f)
 
     # Ensure context is properly formatted for comments
