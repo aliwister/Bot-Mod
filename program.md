@@ -11,13 +11,13 @@ The python uv environment is: ../.venv
 To set up a new experiment, work with the user to:
 
 1. **Agree on a run tag**: propose a tag based on today's date (e.g. `mar5`). The branch `autoresearch/<tag>` must not already exist — this is a fresh run.
-2. **Create the branch**: `git checkout -b autoresearch/<tag>` from current master.
+2. **Create the branch**: `git checkout -b autoresearch/<tag>` from current main.
 3. **Read the in-scope files**: The repo is small. Read these files for full context:
    - `README.md` — repository context.
    - `prepare.py` — fixed constants, data prep, tokenizer, dataloader, evaluation. Do not modify.
    - `eval.py` — fixed constants, data prep, tokenizer, dataloader, evaluation. Do not modify.
    - `train.py` — the file you modify. Model architecture, optimizer, training loop.
-4. **Verify data exists**: Check that `~/cache` contains data files. 
+4. **Verify data exists**: Check that `./cache` contains data files. 
 5. **Initialize results.tsv**: Create `results.tsv` with just the header row. The baseline will be recorded after the first run.
 6. **Confirm and go**: Confirm setup looks good.
 
@@ -36,7 +36,7 @@ Each experiment runs on a single GPU. The training script runs for a **fixed tim
 - Modify the evaluation harness. The `evaluate_f1` function in `prepare.py` is the ground truth metric.
 - Modify the test harness in `eval.py`.
 
-**The goal is simple: get the lowest val_f1.** Since the time budget is fixed, you don't need to worry about training time — it's always 10 minutes. Everything is fair game: change the architecture, moderator functions, the hyperparameters, prompt strategy (can use SOTA methods from literature), prompt text, prompt strategy, convergence strategy, number of iterations, etc. The only constraint is that the code runs without crashing and finishes within the time budget.
+**The goal is simple: get the highest val_f1.** Since the time budget is fixed, you don't need to worry about training time — it's always 10 minutes. Everything is fair game: change the architecture, moderator functions, the hyperparameters, prompt strategy (can use SOTA methods from literature), prompt text, prompt strategy, convergence strategy, number of iterations, etc. The only constraint is that the code runs without crashing and finishes within the time budget.
 
 **VRAM** is a soft constraint. Some increase is acceptable for meaningful val_f1 gains, but it should not blow up dramatically.
 
@@ -64,25 +64,26 @@ total_seconds:    325.9
 
 When an experiment is done, log it to `results.tsv` (tab-separated, NOT comma-separated — commas break in descriptions).
 
-The TSV has a header row and 5 columns:
+The TSV has a header row and 10 columns:
 
 ```
-commit	val_f1	  f1_bin  f1_cat  val_f1_zs	  f1_zs_bin    f1_zs_cat  memory_gb	status
+commit	val_f1   f1_bin f1_cat  val_f1_zs   f1_zs f1_cat_zs   memory_gb    status description
 ```
 
 1. git commit hash (short, 7 chars)
-2. val_bpb achieved (e.g. 1.234567) — use 0.000000 for crashes
-3. peak memory in GB, round to .1f (e.g. 12.3 — divide peak_vram_mb by 1024) — use 0.0 for crashes
-4. status: `eval`, `keep`, `discard`, or `crash`
-5. short text description of what this experiment tried
+2. val_f1 achieved (e.g. 0.834567) — use 0.000000 for crashes
+3-7. other results generated in the output
+8. peak memory in GB, round to .1f (e.g. 12.3 — divide peak_vram_mb by 1024) — use 0.0 for crashes
+9. status: `eval`, `keep`, `discard`, or `crash`
+10. short text description of what this experiment tried
 
 Example:
 
 ```
-commit	val_f1	  f1_bin   f1_cat   val_f1_zs	  f1_zs_bin  f1_zs_cat  memory_gb	status	description
-a1b2c3d	0.997900	  0.8738   0.8738   0.8738       0.8738     0.8738    44.0	      eval	baseline
-b2c3d4e	0.993200	  0.8638   0.8638   0.8638       0.8638     0.8638    44.2	      eval	change mod system prompt
-c3d4e5f	1.005000	  0.7738   0.7738   0.7738       0.7738     0.7738    44.0	      discard	change probe propmt
+commit	val_f1	  f1_bin   f1_cat   val_f1_zs	  f1_zs  f1_cat_zs  memory_gb	status	description
+a1b2c3d	0.797900	  0.8738   0.8738   0.8738       0.8738     0.8738    44.0	      eval	baseline
+b2c3d4e	0.83200	  0.8638   0.8638   0.8638       0.8638     0.8638    44.2	      eval	change mod system prompt
+c3d4e5f	0.705000	  0.7738   0.7738   0.7738       0.7738     0.7738    44.0	      discard	change probe propmt
 d4e5f6g	0.000000	  0.5738   0.5738   0.5738       0.5738     0.5738    0.0	      crash	double probe iterations
 ```
 
@@ -90,13 +91,13 @@ d4e5f6g	0.000000	  0.5738   0.5738   0.5738       0.5738     0.5738    0.0	     
 
 When test evaluation is run (after an improvement on training), also log to `test-results.tsv` (tab-separated).
 
-The test TSV has a header row and these columns:
+The test TSV has the same structure as `results.tsv`:
 
 Example:
 ```
-commit	val_f1	  f1_bin   f1_cat   val_f1_zs	  f1_zs_bin  f1_zs_cat  memory_gb	status	description
-a1b2c3d	0.997900	  0.8738   0.8738   0.8738       0.8738     0.8738    44.0	      keep	baseline
-b2c3d4e	0.993200	  0.8638   0.8638   0.8638       0.8638     0.8638    44.2	      discard	change mod system prompt
+commit	val_f1	  f1_bin   f1_cat   val_f1_zs	  f1_zs  f1_cat_zs  memory_gb	status	description
+a1b2c3d	0.897900	  0.8738   0.8738   0.8738       0.8738     0.8738    44.0	      keep	baseline
+b2c3d4e	0.693200	  0.8638   0.8638   0.8638       0.8638     0.8638    44.2	      discard	change mod system prompt
 d4e5f6g	0.000000	  0.5738   0.5738   0.5738       0.5738     0.5738    0.0	      crash	double probe iterations
 ```
 
@@ -113,14 +114,14 @@ LOOP FOREVER:
 2. Tune `train.py` with an experimental idea by directly hacking the code.
 3. git commit
 4. Run the experiment: `python3 train.py > run.log 2>&1` (redirect everything — do NOT use tee or let output flood your context)
-5. Read out the results: `grep "^val_f1:\|^peak_vram_mb:" run.log`
+5. Read out the results: `grep "^val_f1:\|^f1_binary:\|^f1_categorical:\|^val_f1_zs:\|^f1_zs:\|^f1_cat_zs:" run.log`
 6. If the grep output is empty, the run crashed. Run `tail -n 50 run.log` to read the Python stack trace and attempt a fix. If you can't get things to work after more than a few attempts, give up.
 7. Record the training results in `results.tsv` as soon as the values are available (NOTE: do not commit the results.tsv file, leave it untracked by git)
 8. **Test Evaluation**: Only if the training result improves over the current best, mark it as `eval` then run `python3 eval.py > eval_run.log 2>&1` to evaluate on the test set. Do NOT run eval.py if training did not improve, mark it as `discard` in results.tsv.
 9. **Log Test Results**: Record the test metrics in `test-results.tsv` with all results and the commit hash.
-10. **Acceptance Criteria**: Only accept the commit if it also wins on eval.py (i.e., test metrics must also improve over the current best). If either metric decreases on the test set, mark as `discard` in test-results.tsv and revert.
-11. If both test metrics improved over the current best, mark as `keep` in test-results.tsv and "advance" the branch, keeping the git commit.
-12. If training did not improve, OR if eval.py metrics did not improve (even if training improved), git reset back to where you started.
+10. **Acceptance Criteria**: Only accept the commit if it also wins on eval.py (i.e., eval `val_f1` must also improve over the current best). Otherwise, mark as `discard` in test-results.tsv and revert.
+11. If eval `val_f1` improved over the current best, mark as `keep` in test-results.tsv and "advance" the branch, keeping the git commit.
+12. If training did not improve, OR if `eval.py` metric did not improve (even if training improved), git reset back to where you started.
 
 The idea is that you are a completely autonomous researcher trying things out. If they work, keep. If they don't, discard. And you're advancing the branch so that you can iterate. If you feel like you're getting stuck in some way, you can rewind but you should probably do this very very sparingly (if ever).
 

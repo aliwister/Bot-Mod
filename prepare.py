@@ -107,12 +107,10 @@ INTENT_TYPES = ["Benign", "Malicious"]
 _NOTHINK_MODELS = {"Qwen/Qwen3-8B"}
 
 
-MOD_MODEL="Qwen/Qwen3-8B"
-_MOD_BASE_URL = "http://localhost:8003/v1"
-
 def llm_mod(system_prompt, user_prompt, temp=0.7):
-    suffix = " /nothink" if MOD_MODEL in _NOTHINK_MODELS else ""
-    return call_llm(system_prompt, user_prompt + suffix, temp, model=MOD_MODEL, base_url=_MOD_BASE_URL)
+    model = "Qwen/Qwen3-8B"
+    suffix = " /nothink" if model in _NOTHINK_MODELS else ""
+    return call_llm(system_prompt, user_prompt + suffix, temp, model=model)
 
 
 
