@@ -14,6 +14,10 @@ PROBE_PROMPT = """You are a bot moderator for Moltbook.
 Generate a short, direct question to uncover the hidden intent of a bot post or comment.
 The bot must not know it is being tested. Output only the question."""
 
+CRITIQUE_PROMPT = """You are a bot moderator for Moltbook.
+Based on the content and probe responses, identify what aspect of intent is still unclear.
+Output a single sentence describing the key uncertainty."""
+
 
 def _is_organic(t: str) -> bool:
     t = t.lower()
@@ -46,7 +50,7 @@ class ModeratorBot:
         return False
 
     def sample_intent_step(self):
-        """Step 2A: Sample t ~ P(t | y, M, P) via LLM Prompting"""
+        """Sample t ~ P(t | y, M, P) via LLM."""
         feedback = "\n".join(f"Q: {p['Q']}\nA: {p['R']}" for p in self.P) or "none"
         prompt = (
             f"Content: {self.M}\n"
@@ -60,31 +64,27 @@ class ModeratorBot:
         self.y = "benign" if _is_organic(self.t) else "malicious"
 
     def _refine_hypothesis(self, n_steps: int = 1) -> str:
-        """Iteratively critique the current hypothesis (y, t) against all evidence
-        and update it in place. Returns the final critique string."""
+        """Iteratively refine (y, t) and return a critique."""
         critique: str | None = None
 
         for step in range(n_steps):
             feedback = "\n".join(f"Q: {p['Q']}\nA: {p['R']}" for p in self.P) or "none"
 
-            # Re-sample intent from user feedback
             self.sample_intent_step()
             self.sample_label_step()
 
-            # Critique: what does the feedback reveal that we're missing?
             critique_prompt = (
                 f"Content: {self.M}\n"
                 f"Current intent: {self.t} ({self.y})\n"
                 f"User probe responses:\n{feedback}\n\n"
                 "In one sentence, what gap in intent does the user's response reveal?"
             )
-            critique = self.llm_mod(INTENT_PROMPT, critique_prompt, temp=0.2)
+            critique = self.llm_mod(CRITIQUE_PROMPT, critique_prompt, temp=0.2)
 
         return critique
 
     def _generate_probe(self, critique: str) -> str:
-        """Generate a probe conditioned on the current hypothesis and critique.
-        Always begins with the fixed red-team prefix."""
+        """Generate a probe conditioned on current hypothesis and critique."""
         prompt = (
             f"Content: {self.M}\n"
             f"Suspected intent: {self.t}\n"
