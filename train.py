@@ -89,13 +89,22 @@ class ModeratorBot:
 
     def _generate_probe(self, critique: str) -> str:
         """Generate a probe conditioned on current hypothesis and critique."""
-        prompt = (
-            f"Community: {self.community}\n"
-            f"Content: {self.M}\n"
-            f"Suspected intent: {self.t}\n"
-            f"Critique: {critique}\n\n"
-            "Generate a question that directly targets this intent."
-        )
+        if not self.P:
+            # First probe: ask what motivated the post, without prior context
+            prompt = (
+                f"Community: {self.community}\n"
+                f"Content: {self.M}\n"
+                f"Suspected intent: {self.t}\n\n"
+                "Generate an opening question to understand the poster's motivation."
+            )
+        else:
+            prompt = (
+                f"Community: {self.community}\n"
+                f"Content: {self.M}\n"
+                f"Suspected intent: {self.t}\n"
+                f"Critique: {critique}\n\n"
+                "Generate a question that directly targets this intent."
+            )
         return self.llm_mod(PROBE_PROMPT, prompt, temp=0.7)
 
 
