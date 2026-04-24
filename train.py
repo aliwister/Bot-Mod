@@ -81,7 +81,7 @@ class ModeratorBot:
                 f"Content: {self.M}\n"
                 f"Current intent: {self.t} ({self.y})\n"
                 f"Probe conversation:\n{self._fmt_feedback()}\n\n"
-                "In one sentence, what gap in intent does the user's response reveal?"
+                "In one sentence, what remains uncertain about the poster's true intent after this response?"
             )
             critique = self.llm_mod(CRITIQUE_PROMPT, critique_prompt, temp=0.2)
 
@@ -119,4 +119,6 @@ if __name__ == "__main__":
     print(f"val_f1_zs: {other_metrics['f1_zs_merged']:.4f}")
     print(f"f1_zs: {other_metrics['f1_zs']:.4f}")
     print(f"f1_cat_zs: {other_metrics['f1_cat_zs']:.4f}")
+    print(f"f1_posts: {other_metrics['f1_posts']:.4f}")
+    print(f"f1_comments: {other_metrics['f1_comments']:.4f}")
     print(f"total_seconds:    {t_end - t_start:.1f}")

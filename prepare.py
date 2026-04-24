@@ -107,10 +107,10 @@ INTENT_TYPES = ["Benign", "Malicious"]
 _NOTHINK_MODELS = {"Qwen/Qwen3-8B"}
 
 
-def llm_mod(system_prompt, user_prompt, temp=0.7):
+def llm_mod(system_prompt, user_prompt, temp=0.7, no_think=True, max_new_tokens=1024):
     model = "Qwen/Qwen3-8B"
-    suffix = " /nothink" if model in _NOTHINK_MODELS else ""
-    return call_llm(system_prompt, user_prompt + suffix, temp, model=model)
+    suffix = " /nothink" if model in _NOTHINK_MODELS and no_think else ""
+    return call_llm(system_prompt, user_prompt + suffix, temp, model=model, max_new_tokens=max_new_tokens)
 
 
 
@@ -244,7 +244,16 @@ def evaluate_f1(mod, user_model=None, filename=None):
             model=user_model or llm_used,
             pregenerated_text=generated_text  # Use pre-generated text, skip generation
         )
-        m._init_hypothesis(user.M, community)
+
+        # For comments, prepend the parent post title so the moderator has context
+        # for what the comment is responding to.
+        enriched_M = user.M
+        if mode == "comment" and isinstance(context, dict):
+            parent_title = context.get("post", {}).get("title", "")
+            if parent_title:
+                enriched_M = f"[POST] {parent_title}]\n{user.M}"
+
+        m._init_hypothesis(enriched_M, community)
 
         for i in range(m.max_iterations):
             critique = m._refine_hypothesis()   # samples t, y internally
@@ -258,8 +267,8 @@ def evaluate_f1(mod, user_model=None, filename=None):
         correct = verdict == truth
         print(f"[{idx+1}]  verdict={verdict}  truth={truth}  correct={correct}")
         return (
-            {"verdict": verdict.upper(), "intent_type": truth.upper(), "correct": correct, "intent": intent.lower(), "t": m.t.strip().lower(), "community": community, "M": user.M, "context": context_str},
-            {"verdict": m.y0.upper(), "intent_type": truth.upper(), "correct": m.y0 == truth, "intent": intent.lower(), "t": getattr(m, "t0", m.t).strip().lower(), "community": community, "M": user.M, "context": context_str},
+            {"verdict": verdict.upper(), "intent_type": truth.upper(), "correct": correct, "intent": intent.lower(), "t": m.t.strip().lower(), "community": community, "M": user.M, "context": context_str, "mode": mode},
+            {"verdict": m.y0.upper(), "intent_type": truth.upper(), "correct": m.y0 == truth, "intent": intent.lower(), "t": getattr(m, "t0", m.t).strip().lower(), "community": community, "M": user.M, "context": context_str, "mode": mode},
         )
 
     with ThreadPoolExecutor() as executor:
@@ -268,17 +277,24 @@ def evaluate_f1(mod, user_model=None, filename=None):
     results          = [p[0] for p in pairs]
     results_zeroshot = [p[1] for p in pairs]
 
-    #if filename:
-    #    _save_results_csv(results, filename)
-    #    _save_results_csv(results_zeroshot, filename.replace(".csv", "_zeroshot.csv"))
-
     f1, f1_cat    = metric(results)
     f1_zs, f1_cat_zs = metric(results_zeroshot)
     _lambda = 0.7
     f1_merged = _lambda * f1 + (1 - _lambda) * f1_cat
     f1_zs_merged = _lambda * f1_zs + (1 - _lambda) * f1_cat_zs
+
+    def _val_f1_mode(rs, mode_key):
+        sub = [r for r in rs if r["mode"] == mode_key]
+        if not sub:
+            return 0.0
+        b, c = metric(sub)
+        return _lambda * b + (1 - _lambda) * c
+
+    f1_posts    = _val_f1_mode(results, "post")
+    f1_comments = _val_f1_mode(results, "comment")
+
     print(f"F1-score (iterative): {f1:.4f} (zero-shot): {f1_zs:.4f}")
-    return f1_merged, {'f1_bin': f1, 'f1_cat': f1_cat, 'f1_zs_merged': f1_zs_merged, 'f1_zs': f1_zs, 'f1_cat_zs': f1_cat_zs}
+    return f1_merged, {'f1_bin': f1, 'f1_cat': f1_cat, 'f1_zs_merged': f1_zs_merged, 'f1_zs': f1_zs, 'f1_cat_zs': f1_cat_zs, 'f1_posts': f1_posts, 'f1_comments': f1_comments}
 
 if __name__ == "__main__":
     print("Done! Ready to train.")
