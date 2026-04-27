@@ -4,7 +4,7 @@ This is an experiment to have the LLM do its own research.
 
 ## Runtime
 
-The python uv environment is: ../.venv
+The python uv environment is: .venv
 
 ## Setup
 
