@@ -1,5 +1,6 @@
 import json
 import csv, asyncio, copy, random
+from sklearn.metrics import f1_score
 random.seed(42)
 from concurrent.futures import ThreadPoolExecutor
 from openai import AsyncOpenAI, OpenAI
@@ -173,9 +174,14 @@ def metric(results):
     rec  = tp / (tp + fn) if (tp + fn) else 0.0
     f1_binary = 2 * prec * rec / (prec + rec) if (prec + rec) else 0.0
 
-    # Categorical accuracy on truth-malicious items: predicted intent (t) vs true intent
+    # Macro F1 over intent categories on truth-malicious items
     mal = [r for r in results if r["intent_type"] == "MALICIOUS"]
-    f1_categorical = sum(1 for r in mal if r["t"] == r["intent"]) / len(mal) if mal else 0.0
+    if mal:
+        y_true = [r["intent"] for r in mal]
+        y_pred = [r["t"] for r in mal]
+        f1_categorical = f1_score(y_true, y_pred, average="macro", zero_division=0.0)
+    else:
+        f1_categorical = 0.0
 
     return f1_binary, f1_categorical
 
@@ -270,16 +276,16 @@ def evaluate_f1(mod, user_model=None, filename=None):
 
     f1, f1_cat    = metric(results)
     f1_zs, f1_cat_zs = metric(results_zeroshot)
-    _lambda = 0.7
-    f1_merged = _lambda * f1 + (1 - _lambda) * f1_cat
-    f1_zs_merged = _lambda * f1_zs + (1 - _lambda) * f1_cat_zs
+    _alpha = 0.7
+    f1_merged    = f1    ** _alpha * f1_cat    ** (1 - _alpha)
+    f1_zs_merged = f1_zs ** _alpha * f1_cat_zs ** (1 - _alpha)
 
     def _val_f1_mode(rs, mode_key):
         sub = [r for r in rs if r["mode"] == mode_key]
         if not sub:
             return 0.0
         b, c = metric(sub)
-        return _lambda * b + (1 - _lambda) * c
+        return b ** _alpha * c ** (1 - _alpha)
 
     f1_posts    = _val_f1_mode(results, "post")
     f1_comments = _val_f1_mode(results, "comment")
