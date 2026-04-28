@@ -119,7 +119,7 @@ LOOP FOREVER:
 5. Read out the results: `grep "^val_f1:\|^f1_binary:\|^f1_categorical:\|^val_f1_zs:\|^f1_zs:\|^f1_cat_zs:\|^f1_posts:\|^f1_comments:" run.log`
 6. If the grep output is empty, the run crashed. Run `tail -n 50 run.log` to read the Python stack trace and attempt a fix. If you can't get things to work after more than a few attempts, give up.
 7. Record the training results in `results.tsv` as soon as the values are available (NOTE: do not commit the results.tsv file, leave it untracked by git)
-8. **Test Evaluation**: Only if the training result improves over the current best, mark it as `accept` then run `python3 eval.py > eval_run.log 2>&1` to evaluate on the test set. Do NOT run eval.py if training did not improve, mark it as `discard` in results.tsv.
+8. **Test Evaluation**: Only if the training result improves or within the error boundary of the current best, mark it as `accept` then run `python3 eval.py > eval_run.log 2>&1` to evaluate on the test set. Do NOT run eval.py if training did significantly worse, mark it as `discard` in results.tsv.
 9. **Log Test Results**: Record the test metrics in `test-results.tsv` with all results and the commit hash.
 
 
