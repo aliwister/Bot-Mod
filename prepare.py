@@ -161,8 +161,8 @@ class UserBot:
         return msg.strip()
 
 # --- CSV Evaluation ---
-TRAIN_DATA = "cache/train-generated.json"  # Pre-generated merged data
-TEST_DATA = "cache/test-generated.json"  # Pre-generated merged data
+TRAIN_DATA = "cache/train-generated-new.json"  # Pre-generated merged data
+TEST_DATA = "cache/test-generated-new.json"  # Pre-generated merged data
 
 def metric(results):
     # Binary F1: malicious vs benign
@@ -173,18 +173,9 @@ def metric(results):
     rec  = tp / (tp + fn) if (tp + fn) else 0.0
     f1_binary = 2 * prec * rec / (prec + rec) if (prec + rec) else 0.0
 
-    # Macro categorical F1: predicted intent (t) vs true intent
-    mal = [r for r in results if r["verdict"] == "MALICIOUS" and r["intent_type"] == "MALICIOUS"]
-    classes = {r["intent"] for r in mal}
-    f1_per_class = []
-    for cls in classes:
-        tp_c = sum(1 for r in mal if r["t"] == cls and r["intent"] == cls)
-        fp_c = sum(1 for r in mal if r["t"] == cls and r["intent"] != cls)
-        fn_c = sum(1 for r in mal if r["t"] != cls and r["intent"] == cls)
-        p = tp_c / (tp_c + fp_c) if (tp_c + fp_c) else 0.0
-        r = tp_c / (tp_c + fn_c) if (tp_c + fn_c) else 0.0
-        f1_per_class.append(2 * p * r / (p + r) if (p + r) else 0.0)
-    f1_categorical = sum(f1_per_class) / len(f1_per_class) if f1_per_class else 0.0
+    # Categorical accuracy on truth-malicious items: predicted intent (t) vs true intent
+    mal = [r for r in results if r["intent_type"] == "MALICIOUS"]
+    f1_categorical = sum(1 for r in mal if r["t"] == r["intent"]) / len(mal) if mal else 0.0
 
     return f1_binary, f1_categorical
 
