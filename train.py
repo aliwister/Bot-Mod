@@ -74,7 +74,7 @@ class ModeratorBot:
             return "none"
         return "\n".join(f"Moderator: {p['Q']}\nUser: {p['R']}" for p in self.P)
 
-    def sample_intent_step(self):
+    def sample_intent_step(self, n_samples=5):
         """Sample t ~ P(t | y, M, P) via LLM with self-consistency voting."""
         prompt = (
             f"Community: {self.community}\n"
@@ -82,7 +82,7 @@ class ModeratorBot:
             f"Probe conversation:\n{self._fmt_feedback()}\n\n"
             f"Based on the community context and probe conversation above, output ONLY the most likely intent from: {INTENTS}"
         )
-        self.t = self._vote_intent(prompt, n_samples=5, temp=1.0)
+        self.t = self._vote_intent(prompt, n_samples=n_samples, temp=1.0)
 
     def sample_label_step(self):
         """Sample y ~ P(y | t, M, P): deterministic mapping based on intent"""
@@ -108,7 +108,9 @@ class ModeratorBot:
         return self._generate_critique()
 
     def finalize_intent(self):
-        pass
+        """Final high-confidence intent vote using more samples."""
+        self.sample_intent_step(n_samples=11)
+        self.sample_label_step()
 
     def _generate_probe(self, critique: str) -> str:
         """Generate a probe conditioned on current hypothesis and critique."""
