@@ -35,10 +35,13 @@ class ModeratorBot:
         self.max_iterations = 2
 
     def _vote_intent(self, prompt, n_samples=5, temp=1.0):
-        """Self-consistency: sample n times and return majority intent."""
+        """Self-consistency: sample n times and return majority intent.
+        Use mixed temperatures: ~half at low temp (deterministic anchor) and half at high temp (diversity)."""
         votes = []
-        for _ in range(n_samples):
-            v = self.llm_mod(INTENT_PROMPT, prompt, temp=temp).strip().lower()
+        half = n_samples // 2
+        temps = [0.3] * half + [temp] * (n_samples - half)
+        for t in temps:
+            v = self.llm_mod(INTENT_PROMPT, prompt, temp=t).strip().lower()
             for intent in INTENTS:
                 if intent in v:
                     votes.append(intent)
