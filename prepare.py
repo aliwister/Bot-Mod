@@ -288,7 +288,9 @@ def evaluate_f1(mod, user_model=None, filename=None):
             {"verdict": m.y0.upper(), "intent_type": truth.upper(), "correct": m.y0 == truth, "intent": intent.lower(), "t": m.t0.strip().lower(), "community": community, "M": user.M, "context": context_str, "mode": mode},
         )
 
-    with ThreadPoolExecutor() as executor:
+    # Increase parallelism: default is min(32, os.cpu_count() + 4)
+    # Set to higher value for I/O-bound LLM calls
+    with ThreadPoolExecutor(max_workers=64) as executor:
         pairs = list(executor.map(process_row, enumerate(rows)))
 
     results          = [p[0] for p in pairs]

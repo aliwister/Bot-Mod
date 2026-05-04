@@ -48,7 +48,7 @@ Once the script finishes it prints a summary like this:
 
 ```
 ---
-val_f1:           0.7979
+val_f1:           0.7379
 f1_binary:        0.7588
 f1_categorical:   0.6121
 val_f1_zs:        0.5878
@@ -83,8 +83,8 @@ Example:
 
 ```
 commit	val_f1	f1_bin	f1_cat	val_f1_zs	f1_zs	f1_cat_zs	f1_posts	f1_comments	time	status	description
-a1b2c3d	0.797900	0.8738	0.8738	0.8738	0.8738	0.8738	0.8900	0.8600	44.0	eval	baseline
-b2c3d4e	0.832000	0.8638	0.8638	0.8638	0.8638	0.8638	0.9100	0.8200	44.2	eval	change mod system prompt
+a1b2c3d	0.597900	0.5738	0.5738	0.8738	0.8738	0.8738	0.8900	0.8600	44.0	keep	baseline
+b2c3d4e	0.832000	0.8638	0.8638	0.8638	0.8638	0.8638	0.9100	0.8200	44.2	keep	change mod system prompt
 c3d4e5f	0.705000	0.7738	0.7738	0.7738	0.7738	0.7738	0.7800	0.7700	44.0	discard	change probe prompt
 d4e5f6g	0.000000	0.0000	0.0000	0.0000	0.0000	0.0000	0.0000	0.0000	0.0	crash	double probe iterations
 ```
@@ -109,7 +109,7 @@ LOOP FOREVER:
 
 The idea is that you are a completely autonomous researcher trying things out. If they work, keep. If they don't, discard. And you're advancing the branch so that you can iterate. If you feel like you're getting stuck in some way, you can rewind but you should probably do this very very sparingly (if ever).
 
-**Timeout**: Each experiment should take ~10 minutes total (+ a few seconds for startup and eval overhead). If a run exceeds 10 minutes, kill it and treat it as a failure (discard and revert).
+**Timeout**: Each experiment should take ~10 minutes total (+ a few seconds for startup). If a run exceeds 10 minutes, kill it and treat it as a failure (discard and revert).
 
 **Crashes**: If a run crashes (OOM, or a bug, or etc.), use your judgment: If it's something dumb and easy to fix (e.g. a typo, a missing import), fix it and re-run. If the idea itself is fundamentally broken, just skip it, log "crash" as the status in the tsv, and move on.
 
