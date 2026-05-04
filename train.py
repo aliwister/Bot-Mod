@@ -75,14 +75,14 @@ class ModeratorBot:
         return "\n".join(f"Moderator: {p['Q']}\nUser: {p['R']}" for p in self.P)
 
     def sample_intent_step(self):
-        """Sample t ~ P(t | y, M, P) via LLM."""
+        """Sample t ~ P(t | y, M, P) via LLM with self-consistency voting."""
         prompt = (
             f"Community: {self.community}\n"
             f"Content: {self.M}\n"
             f"Probe conversation:\n{self._fmt_feedback()}\n\n"
             f"Based on the community context and probe conversation above, output ONLY the most likely intent from: {INTENTS}"
         )
-        self.t = self.llm_mod(INTENT_PROMPT, prompt, temp=0.3).strip()
+        self.t = self._vote_intent(prompt, n_samples=5, temp=1.0)
 
     def sample_label_step(self):
         """Sample y ~ P(y | t, M, P): deterministic mapping based on intent"""
