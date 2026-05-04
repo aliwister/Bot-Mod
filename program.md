@@ -25,7 +25,7 @@ Once you get confirmation, kick off the experimentation.
 
 ## Experimentation
 
-Each experiment runs on a single GPU. The training script runs for a **fixed time budget of 10 minutes**  (wall clock training time, excluding startup/compilation). You launch it simply as: `python3 train.py`.
+Each experiment runs on a single GPU. The training script runs for a **fixed time budget of 5 minutes**  (wall clock training time, excluding startup/compilation). You launch it simply as: `python3 train.py`.
 
 **What you CAN do:**
 - Modify `train.py` — this is the only file you edit. Everything is fair game: prompt text, prompt structure, hyperparameters, training loop, prompting approach, sampling approach, etc.
@@ -38,9 +38,9 @@ Each experiment runs on a single GPU. The training script runs for a **fixed tim
 
 **The goal is simple: get the highest val_f1.** Since the time budget is fixed, you don't need to worry about training time — it's always 10 minutes. Everything is fair game: change the architecture, moderator functions, the hyperparameters, prompt strategy (can use SOTA methods from literature), prompt text, prompt strategy, convergence strategy, number of iterations, etc. The only constraint is that the code runs without crashing and finishes within the time budget.
 
-**Simplicity criterion**: All else being equal, simpler is better. A small improvement that adds ugly complexity is not worth it. Conversely, removing something and getting equal or better results is a great outcome — that's a simplification win. When evaluating whether to keep a change, weigh the complexity cost against the improvement magnitude. A 0.001 val_f1 improvement that adds 20 lines of hacky code? Probably not worth it. A 0.001 val_f1 improvement from deleting code? Definitely keep. An improvement of ~0 but much simpler code? Keep.
+**Simplicity criterion**: All else being equal, simpler is better. A small improvement that adds ugly complexity is not worth it. Conversely, removing something and getting equal or better results is a great outcome — that's a simplification win. When evaluating whether to keep a change, weigh the complexity cost against the improvement magnitude. A 0.01 val_f1 improvement that adds 20 lines of hacky code? Probably not worth it. A 0.02 val_f1 improvement from deleting code? Definitely keep. An improvement of ~0 but much simpler code? Keep.
 
-**The first run**: Your very first run should always be to establish the baseline, so you will run the training script as is. This baseline is critical for all future acceptance decisions. After the baseline training completes, **immediately run the test evaluation** (`python3 eval.py > eval_run.log 2>&1`) for reference. 
+**The first run**: Your very first run should always be to establish the baseline, so you will run the training script as is. This baseline is critical for all future acceptance decisions. 
 
 ## Output format
 
@@ -49,12 +49,12 @@ Once the script finishes it prints a summary like this:
 ```
 ---
 val_f1:           0.7979
-f1_binary:        0.9588
-f1_categorical:   0.9121
-val_f1_zs:        0.7878
-f1_zs:            0.8766
-f1_cat_zs:        0.6773
-f1_posts:         0.8292
+f1_binary:        0.7588
+f1_categorical:   0.6121
+val_f1_zs:        0.5878
+f1_zs:            0.4766
+f1_cat_zs:        0.5773
+f1_posts:         0.6292
 f1_comments:      0.6892
 total_seconds:    325.9
 ```
@@ -89,22 +89,8 @@ c3d4e5f	0.705000	0.7738	0.7738	0.7738	0.7738	0.7738	0.7800	0.7700	44.0	discard	c
 d4e5f6g	0.000000	0.0000	0.0000	0.0000	0.0000	0.0000	0.0000	0.0000	0.0	crash	double probe iterations
 ```
 
-### Test Results Logging
 
-When test evaluation is run (after an improvement on training), also log to `test-results.tsv` (tab-separated).
-
-The test TSV has the same structure as `results.tsv`:
-
-Example:
-```
-commit	val_f1	f1_bin	f1_cat	val_f1_zs	f1_zs	f1_cat_zs	f1_posts	f1_comments	time	status	description
-a1b2c3d	0.897900	0.8738	0.8738	0.8738	0.8738	0.8738	0.9100	0.8800	44.0	keep	baseline
-b2c3d4e	0.693200	0.8638	0.8638	0.8638	0.8638	0.8638	0.7200	0.6600	44.2	discard	change mod system prompt
-d4e5f6g	0.000000	0.0000	0.0000	0.0000	0.0000	0.0000	0.0000	0.0000	0.0	crash	double probe iterations
-```
-
-
-**NOTE**: Do not commit `results.tsv` or `test-results.tsv` — leave them untracked by git.
+**NOTE**: Do not commit `results.tsv` — leave them untracked by git.
 
 ## The experiment loop
 
@@ -119,8 +105,6 @@ LOOP FOREVER:
 5. Read out the results: `grep "^val_f1:\|^f1_binary:\|^f1_categorical:\|^val_f1_zs:\|^f1_zs:\|^f1_cat_zs:\|^f1_posts:\|^f1_comments:" run.log`
 6. If the grep output is empty, the run crashed. Run `tail -n 50 run.log` to read the Python stack trace and attempt a fix. If you can't get things to work after more than a few attempts, give up.
 7. Record the training results in `results.tsv` as soon as the values are available (NOTE: do not commit the results.tsv file, leave it untracked by git)
-8. **Test Evaluation**: Only if the training result improves or within the error boundary of the current best, mark it as `accept` then run `python3 eval.py > eval_run.log 2>&1` to evaluate on the test set. Do NOT run eval.py if training did significantly worse, mark it as `discard` in results.tsv.
-9. **Log Test Results**: Record the test metrics in `test-results.tsv` with all results and the commit hash.
 
 
 The idea is that you are a completely autonomous researcher trying things out. If they work, keep. If they don't, discard. And you're advancing the branch so that you can iterate. If you feel like you're getting stuck in some way, you can rewind but you should probably do this very very sparingly (if ever).

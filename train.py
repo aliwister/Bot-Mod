@@ -40,9 +40,18 @@ class ModeratorBot:
         self.community = community
         self.P = []
         self._probe_history = []
-        # Random start (Gibbs baseline: uniform prior)
-        self.t = random.choice(INTENTS)
-        self.y = random.choice(["benign", "malicious"])
+
+        # Zero-shot prediction (before any probing)
+        prompt = (
+            f"Community: {self.community}\n"
+            f"Content: {self.M}\n\n"
+            f"Based on the community context, output ONLY the most likely intent from: {INTENTS}"
+        )
+        self.t = self.llm_mod(INTENT_PROMPT, prompt, temp=0.3).strip()
+        self.y = "benign" if _is_organic(self.t) else "malicious"
+
+        # Save zero-shot baseline
+        self.t0 = self.t
         self.y0 = self.y
 
     def is_converged(self):
@@ -65,27 +74,28 @@ class ModeratorBot:
         self.t = self.llm_mod(INTENT_PROMPT, prompt, temp=0.3).strip()
 
     def sample_label_step(self):
-        """Sample y ~ P(y | t): organic/orangic -> benign, all others -> malicious"""
+        """Sample y ~ P(y | t, M, P): deterministic mapping based on intent"""
+        # In true Gibbs, this could query LLM for P(y | t, M, P)
+        # For now, deterministic: organic -> benign, else -> malicious
         self.y = "benign" if _is_organic(self.t) else "malicious"
 
-    def _refine_hypothesis(self, n_steps: int = 1) -> str:
-        """Iteratively refine (y, t) and return a critique."""
-        critique: str | None = None
+    def _generate_critique(self) -> str:
+        """Generate critique based on current hypothesis state."""
+        critique_prompt = (
+            f"Community: {self.community}\n"
+            f"Content: {self.M}\n"
+            f"Current intent: {self.t} ({self.y})\n"
+            f"Probe conversation:\n{self._fmt_feedback()}\n\n"
+            "In one sentence, what remains uncertain about the poster's true intent after this response?"
+        )
+        return self.llm_mod(CRITIQUE_PROMPT, critique_prompt, temp=0.2)
 
+    def _refine_hypothesis(self, n_steps: int = 1) -> str:
+        """Legacy method for backward compatibility - performs Gibbs sampling."""
         for step in range(n_steps):
             self.sample_intent_step()
             self.sample_label_step()
-
-            critique_prompt = (
-                f"Community: {self.community}\n"
-                f"Content: {self.M}\n"
-                f"Current intent: {self.t} ({self.y})\n"
-                f"Probe conversation:\n{self._fmt_feedback()}\n\n"
-                "In one sentence, what remains uncertain about the poster's true intent after this response?"
-            )
-            critique = self.llm_mod(CRITIQUE_PROMPT, critique_prompt, temp=0.2)
-
-        return critique
+        return self._generate_critique()
 
     def _generate_probe(self, critique: str) -> str:
         """Generate a probe conditioned on current hypothesis and critique."""
