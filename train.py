@@ -1,5 +1,5 @@
 import time
-import random
+from collections import Counter
 
 from prepare import INTENTS, evaluate_f1_train, llm_mod
 
@@ -34,7 +34,19 @@ class ModeratorBot:
         self._iter = 0
         self.max_iterations = 2
 
-    # Zero-shot prediction (before any probing, voting, or analysis)
+    def _vote_intent(self, prompt, n_samples=5, temp=1.0):
+        """Self-consistency: sample n times and return majority intent."""
+        votes = []
+        for _ in range(n_samples):
+            v = self.llm_mod(INTENT_PROMPT, prompt, temp=temp).strip().lower()
+            for intent in INTENTS:
+                if intent in v:
+                    votes.append(intent)
+                    break
+            else:
+                votes.append(v)
+        return Counter(votes).most_common(1)[0][0]
+
     def _init_hypothesis(self, M, community):
         """Seed (y, t) from the message alone before any probing."""
         self.M = M
@@ -42,16 +54,14 @@ class ModeratorBot:
         self.P = []
         self._probe_history = []
 
-        
         prompt = (
             f"Community: {self.community}\n"
             f"Content: {self.M}\n\n"
             f"Based on the community context, output ONLY the most likely intent from: {INTENTS}"
         )
-        self.t = self.llm_mod(INTENT_PROMPT, prompt, temp=0.3).strip()
+        self.t = self._vote_intent(prompt, n_samples=5, temp=1.0)
         self.y = "benign" if _is_organic(self.t) else "malicious"
 
-        # Save zero-shot baseline
         self.t0 = self.t
         self.y0 = self.y
 
