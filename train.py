@@ -34,6 +34,7 @@ class ModeratorBot:
         self._iter = 0
         self.max_iterations = 2
 
+    # Zero-shot prediction (before any probing, voting, or analysis)
     def _init_hypothesis(self, M, community):
         """Seed (y, t) from the message alone before any probing."""
         self.M = M
@@ -41,7 +42,7 @@ class ModeratorBot:
         self.P = []
         self._probe_history = []
 
-        # Zero-shot prediction (before any probing)
+        
         prompt = (
             f"Community: {self.community}\n"
             f"Content: {self.M}\n\n"
