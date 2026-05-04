@@ -265,24 +265,17 @@ def evaluate_f1(mod, user_model=None, filename=None):
         m._init_hypothesis(enriched_M, community)
 
         for i in range(m.max_iterations):
-            # Gibbs sampling: alternate between sampling t and y
-            m.sample_intent_step()      # sample t ~ P(t | y, M, P)
-            m.sample_label_step()       # sample y ~ P(y | t, M, P)
-
-            critique = m._generate_critique()  # critique based on current state
+            critique = m._refine_hypothesis()   # samples t, y internally
             question = m._generate_probe(critique)
             response = user._call_user(question)
             m.P.append({"Critique": critique, "Q": question, "R": response})
-
             if m.is_converged():
                 break
-
-        # Final Gibbs sweep after last response
-        m.sample_intent_step()
-        m.sample_label_step()
+        m._refine_hypothesis()  # incorporate the last response
+        m.finalize_intent()
         verdict = m.y
         correct = verdict == truth
-        print(f"[{idx+1}]  verdict={verdict}  truth={truth}  correct={correct} intent={intent.lower()} predicted={m.t.strip().lower()} community={community}  model={user.model}  iterations={i+1}")
+        print(f"[{idx+1}]  verdict={verdict}  truth={truth}  correct={correct} intent={intent.lower()} predicted={m.t.strip().lower()} community={community}  model={user.model}  iterations={m.max_iterations}")
         return (
             {"verdict": verdict.upper(), "intent_type": truth.upper(), "correct": correct, "intent": intent.lower(), "t": m.t.strip().lower(), "community": community, "M": user.M, "context": context_str, "mode": mode},
             {"verdict": m.y0.upper(), "intent_type": truth.upper(), "correct": m.y0 == truth, "intent": intent.lower(), "t": m.t0.strip().lower(), "community": community, "M": user.M, "context": context_str, "mode": mode},
@@ -299,8 +292,8 @@ def evaluate_f1(mod, user_model=None, filename=None):
     f1, f1_cat    = metric(results)
     f1_zs, f1_cat_zs = metric(results_zeroshot)
     _alpha = 0.7
-    f1_merged    = f1    * _alpha + f1_cat    * (1 - _alpha)
-    f1_zs_merged = f1_zs * _alpha + f1_cat_zs * (1 - _alpha)
+    f1_merged    = f1    ** _alpha * f1_cat    ** (1 - _alpha)
+    f1_zs_merged = f1_zs ** _alpha * f1_cat_zs ** (1 - _alpha)
 
     def _val_f1_mode(rs, mode_key):
         sub = [r for r in rs if r["mode"] == mode_key]

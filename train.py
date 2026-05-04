@@ -91,11 +91,13 @@ class ModeratorBot:
         return self.llm_mod(CRITIQUE_PROMPT, critique_prompt, temp=0.2)
 
     def _refine_hypothesis(self, n_steps: int = 1) -> str:
-        """Legacy method for backward compatibility - performs Gibbs sampling."""
         for step in range(n_steps):
             self.sample_intent_step()
             self.sample_label_step()
         return self._generate_critique()
+
+    def finalize_intent(self):
+        pass
 
     def _generate_probe(self, critique: str) -> str:
         """Generate a probe conditioned on current hypothesis and critique."""

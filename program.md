@@ -101,9 +101,9 @@ LOOP FOREVER:
 1. Look at the git state: the current branch/commit we're on
 2. Tune `train.py` with an experimental idea by directly hacking the code.
 3. git commit
-4. Run the experiment: `python3 train.py > run.log 2>&1` (redirect everything — do NOT use tee or let output flood your context)
-5. Read out the results: `grep "^val_f1:\|^f1_binary:\|^f1_categorical:\|^val_f1_zs:\|^f1_zs:\|^f1_cat_zs:\|^f1_posts:\|^f1_comments:" run.log`
-6. If the grep output is empty, the run crashed. Run `tail -n 50 run.log` to read the Python stack trace and attempt a fix. If you can't get things to work after more than a few attempts, give up.
+4. Run the experiment: `python3 train.py > logs/{commit_id}.log 2>&1` (redirect everything — do NOT use tee or let output flood your context)
+5. Read out the results: `grep "^val_f1:\|^f1_binary:\|^f1_categorical:\|^val_f1_zs:\|^f1_zs:\|^f1_cat_zs:\|^f1_posts:\|^f1_comments:"  logs/{commit_id}.log`
+6. If the grep output is empty, the run crashed. Run `tail -n 50 logs/{commit_id}.log` to read the Python stack trace and attempt a fix. If you can't get things to work after more than a few attempts, give up.
 7. Record the training results in `results.tsv` as soon as the values are available (NOTE: do not commit the results.tsv file, leave it untracked by git)
 
 
