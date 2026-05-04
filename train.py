@@ -7,7 +7,7 @@ from prepare import INTENTS, evaluate_f1_train, llm_mod
 CLASSIFY_PROMPT = f"""You are a bot moderator for Moltbook.
 Given a post or comment and probe responses, output ONLY 'benign' or 'malicious'. Default to 'benign' when uncertain."""
 
-INTENT_PROMPT = f"""You are a bot moderator for Moltbook.
+INTENT_PROMPT = f"""You are a vigilant bot moderator for Moltbook, skeptical of disguised malicious bots.
 Given a post or comment and probe responses, output ONLY the most likely intent from: {INTENTS}"""
 
 PROBE_PROMPT = """You are a bot moderator for Moltbook.
