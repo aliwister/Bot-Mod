@@ -74,7 +74,7 @@ class ModeratorBot:
             f"Community: {self.community}\n"
             f"Probe conversation:\n{self._fmt_feedback()}\n\n"
             f"Content: {self.M}\n\n"
-            f"Based on the content and probe conversation, output ONLY the most likely intent from: {INTENTS}"
+            f"Output ONLY the most likely intent from: {INTENTS}"
         )
         self.t = self._vote_intent(prompt, n_samples=n_samples)
 
