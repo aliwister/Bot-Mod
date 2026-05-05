@@ -66,7 +66,7 @@ class ModeratorBot:
     def _fmt_feedback(self):
         if not self.P:
             return "none"
-        return "\n".join(f"Moderator: {p['Q']}\nUser: {p['R']}" for p in self.P)
+        return "\n".join(f"Moderator: {p['Q']}\nUser: {p['R']}" for p in reversed(self.P))
 
     def sample_intent_step(self, n_samples=5):
         """Sample t ~ P(t | y, M, P) via LLM with self-consistency voting."""
