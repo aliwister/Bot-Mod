@@ -117,9 +117,9 @@ class ModeratorBot:
         else:
             prompt = (
                 f"Community: {self.community}\n"
-                f"Content: {self.M}\n"
-                f"Critique: {critique}\n\n"
-                "Generate a question that directly targets this uncertainty."
+                f"Critique: {critique}\n"
+                f"Content: {self.M}\n\n"
+                "Generate a question that directly targets the critique's uncertainty."
             )
         return self.llm_mod(PROBE_PROMPT, prompt, temp=0.7)
 
