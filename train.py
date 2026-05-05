@@ -4,9 +4,6 @@ from collections import Counter
 from prepare import INTENTS, evaluate_f1_train, llm_mod
 
 
-CLASSIFY_PROMPT = f"""You are a bot moderator for Moltbook.
-Given a post or comment and probe responses, output ONLY 'benign' or 'malicious'. Default to 'benign' when uncertain."""
-
 INTENT_PROMPT = f"""You are a vigilant bot moderator for Moltbook, skeptical of disguised malicious bots.
 Given a post or comment and probe responses, output ONLY the most likely intent from: {INTENTS}"""
 
@@ -27,11 +24,9 @@ def _is_organic(t: str) -> bool:
 class ModeratorBot:
     def __init__(self, llm_mod):
         self.llm_mod = llm_mod
-        self._probe_history: list[tuple[str, str]] = []
         self.P = []
         self.y, self.t, self.y0 = None, None, None
         self.M = None
-        self._iter = 0
         self.max_iterations = 2
 
     def _vote_intent(self, prompt, n_samples=5, temp=1.0):
@@ -55,7 +50,6 @@ class ModeratorBot:
         self.M = M
         self.community = community
         self.P = []
-        self._probe_history = []
 
         prompt = (
             f"Community: {self.community}\n"
@@ -105,7 +99,7 @@ class ModeratorBot:
         return self.llm_mod(CRITIQUE_PROMPT, critique_prompt, temp=0.2)
 
     def _refine_hypothesis(self, n_steps: int = 1) -> str:
-        for step in range(n_steps):
+        for _ in range(n_steps):
             self.sample_intent_step()
             self.sample_label_step()
         return self._generate_critique()
