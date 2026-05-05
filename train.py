@@ -39,7 +39,7 @@ class ModeratorBot:
         Use mixed temperatures: ~half at low temp (deterministic anchor) and half at high temp (diversity)."""
         votes = []
         half = n_samples // 2
-        temps = [0.3] * half + [temp] * (n_samples - half)
+        temps = [0.0] * half + [temp] * (n_samples - half)
         for t in temps:
             v = self.llm_mod(INTENT_PROMPT, prompt, temp=t).strip().lower()
             for intent in INTENTS:
