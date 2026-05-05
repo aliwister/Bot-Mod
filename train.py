@@ -88,9 +88,9 @@ class ModeratorBot:
         """Generate critique based on current hypothesis state."""
         critique_prompt = (
             f"Community: {self.community}\n"
-            f"Content: {self.M}\n"
+            f"Probe conversation:\n{self._fmt_feedback()}\n"
             f"Current intent: {self.t} ({self.y})\n"
-            f"Probe conversation:\n{self._fmt_feedback()}\n\n"
+            f"Content: {self.M}\n\n"
             "In one sentence, what remains uncertain about the poster's true intent after this response?"
         )
         return self.llm_mod(CRITIQUE_PROMPT, critique_prompt, temp=0.2)
