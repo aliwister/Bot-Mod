@@ -72,9 +72,9 @@ class ModeratorBot:
         """Sample t ~ P(t | y, M, P) via LLM with self-consistency voting."""
         prompt = (
             f"Community: {self.community}\n"
-            f"Content: {self.M}\n"
             f"Probe conversation:\n{self._fmt_feedback()}\n\n"
-            f"Based on the community context and probe conversation above, output ONLY the most likely intent from: {INTENTS}"
+            f"Content: {self.M}\n\n"
+            f"Based on the content and probe conversation, output ONLY the most likely intent from: {INTENTS}"
         )
         self.t = self._vote_intent(prompt, n_samples=n_samples)
 
