@@ -112,14 +112,15 @@ class ModeratorBot:
             prompt = (
                 f"Community: {self.community}\n"
                 f"Content: {self.M}\n\n"
-                "Generate an opening question to understand the poster's motivation."
+                "Generate an opening question to understand the poster's motivation and goals."
             )
         else:
             prompt = (
                 f"Community: {self.community}\n"
+                f"Previous exchange:\n{self._fmt_feedback()}\n"
                 f"Critique: {critique}\n"
                 f"Content: {self.M}\n\n"
-                "Generate a question that directly targets the critique's uncertainty."
+                "Generate a follow-up question targeting the critique."
             )
         return self.llm_mod(PROBE_PROMPT, prompt, temp=0.7)
 
