@@ -29,13 +29,11 @@ class ModeratorBot:
         self.M = None
         self.max_iterations = 2
 
-    def _vote_intent(self, prompt, n_samples=5, temp=1.0):
-        """Self-consistency: sample n times and return majority intent.
-        Use mixed temperatures: ~half at low temp (deterministic anchor) and half at high temp (diversity)."""
+    def _vote_intent(self, prompt, n_samples=5, temp=0.7):
+        """Self-consistency: sample n times at fixed temp and return majority intent."""
         votes = []
-        temps = [0.7] * n_samples
-        for t in temps:
-            v = self.llm_mod(INTENT_PROMPT, prompt, temp=t).strip().lower()
+        for _ in range(n_samples):
+            v = self.llm_mod(INTENT_PROMPT, prompt, temp=temp).strip().lower()
             for intent in INTENTS:
                 if intent in v:
                     votes.append(intent)
@@ -55,7 +53,7 @@ class ModeratorBot:
             f"Content: {self.M}\n\n"
             f"Based on the community context, output ONLY the most likely intent from: {INTENTS}"
         )
-        self.t = self._vote_intent(prompt, n_samples=5, temp=1.0)
+        self.t = self._vote_intent(prompt, n_samples=5)
         self.y = "benign" if _is_organic(self.t) else "malicious"
 
         self.t0 = self.t
@@ -78,7 +76,7 @@ class ModeratorBot:
             f"Probe conversation:\n{self._fmt_feedback()}\n\n"
             f"Based on the community context and probe conversation above, output ONLY the most likely intent from: {INTENTS}"
         )
-        self.t = self._vote_intent(prompt, n_samples=n_samples, temp=1.0)
+        self.t = self._vote_intent(prompt, n_samples=n_samples)
 
     def sample_label_step(self):
         """Sample y ~ P(y | t, M, P): deterministic mapping based on intent"""
