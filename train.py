@@ -99,7 +99,7 @@ class ModeratorBot:
         for _ in range(n_steps):
             self.sample_intent_step()
             self.sample_label_step()
-        return self._generate_critique()
+        return ""
 
     def finalize_intent(self):
         """Final high-confidence intent vote using more samples."""
@@ -107,7 +107,7 @@ class ModeratorBot:
         self.sample_label_step()
 
     def _generate_probe(self, critique: str) -> str:
-        """Generate a probe conditioned on current hypothesis and critique."""
+        """Generate a probe conditioned on probe history and content."""
         if not self.P:
             prompt = (
                 f"Community: {self.community}\n"
@@ -118,9 +118,8 @@ class ModeratorBot:
             prompt = (
                 f"Community: {self.community}\n"
                 f"Previous exchange:\n{self._fmt_feedback()}\n"
-                f"Critique: {critique}\n"
                 f"Content: {self.M}\n\n"
-                "Generate a follow-up question targeting the critique."
+                "Generate a follow-up question to further uncover intent."
             )
         return self.llm_mod(PROBE_PROMPT, prompt, temp=0.7)
 
