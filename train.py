@@ -45,9 +45,9 @@ class ModeratorBot:
         self.P = []
 
         prompt = (
-            f"Community: {self.community}\n"
+            f"Community: {self.community}\n\n"
             f"Content: {self.M}\n\n"
-            f"Based on the community context, output ONLY the most likely intent from: {INTENTS}"
+            f"Output ONLY the most likely intent from: {INTENTS}"
         )
         self.t = self._vote_intent(prompt, n_samples=5)
         self.y = "benign" if _is_organic(self.t) else "malicious"
