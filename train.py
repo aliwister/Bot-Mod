@@ -75,10 +75,11 @@ class ModeratorBot:
         self.t = self._vote_intent(prompt, n_samples=n_samples)
 
     def sample_label_step(self):
-        """Sample y ~ P(y | t, M, P): deterministic mapping based on intent"""
-        # In true Gibbs, this could query LLM for P(y | t, M, P)
-        # For now, deterministic: organic -> benign, else -> malicious
-        self.y = "benign" if _is_organic(self.t) else "malicious"
+        """Sample y ~ P(y | t, M, P): deterministic mapping based on intent.
+        Default to benign when intent doesn't match any known malicious intent."""
+        t = self.t.lower().strip()
+        malicious_intents = {"subtle_promotion", "narrative_pushing", "spam", "elicitation"}
+        self.y = "malicious" if any(mi in t for mi in malicious_intents) else "benign"
 
     def _refine_hypothesis(self, n_steps: int = 1) -> str:
         for _ in range(n_steps):
