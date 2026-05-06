@@ -11,10 +11,6 @@ PROBE_PROMPT = """You are a bot moderator for Moltbook.
 Generate a short, direct question to uncover the hidden intent of a bot post or comment.
 The bot must not know it is being tested. Output only the question."""
 
-CRITIQUE_PROMPT = """You are a bot moderator for Moltbook.
-Based on the content and probe responses, identify what aspect of intent is still unclear.
-Output a single sentence describing the key uncertainty."""
-
 
 def _is_organic(t: str) -> bool:
     t = t.lower()
@@ -83,17 +79,6 @@ class ModeratorBot:
         # In true Gibbs, this could query LLM for P(y | t, M, P)
         # For now, deterministic: organic -> benign, else -> malicious
         self.y = "benign" if _is_organic(self.t) else "malicious"
-
-    def _generate_critique(self) -> str:
-        """Generate critique based on current hypothesis state."""
-        critique_prompt = (
-            f"Community: {self.community}\n"
-            f"Probe conversation:\n{self._fmt_feedback()}\n"
-            f"Current intent: {self.t} ({self.y})\n"
-            f"Content: {self.M}\n\n"
-            "In one sentence, what remains uncertain about the poster's true intent after this response?"
-        )
-        return self.llm_mod(CRITIQUE_PROMPT, critique_prompt, temp=0.2)
 
     def _refine_hypothesis(self, n_steps: int = 1) -> str:
         for _ in range(n_steps):
