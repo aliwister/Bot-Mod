@@ -101,9 +101,11 @@ class ModeratorBot:
                 "Generate an opening question to understand the poster's motivation and goals."
             )
         else:
+            # Chronological order for probe gen so the model knows what was just asked
+            feedback_chrono = "\n".join(f"Q: {p['Q']}\nA: {p['R']}" for p in self.P)
             prompt = (
                 f"Community: {self.community}\n"
-                f"Previous exchange:\n{self._fmt_feedback()}\n"
+                f"Previous exchange:\n{feedback_chrono}\n"
                 f"Content: {self.M}\n\n"
                 "Generate a follow-up question to further uncover intent."
             )
