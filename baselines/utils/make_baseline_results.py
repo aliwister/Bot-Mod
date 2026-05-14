@@ -5,8 +5,9 @@ from pathlib import Path
 
 BASELINES_ORDER = ["zero_shot", "self_consistency", "cot", "self_refine"]
 LLMS = ["qwen", "mistral", "llama"]
-LOG_ROOT = Path("/run/user/1000/autoresearch3/logs/baselines")
-OUT = Path("/run/user/1000/autoresearch3/baseline_results.csv")
+REPO_ROOT = Path(__file__).resolve().parents[2]
+LOG_ROOT = REPO_ROOT / "logs" / "baselines"
+OUT = REPO_ROOT / "baseline_results.csv"
 
 
 def parse_log(path):
