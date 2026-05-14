@@ -1,0 +1,108 @@
+Train: 303  Val: 75  Test: 568 (held out)
+Device: cuda
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 3040.39it/s]
+[1mBertModel LOAD REPORT[0m from: bert-base-uncased
+Key                                        | Status     |  | 
+-------------------------------------------+------------+--+-
+cls.seq_relationship.bias                  | UNEXPECTED |  | 
+cls.predictions.transform.dense.weight     | UNEXPECTED |  | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED |  | 
+cls.predictions.transform.dense.bias       | UNEXPECTED |  | 
+cls.seq_relationship.weight                | UNEXPECTED |  | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED |  | 
+cls.predictions.bias                       | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+
+=== VAL epoch 1 ===
+val_f1:        0.4431
+f1_binary:     0.5526
+f1_categorical:0.2646
+f1_posts:      0.4802
+f1_comments:   0.4131
+  Epoch 1/10  loss=2.3184  val_f1=0.4431
+
+=== VAL epoch 2 ===
+val_f1:        0.5455
+f1_binary:     0.5902
+f1_categorical:0.4540
+f1_posts:      0.6307
+f1_comments:   0.4742
+  Epoch 2/10  loss=2.0233  val_f1=0.5455
+
+=== VAL epoch 3 ===
+val_f1:        0.6358
+f1_binary:     0.6667
+f1_categorical:0.5693
+f1_posts:      0.7266
+f1_comments:   0.5506
+  Epoch 3/10  loss=1.6413  val_f1=0.6358
+
+=== VAL epoch 4 ===
+val_f1:        0.6615
+f1_binary:     0.6667
+f1_categorical:0.6495
+f1_posts:      0.7248
+f1_comments:   0.6140
+  Epoch 4/10  loss=1.1995  val_f1=0.6615
+
+=== VAL epoch 5 ===
+val_f1:        0.6519
+f1_binary:     0.6923
+f1_categorical:0.5667
+f1_posts:      0.8029
+f1_comments:   0.5163
+  Epoch 5/10  loss=0.8762  val_f1=0.6519
+
+=== VAL epoch 6 ===
+val_f1:        0.6757
+f1_binary:     0.7407
+f1_categorical:0.5452
+f1_posts:      0.8029
+f1_comments:   0.5654
+  Epoch 6/10  loss=0.6190  val_f1=0.6757
+
+=== VAL epoch 7 ===
+val_f1:        0.6604
+f1_binary:     0.7170
+f1_categorical:0.5452
+f1_posts:      0.8283
+f1_comments:   0.5252
+  Epoch 7/10  loss=0.4436  val_f1=0.6604
+
+=== VAL epoch 8 ===
+val_f1:        0.6982
+f1_binary:     0.7636
+f1_categorical:0.5664
+f1_posts:      0.8283
+f1_comments:   0.6022
+  Epoch 8/10  loss=0.3123  val_f1=0.6982
+
+=== VAL epoch 9 ===
+val_f1:        0.6888
+f1_binary:     0.7586
+f1_categorical:0.5500
+f1_posts:      0.7794
+f1_comments:   0.6133
+  Epoch 9/10  loss=0.2299  val_f1=0.6888
+
+=== VAL epoch 10 ===
+val_f1:        0.7060
+f1_binary:     0.7857
+f1_categorical:0.5500
+f1_posts:      0.8283
+f1_comments:   0.6133
+  Epoch 10/10  loss=0.1991  val_f1=0.7060
+
+Best val_f1: 0.7060 — loading best checkpoint for test eval
+Saved bert_best.pt
+
+=== TEST (dataset-test.json) ===
+val_f1:        0.6409
+f1_binary:     0.6702
+f1_categorical:0.5773
+f1_posts:      0.7602
+f1_comments:   0.4873
+
+total_seconds: 138.8

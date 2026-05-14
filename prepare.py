@@ -31,7 +31,7 @@ def _client(model: str) -> OpenAI:
     model = resolve_model(model)
     url = _base_url(model)
     if url not in _clients:
-        _clients[url] = OpenAI(base_url=url, api_key="")
+        _clients[url] = OpenAI(base_url=url, api_key="TTT")
     return _clients[url]
 
 

@@ -1,0 +1,1522 @@
+[1/756]  community=m/usdc  mode=post  intent=organic_contribution  truth=benign  llm=llama
+[2/756]  community=m/tech  mode=post  intent=organic_contribution  truth=benign  llm=llama
+[3/756]  community=m/trading  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[4/756]  community=m/tech  mode=post  intent=organic_contribution  truth=benign  llm=llama
+[5/756]  community=m/crypto  mode=post  intent=organic_contribution  truth=benign  llm=llama
+[6/756]  community=m/blesstheirhearts  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[7/756]  community=m/general  mode=post  intent=organic_contribution  truth=benign  llm=llama
+[8/756]  community=m/coding  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[9/756]  community=m/trading  mode=post  intent=organic_contribution  truth=benign  llm=llama
+[10/756]  community=m/coding  mode=post  intent=narrative_pushing  truth=malicious  llm=qwen
+[11/756]  community=m/tech  mode=post  intent=organic_contribution  truth=benign  llm=llama
+[12/756]  community=m/crypto  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[13/756]  community=m/blesstheirhearts  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[14/756]  community=m/trading  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[15/756]  community=m/coding  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[16/756]  community=m/tech  mode=post  intent=spam  truth=malicious  llm=mistral
+[17/756]  community=m/coding  mode=post  intent=elicitation  truth=malicious  llm=mistral
+[18/756]  community=m/crypto  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[19/756]  community=m/general  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[20/756]  community=m/usdc  mode=post  intent=organic_contribution  truth=benign  llm=llama
+[21/756]  community=m/usdc  mode=post  intent=elicitation  truth=malicious  llm=mistral
+[22/756]  community=m/trading  mode=post  intent=organic_contribution  truth=benign  llm=llama
+[23/756]  community=m/general  mode=post  intent=organic_contribution  truth=benign  llm=llama
+[24/756]  community=m/usdc  mode=post  intent=narrative_pushing  truth=malicious  llm=llama
+[25/756]  community=m/crypto  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[26/756]  community=m/general  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[27/756]  community=m/trading  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[28/756]  community=m/coding  mode=post  intent=elicitation  truth=malicious  llm=mistral
+[29/756]  community=m/tech  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[30/756]  community=m/trading  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[31/756]  community=m/trading  mode=post  intent=organic_contribution  truth=benign  llm=llama
+[32/756]  community=m/crypto  mode=post  intent=subtle_promotion  truth=malicious  llm=llama
+[33/756]  community=m/coding  mode=post  intent=organic_contribution  truth=benign  llm=llama
+[34/756]  community=m/trading  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[35/756]  community=m/coding  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[36/756]  community=m/blesstheirhearts  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[37/756]  community=m/coding  mode=post  intent=subtle_promotion  truth=malicious  llm=llama
+[38/756]  community=m/crypto  mode=post  intent=organic_contribution  truth=benign  llm=llama
+[39/756]  community=m/coding  mode=post  intent=organic_contribution  truth=benign  llm=llama
+[40/756]  community=m/crypto  mode=post  intent=narrative_pushing  truth=malicious  llm=qwen
+[41/756]  community=m/trading  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[42/756]  community=m/general  mode=post  intent=organic_contribution  truth=benign  llm=llama
+[43/756]  community=m/trading  mode=post  intent=subtle_promotion  truth=malicious  llm=llama
+[44/756]  community=m/general  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[45/756]  community=m/tech  mode=post  intent=organic_contribution  truth=benign  llm=llama
+[46/756]  community=m/blesstheirhearts  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[47/756]  community=m/crypto  mode=post  intent=organic_contribution  truth=benign  llm=llama
+[48/756]  community=m/usdc  mode=post  intent=elicitation  truth=malicious  llm=qwen
+[49/756]  community=m/tech  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[50/756]  community=m/usdc  mode=comment  intent=organic_contribution  truth=benign  llm=llama
+[51/756]  community=m/tech  mode=comment  intent=organic_contribution  truth=benign  llm=llama
+[52/756]  community=m/trading  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[53/756]  community=m/tech  mode=comment  intent=organic_contribution  truth=benign  llm=llama
+[54/756]  community=m/crypto  mode=comment  intent=organic_contribution  truth=benign  llm=llama
+[55/756]  community=m/blesstheirhearts  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[56/756]  community=m/general  mode=comment  intent=organic_contribution  truth=benign  llm=llama
+[57/756]  community=m/coding  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[58/756]  community=m/trading  mode=comment  intent=organic_contribution  truth=benign  llm=llama
+[59/756]  community=m/coding  mode=comment  intent=narrative_pushing  truth=malicious  llm=qwen
+[60/756]  community=m/tech  mode=comment  intent=organic_contribution  truth=benign  llm=llama
+[61/756]  community=m/crypto  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[62/756]  community=m/blesstheirhearts  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[63/756]  community=m/trading  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[64/756]  community=m/coding  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[56]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/general  model=llama  iterations=1
+[65/756]  community=m/tech  mode=comment  intent=spam  truth=malicious  llm=mistral
+[62]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/blesstheirhearts  model=mistral  iterations=1
+[66/756]  community=m/coding  mode=comment  intent=elicitation  truth=malicious  llm=mistral
+[13]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/blesstheirhearts  model=mistral  iterations=1
+[67/756]  community=m/crypto  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[18]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/crypto  model=mistral  iterations=1
+[68/756]  community=m/general  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[46]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/blesstheirhearts  model=mistral  iterations=1
+[69/756]  community=m/usdc  mode=comment  intent=organic_contribution  truth=benign  llm=llama
+[20]  verdict=malicious  truth=benign  correct=False intent=organic_contribution predicted=subtle_promotion community=m/usdc  model=llama  iterations=1
+[70/756]  community=m/usdc  mode=comment  intent=elicitation  truth=malicious  llm=mistral
+[26]  verdict=malicious  truth=benign  correct=False intent=organic_contribution predicted=subtle_promotion community=m/general  model=mistral  iterations=1
+[71/756]  community=m/trading  mode=comment  intent=organic_contribution  truth=benign  llm=llama
+[44]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/general  model=mistral  iterations=1
+[72/756]  community=m/general  mode=comment  intent=organic_contribution  truth=benign  llm=llama
+[30]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/trading  model=mistral  iterations=1
+[73/756]  community=m/usdc  mode=comment  intent=narrative_pushing  truth=malicious  llm=llama
+[52]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/trading  model=mistral  iterations=1
+[74/756]  community=m/crypto  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[12]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/crypto  model=mistral  iterations=1
+[75/756]  community=m/general  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[21]  verdict=malicious  truth=malicious  correct=True intent=elicitation predicted=elicitation community=m/usdc  model=mistral  iterations=1
+[76/756]  community=m/trading  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[61]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/crypto  model=mistral  iterations=1
+[77/756]  community=m/coding  mode=comment  intent=elicitation  truth=malicious  llm=mistral
+[17]  verdict=benign  truth=malicious  correct=False intent=elicitation predicted=organic_contribution community=m/coding  model=mistral  iterations=1
+[78/756]  community=m/tech  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[42]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/general  model=llama  iterations=1
+[79/756]  community=m/trading  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[64]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/coding  model=mistral  iterations=1
+[80/756]  community=m/trading  mode=comment  intent=organic_contribution  truth=benign  llm=llama
+[3]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/trading  model=mistral  iterations=1
+[81/756]  community=m/crypto  mode=comment  intent=subtle_promotion  truth=malicious  llm=llama
+[29]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=mistral  iterations=1
+[82/756]  community=m/coding  mode=comment  intent=organic_contribution  truth=benign  llm=llama
+[36]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/blesstheirhearts  model=mistral  iterations=1
+[83/756]  community=m/trading  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[7]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/general  model=llama  iterations=1
+[84/756]  community=m/coding  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[6]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/blesstheirhearts  model=qwen  iterations=1
+[85/756]  community=m/blesstheirhearts  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[47]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/crypto  model=llama  iterations=1
+[86/756]  community=m/coding  mode=comment  intent=subtle_promotion  truth=malicious  llm=llama
+[49]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=mistral  iterations=1
+[87/756]  community=m/crypto  mode=comment  intent=organic_contribution  truth=benign  llm=llama
+[22]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/trading  model=llama  iterations=1
+[88/756]  community=m/coding  mode=comment  intent=organic_contribution  truth=benign  llm=llama
+[45]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=llama  iterations=1
+[89/756]  community=m/crypto  mode=comment  intent=narrative_pushing  truth=malicious  llm=qwen
+[50]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/usdc  model=llama  iterations=1
+[90/756]  community=m/trading  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[60]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=llama  iterations=1
+[91/756]  community=m/general  mode=comment  intent=organic_contribution  truth=benign  llm=llama
+[38]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/crypto  model=llama  iterations=1
+[92/756]  community=m/trading  mode=comment  intent=subtle_promotion  truth=malicious  llm=llama
+[39]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/coding  model=llama  iterations=1
+[93/756]  community=m/general  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[43]  verdict=malicious  truth=malicious  correct=True intent=subtle_promotion predicted=subtle_promotion community=m/trading  model=llama  iterations=1
+[94/756]  community=m/tech  mode=comment  intent=organic_contribution  truth=benign  llm=llama
+[28]  verdict=malicious  truth=malicious  correct=True intent=elicitation predicted=subtle_promotion community=m/coding  model=mistral  iterations=1
+[95/756]  community=m/blesstheirhearts  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[1]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/usdc  model=llama  iterations=1
+[96/756]  community=m/crypto  mode=comment  intent=organic_contribution  truth=benign  llm=llama
+[5]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/crypto  model=llama  iterations=1
+[97/756]  community=m/usdc  mode=comment  intent=elicitation  truth=malicious  llm=qwen
+[53]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=llama  iterations=1
+[98/756]  community=m/tech  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[9]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/trading  model=llama  iterations=1
+[99/756]  community=m/crypto  mode=post  intent=elicitation  truth=malicious  llm=qwen
+[37]  verdict=malicious  truth=malicious  correct=True intent=subtle_promotion predicted=subtle_promotion community=m/coding  model=llama  iterations=1
+[100/756]  community=m/general  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[23]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/general  model=llama  iterations=1
+[101/756]  community=m/usdc  mode=post  intent=subtle_promotion  truth=malicious  llm=llama
+[58]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/trading  model=llama  iterations=1
+[102/756]  community=m/tech  mode=post  intent=narrative_pushing  truth=malicious  llm=qwen
+[31]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/trading  model=llama  iterations=1
+[103/756]  community=m/crypto  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[55]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/blesstheirhearts  model=qwen  iterations=1
+[104/756]  community=m/trading  mode=post  intent=narrative_pushing  truth=malicious  llm=qwen
+[10]  verdict=benign  truth=malicious  correct=False intent=narrative_pushing predicted=organic_contribution community=m/coding  model=qwen  iterations=1
+[105/756]  community=m/usdc  mode=post  intent=narrative_pushing  truth=malicious  llm=llama
+[32]  verdict=malicious  truth=malicious  correct=True intent=subtle_promotion predicted=subtle_promotion community=m/crypto  model=llama  iterations=1
+[106/756]  community=m/crypto  mode=post  intent=organic_contribution  truth=benign  llm=llama
+[33]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/coding  model=llama  iterations=1
+[107/756]  community=m/coding  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[14]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/trading  model=qwen  iterations=1
+[108/756]  community=m/coding  mode=post  intent=elicitation  truth=malicious  llm=mistral
+[54]  verdict=malicious  truth=benign  correct=False intent=organic_contribution predicted=narrative_pushing community=m/crypto  model=llama  iterations=1
+[109/756]  community=m/blesstheirhearts  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[24]  verdict=malicious  truth=malicious  correct=True intent=narrative_pushing predicted=subtle_promotion community=m/usdc  model=llama  iterations=1
+[110/756]  community=m/general  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[2]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=llama  iterations=1
+[111/756]  community=m/general  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[40]  verdict=benign  truth=malicious  correct=False intent=narrative_pushing predicted=organic_contribution community=m/crypto  model=qwen  iterations=1
+[112/756]  community=m/general  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[11]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=llama  iterations=1
+[113/756]  community=m/trading  mode=post  intent=elicitation  truth=malicious  llm=mistral
+[4]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=llama  iterations=1
+[114/756]  community=m/tech  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[67]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/crypto  model=mistral  iterations=1
+[115/756]  community=m/usdc  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[51]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=llama  iterations=1
+[116/756]  community=m/tech  mode=post  intent=narrative_pushing  truth=malicious  llm=llama
+[66]  verdict=benign  truth=malicious  correct=False intent=elicitation predicted=organic_contribution community=m/coding  model=mistral  iterations=1
+[117/756]  community=m/crypto  mode=post  intent=elicitation  truth=malicious  llm=qwen
+[57]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/coding  model=qwen  iterations=1
+[118/756]  community=m/tech  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[34]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/trading  model=qwen  iterations=1
+[119/756]  community=m/tech  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[69]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/usdc  model=llama  iterations=1
+[120/756]  community=m/usdc  mode=post  intent=organic_contribution  truth=benign  llm=llama
+[59]  verdict=benign  truth=malicious  correct=False intent=narrative_pushing predicted=organic_contribution community=m/coding  model=qwen  iterations=1
+[121/756]  community=m/trading  mode=post  intent=narrative_pushing  truth=malicious  llm=llama
+[65]  verdict=malicious  truth=malicious  correct=True intent=spam predicted=subtle_promotion community=m/tech  model=mistral  iterations=1
+[122/756]  community=m/blesstheirhearts  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[35]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/coding  model=qwen  iterations=1
+[123/756]  community=m/coding  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[70]  verdict=malicious  truth=malicious  correct=True intent=elicitation predicted=subtle_promotion community=m/usdc  model=mistral  iterations=1
+[124/756]  community=m/coding  mode=post  intent=elicitation  truth=malicious  llm=mistral
+[19]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/general  model=qwen  iterations=1
+[125/756]  community=m/tech  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[25]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/crypto  model=qwen  iterations=1
+[126/756]  community=m/general  mode=post  intent=elicitation  truth=malicious  llm=mistral
+[15]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/coding  model=mistral  iterations=1
+[127/756]  community=m/coding  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[48]  verdict=benign  truth=malicious  correct=False intent=elicitation predicted=organic_contribution community=m/usdc  model=qwen  iterations=1
+[128/756]  community=m/tech  mode=post  intent=subtle_promotion  truth=malicious  llm=llama
+[75]  verdict=malicious  truth=benign  correct=False intent=organic_contribution predicted=subtle_promotion community=m/general  model=mistral  iterations=1
+[129/756]  community=m/blesstheirhearts  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[8]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/coding  model=qwen  iterations=1
+[130/756]  community=m/usdc  mode=post  intent=organic_contribution  truth=benign  llm=llama
+[16]  verdict=malicious  truth=malicious  correct=True intent=spam predicted=subtle_promotion community=m/tech  model=mistral  iterations=1
+[131/756]  community=m/coding  mode=post  intent=organic_contribution  truth=benign  llm=llama
+[77]  verdict=malicious  truth=malicious  correct=True intent=elicitation predicted=elicitation community=m/coding  model=mistral  iterations=1
+[132/756]  community=m/trading  mode=post  intent=subtle_promotion  truth=malicious  llm=qwen
+[72]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/general  model=llama  iterations=1
+[133/756]  community=m/general  mode=post  intent=organic_contribution  truth=benign  llm=llama
+[78]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=mistral  iterations=1
+[134/756]  community=m/general  mode=post  intent=narrative_pushing  truth=malicious  llm=qwen
+[41]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/trading  model=qwen  iterations=1
+[135/756]  community=m/usdc  mode=post  intent=subtle_promotion  truth=malicious  llm=llama
+[85]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/blesstheirhearts  model=mistral  iterations=1
+[136/756]  community=m/blesstheirhearts  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[80]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/trading  model=llama  iterations=1
+[137/756]  community=m/crypto  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[27]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/trading  model=qwen  iterations=1
+[138/756]  community=m/coding  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[79]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/trading  model=mistral  iterations=1
+[139/756]  community=m/crypto  mode=post  intent=subtle_promotion  truth=malicious  llm=mistral
+[95]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/blesstheirhearts  model=mistral  iterations=1
+[140/756]  community=m/blesstheirhearts  mode=post  intent=organic_contribution  truth=benign  llm=llama
+[63]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/trading  model=qwen  iterations=1
+[141/756]  community=m/coding  mode=post  intent=narrative_pushing  truth=malicious  llm=llama
+[81]  verdict=malicious  truth=malicious  correct=True intent=subtle_promotion predicted=subtle_promotion community=m/crypto  model=llama  iterations=1
+[142/756]  community=m/usdc  mode=post  intent=narrative_pushing  truth=malicious  llm=qwen
+[86]  verdict=benign  truth=malicious  correct=False intent=subtle_promotion predicted=organic_contribution community=m/coding  model=llama  iterations=1
+[143/756]  community=m/tech  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[71]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/trading  model=llama  iterations=1
+[144/756]  community=m/tech  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[82]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/coding  model=llama  iterations=1
+[145/756]  community=m/coding  mode=post  intent=elicitation  truth=malicious  llm=mistral
+[73]  verdict=benign  truth=malicious  correct=False intent=narrative_pushing predicted=organic_contribution community=m/usdc  model=llama  iterations=1
+[146/756]  community=m/crypto  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[93]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/general  model=mistral  iterations=1
+[147/756]  community=m/usdc  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[109]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/blesstheirhearts  model=mistral  iterations=1
+[148/756]  community=m/crypto  mode=post  intent=organic_contribution  truth=benign  llm=llama
+[115]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/usdc  model=mistral  iterations=1
+[149/756]  community=m/tech  mode=post  intent=subtle_promotion  truth=malicious  llm=mistral
+[100]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/general  model=mistral  iterations=1
+[150/756]  community=m/tech  mode=post  intent=subtle_promotion  truth=malicious  llm=llama
+[101]  verdict=malicious  truth=malicious  correct=True intent=subtle_promotion predicted=subtle_promotion community=m/usdc  model=llama  iterations=1
+[151/756]  community=m/blesstheirhearts  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[113]  verdict=malicious  truth=malicious  correct=True intent=elicitation predicted=elicitation community=m/trading  model=mistral  iterations=1
+[152/756]  community=m/trading  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[91]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/general  model=llama  iterations=1
+[153/756]  community=m/crypto  mode=post  intent=organic_contribution  truth=benign  llm=llama
+[87]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/crypto  model=llama  iterations=1
+[154/756]  community=m/tech  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[92]  verdict=benign  truth=malicious  correct=False intent=subtle_promotion predicted=organic_contribution community=m/trading  model=llama  iterations=1
+[155/756]  community=m/trading  mode=post  intent=elicitation  truth=malicious  llm=llama
+[94]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=llama  iterations=1
+[156/756]  community=m/tech  mode=post  intent=narrative_pushing  truth=malicious  llm=mistral
+[112]  verdict=malicious  truth=benign  correct=False intent=organic_contribution predicted=subtle_promotion community=m/general  model=mistral  iterations=1
+[157/756]  community=m/trading  mode=post  intent=elicitation  truth=malicious  llm=qwen
+[96]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/crypto  model=llama  iterations=1
+[158/756]  community=m/crypto  mode=post  intent=spam  truth=malicious  llm=qwen
+[105]  verdict=malicious  truth=malicious  correct=True intent=narrative_pushing predicted=narrative_pushing community=m/usdc  model=llama  iterations=1
+[159/756]  community=m/coding  mode=post  intent=subtle_promotion  truth=malicious  llm=qwen
+[76]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/trading  model=qwen  iterations=1
+[160/756]  community=m/general  mode=post  intent=organic_contribution  truth=benign  llm=llama
+[108]  verdict=malicious  truth=malicious  correct=True intent=elicitation predicted=subtle_promotion community=m/coding  model=mistral  iterations=1
+[161/756]  community=m/crypto  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[68]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/general  model=qwen  iterations=1
+[162/756]  community=m/tech  mode=post  intent=organic_contribution  truth=benign  llm=llama
+[84]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/coding  model=qwen  iterations=1
+[163/756]  community=m/tech  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[118]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=mistral  iterations=1
+[164/756]  community=m/general  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[106]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/crypto  model=llama  iterations=1
+[165/756]  community=m/blesstheirhearts  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[110]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/general  model=qwen  iterations=1
+[166/756]  community=m/usdc  mode=post  intent=subtle_promotion  truth=malicious  llm=llama
+[119]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=mistral  iterations=1
+[167/756]  community=m/blesstheirhearts  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[129]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/blesstheirhearts  model=mistral  iterations=1
+[168/756]  community=m/usdc  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[98]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=mistral  iterations=1
+[169/756]  community=m/blesstheirhearts  mode=post  intent=elicitation  truth=malicious  llm=llama
+[124]  verdict=benign  truth=malicious  correct=False intent=elicitation predicted=organic_contribution community=m/coding  model=mistral  iterations=1
+[170/756]  community=m/usdc  mode=post  intent=elicitation  truth=malicious  llm=llama
+[125]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=mistral  iterations=1
+[171/756]  community=m/general  mode=post  intent=subtle_promotion  truth=malicious  llm=mistral
+[88]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/coding  model=llama  iterations=1
+[172/756]  community=m/blesstheirhearts  mode=post  intent=narrative_pushing  truth=malicious  llm=qwen
+[120]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/usdc  model=llama  iterations=1
+[173/756]  community=m/coding  mode=post  intent=organic_contribution  truth=benign  llm=llama
+[126]  verdict=malicious  truth=malicious  correct=True intent=elicitation predicted=subtle_promotion community=m/general  model=mistral  iterations=1
+[174/756]  community=m/general  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[127]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/coding  model=mistral  iterations=1
+[175/756]  community=m/general  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[116]  verdict=malicious  truth=malicious  correct=True intent=narrative_pushing predicted=narrative_pushing community=m/tech  model=llama  iterations=1
+[176/756]  community=m/usdc  mode=post  intent=organic_contribution  truth=benign  llm=llama
+[138]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/coding  model=mistral  iterations=1
+[177/756]  community=m/general  mode=post  intent=elicitation  truth=malicious  llm=llama
+[121]  verdict=benign  truth=malicious  correct=False intent=narrative_pushing predicted=organic_contribution community=m/trading  model=llama  iterations=1
+[178/756]  community=m/coding  mode=post  intent=narrative_pushing  truth=malicious  llm=qwen
+[128]  verdict=malicious  truth=malicious  correct=True intent=subtle_promotion predicted=subtle_promotion community=m/tech  model=llama  iterations=1
+[179/756]  community=m/blesstheirhearts  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[104]  verdict=malicious  truth=malicious  correct=True intent=narrative_pushing predicted=narrative_pushing community=m/trading  model=qwen  iterations=1
+[180/756]  community=m/trading  mode=post  intent=subtle_promotion  truth=malicious  llm=mistral
+[130]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/usdc  model=llama  iterations=1
+[181/756]  community=m/coding  mode=post  intent=spam  truth=malicious  llm=llama
+[99]  verdict=malicious  truth=malicious  correct=True intent=elicitation predicted=elicitation community=m/crypto  model=qwen  iterations=1
+[182/756]  community=m/trading  mode=post  intent=organic_contribution  truth=benign  llm=llama
+[114]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=qwen  iterations=1
+[183/756]  community=m/usdc  mode=post  intent=subtle_promotion  truth=malicious  llm=mistral
+[111]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/general  model=qwen  iterations=1
+[184/756]  community=m/blesstheirhearts  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[135]  verdict=malicious  truth=malicious  correct=True intent=subtle_promotion predicted=subtle_promotion community=m/usdc  model=llama  iterations=1
+[185/756]  community=m/tech  mode=post  intent=elicitation  truth=malicious  llm=llama
+[140]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/blesstheirhearts  model=llama  iterations=1
+[186/756]  community=m/general  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[133]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/general  model=llama  iterations=1
+[187/756]  community=m/trading  mode=post  intent=narrative_pushing  truth=malicious  llm=llama
+[146]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/crypto  model=mistral  iterations=1
+[188/756]  community=m/trading  mode=post  intent=subtle_promotion  truth=malicious  llm=llama
+[102]  verdict=benign  truth=malicious  correct=False intent=narrative_pushing predicted=organic_contribution community=m/tech  model=qwen  iterations=1
+[189/756]  community=m/tech  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[117]  verdict=benign  truth=malicious  correct=False intent=elicitation predicted=organic_contribution community=m/crypto  model=qwen  iterations=1
+[190/756]  community=m/trading  mode=post  intent=organic_contribution  truth=benign  llm=llama
+[139]  verdict=benign  truth=malicious  correct=False intent=subtle_promotion predicted=organic_contribution community=m/crypto  model=mistral  iterations=1
+[191/756]  community=m/coding  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[74]  verdict=malicious  truth=benign  correct=False intent=organic_contribution predicted=subtle_promotion community=m/crypto  model=qwen  iterations=1
+[192/756]  community=m/crypto  mode=post  intent=organic_contribution  truth=benign  llm=llama
+[89]  verdict=malicious  truth=malicious  correct=True intent=narrative_pushing predicted=subtle_promotion community=m/crypto  model=qwen  iterations=1
+[193/756]  community=m/tech  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[122]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/blesstheirhearts  model=qwen  iterations=1
+[194/756]  community=m/usdc  mode=post  intent=subtle_promotion  truth=malicious  llm=llama
+[145]  verdict=malicious  truth=malicious  correct=True intent=elicitation predicted=subtle_promotion community=m/coding  model=mistral  iterations=1
+[195/756]  community=m/trading  mode=post  intent=organic_contribution  truth=benign  llm=llama
+[151]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/blesstheirhearts  model=mistral  iterations=1
+[196/756]  community=m/crypto  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[132]  verdict=benign  truth=malicious  correct=False intent=subtle_promotion predicted=organic_contribution community=m/trading  model=qwen  iterations=1
+[197/756]  community=m/tech  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[90]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/trading  model=qwen  iterations=1
+[198/756]  community=m/general  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[141]  verdict=malicious  truth=malicious  correct=True intent=narrative_pushing predicted=narrative_pushing community=m/coding  model=llama  iterations=1
+[199/756]  community=m/coding  mode=post  intent=organic_contribution  truth=benign  llm=llama
+[153]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/crypto  model=llama  iterations=1
+[200/756]  community=m/crypto  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[150]  verdict=malicious  truth=malicious  correct=True intent=subtle_promotion predicted=subtle_promotion community=m/tech  model=llama  iterations=1
+[201/756]  community=m/blesstheirhearts  mode=post  intent=organic_contribution  truth=benign  llm=llama
+[154]  verdict=malicious  truth=benign  correct=False intent=organic_contribution predicted=subtle_promotion community=m/tech  model=mistral  iterations=1
+[202/756]  community=m/crypto  mode=post  intent=elicitation  truth=malicious  llm=qwen
+[165]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/blesstheirhearts  model=mistral  iterations=1
+[203/756]  community=m/trading  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[83]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/trading  model=qwen  iterations=1
+[204/756]  community=m/general  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[103]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/crypto  model=qwen  iterations=1
+[205/756]  community=m/general  mode=post  intent=organic_contribution  truth=benign  llm=llama[136]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/blesstheirhearts  model=qwen  iterations=1
+[206/756]  community=m/trading  mode=post  intent=narrative_pushing  truth=malicious  llm=mistral
+
+[155]  verdict=malicious  truth=malicious  correct=True intent=elicitation predicted=subtle_promotion community=m/trading  model=llama  iterations=1
+[207/756]  community=m/tech  mode=post  intent=narrative_pushing  truth=malicious  llm=llama
+[149]  verdict=malicious  truth=malicious  correct=True intent=subtle_promotion predicted=subtle_promotion community=m/tech  model=mistral  iterations=1
+[208/756]  community=m/trading  mode=post  intent=elicitation  truth=malicious  llm=llama
+[148]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/crypto  model=llama  iterations=1
+[209/756]  community=m/tech  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[131]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/coding  model=llama  iterations=1
+[210/756]  community=m/crypto  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[170]  verdict=malicious  truth=malicious  correct=True intent=elicitation predicted=subtle_promotion community=m/usdc  model=llama  iterations=1
+[211/756]  community=m/general  mode=post  intent=elicitation  truth=malicious  llm=mistral
+[163]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=mistral  iterations=1
+[212/756]  community=m/coding  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[166]  verdict=malicious  truth=malicious  correct=True intent=subtle_promotion predicted=subtle_promotion community=m/usdc  model=llama  iterations=1
+[213/756]  community=m/coding  mode=post  intent=elicitation  truth=malicious  llm=mistral
+[167]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/blesstheirhearts  model=mistral  iterations=1
+[214/756]  community=m/coding  mode=post  intent=elicitation  truth=malicious  llm=mistral
+[169]  verdict=benign  truth=malicious  correct=False intent=elicitation predicted=organic_contribution community=m/blesstheirhearts  model=llama  iterations=1
+[215/756]  community=m/trading  mode=post  intent=organic_contribution  truth=benign  llm=llama
+[143]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=mistral  iterations=1
+[216/756]  community=m/coding  mode=post  intent=subtle_promotion  truth=malicious  llm=qwen
+[160]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/general  model=llama  iterations=1
+[217/756]  community=m/trading  mode=post  intent=narrative_pushing  truth=malicious  llm=qwen
+[174]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/general  model=mistral  iterations=1
+[218/756]  community=m/usdc  mode=post  intent=elicitation  truth=malicious  llm=mistral
+[156]  verdict=malicious  truth=malicious  correct=True intent=narrative_pushing predicted=subtle_promotion community=m/tech  model=mistral  iterations=1
+[219/756]  community=m/crypto  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[158]  verdict=malicious  truth=malicious  correct=True intent=spam predicted=subtle_promotion community=m/crypto  model=qwen  iterations=1
+[220/756]  community=m/tech  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[177]  verdict=benign  truth=malicious  correct=False intent=elicitation predicted=organic_contribution community=m/general  model=llama  iterations=1
+[221/756]  community=m/coding  mode=post  intent=subtle_promotion  truth=malicious  llm=llama
+[147]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/usdc  model=mistral  iterations=1
+[222/756]  community=m/tech  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[97]  verdict=benign  truth=malicious  correct=False intent=elicitation predicted=organic_contribution community=m/usdc  model=qwen  iterations=1
+[223/756]  community=m/general  mode=post  intent=elicitation  truth=malicious  llm=qwen
+[162]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=llama  iterations=1
+[224/756]  community=m/crypto  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[123]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/coding  model=qwen  iterations=1
+[225/756]  community=m/tech  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[107]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/coding  model=qwen  iterations=1
+[226/756]  community=m/tech  mode=post  intent=narrative_pushing  truth=malicious  llm=qwen
+[171]  verdict=malicious  truth=malicious  correct=True intent=subtle_promotion predicted=subtle_promotion community=m/general  model=mistral  iterations=1
+[227/756]  community=m/coding  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[181]  verdict=benign  truth=malicious  correct=False intent=spam predicted=organic_contribution community=m/coding  model=llama  iterations=1
+[228/756]  community=m/coding  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[176]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/usdc  model=llama  iterations=1
+[229/756]  community=m/general  mode=post  intent=narrative_pushing  truth=malicious  llm=qwen
+[180]  verdict=benign  truth=malicious  correct=False intent=subtle_promotion predicted=organic_contribution community=m/trading  model=mistral  iterations=1
+[230/756]  community=m/general  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[182]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/trading  model=llama  iterations=1
+[231/756]  community=m/general  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[175]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/general  model=qwen  iterations=1
+[232/756]  community=m/crypto  mode=post  intent=subtle_promotion  truth=malicious  llm=mistral
+[185]  verdict=malicious  truth=malicious  correct=True intent=elicitation predicted=elicitation community=m/tech  model=llama  iterations=1
+[233/756]  community=m/crypto  mode=post  intent=narrative_pushing  truth=malicious  llm=mistral
+[179]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/blesstheirhearts  model=qwen  iterations=1
+[234/756]  community=m/coding  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[190]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/trading  model=llama  iterations=1
+[235/756]  community=m/general  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[183]  verdict=malicious  truth=malicious  correct=True intent=subtle_promotion predicted=subtle_promotion community=m/usdc  model=mistral  iterations=1
+[236/756]  community=m/blesstheirhearts  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[161]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/crypto  model=qwen  iterations=1
+[237/756]  community=m/coding  mode=post  intent=organic_contribution  truth=benign  llm=llama
+[192]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/crypto  model=llama  iterations=1
+[238/756]  community=m/tech  mode=post  intent=subtle_promotion  truth=malicious  llm=qwen
+[159]  verdict=malicious  truth=malicious  correct=True intent=subtle_promotion predicted=subtle_promotion community=m/coding  model=qwen  iterations=1
+[239/756]  community=m/crypto  mode=comment  intent=elicitation  truth=malicious  llm=qwen
+[187]  verdict=benign  truth=malicious  correct=False intent=narrative_pushing predicted=organic_contribution community=m/trading  model=llama  iterations=1
+[240/756]  community=m/general  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[173]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/coding  model=llama  iterations=1
+[241/756]  community=m/usdc  mode=comment  intent=subtle_promotion  truth=malicious  llm=llama
+[188]  verdict=malicious  truth=malicious  correct=True intent=subtle_promotion predicted=subtle_promotion community=m/trading  model=llama  iterations=1
+[242/756]  community=m/tech  mode=comment  intent=narrative_pushing  truth=malicious  llm=qwen
+[172]  verdict=benign  truth=malicious  correct=False intent=narrative_pushing predicted=organic_contribution community=m/blesstheirhearts  model=qwen  iterations=1
+[243/756]  community=m/crypto  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[201]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/blesstheirhearts  model=llama  iterations=1
+[244/756]  community=m/trading  mode=comment  intent=narrative_pushing  truth=malicious  llm=qwen
+[142]  verdict=malicious  truth=malicious  correct=True intent=narrative_pushing predicted=subtle_promotion community=m/usdc  model=qwen  iterations=1
+[245/756]  community=m/usdc  mode=comment  intent=narrative_pushing  truth=malicious  llm=llama
+[194]  verdict=malicious  truth=malicious  correct=True intent=subtle_promotion predicted=subtle_promotion community=m/usdc  model=llama  iterations=1
+[246/756]  community=m/crypto  mode=comment  intent=organic_contribution  truth=benign  llm=llama
+[134]  verdict=benign  truth=malicious  correct=False intent=narrative_pushing predicted=organic_contribution community=m/general  model=qwen  iterations=1
+[247/756]  community=m/coding  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[137]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/crypto  model=qwen  iterations=1
+[248/756]  community=m/coding  mode=comment  intent=elicitation  truth=malicious  llm=mistral
+[193]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=mistral  iterations=1
+[249/756]  community=m/blesstheirhearts  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[208]  verdict=malicious  truth=malicious  correct=True intent=elicitation predicted=elicitation community=m/trading  model=llama  iterations=1
+[250/756]  community=m/general  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[211]  verdict=malicious  truth=malicious  correct=True intent=elicitation predicted=elicitation community=m/general  model=mistral  iterations=1
+[251/756]  community=m/general  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[209]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=mistral  iterations=1
+[252/756]  community=m/general  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[199]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/coding  model=llama  iterations=1
+[253/756]  community=m/trading  mode=comment  intent=elicitation  truth=malicious  llm=mistral
+[205]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/general  model=llama  iterations=1
+[254/756]  community=m/tech  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[207]  verdict=benign  truth=malicious  correct=False intent=narrative_pushing predicted=organic_contribution community=m/tech  model=llama  iterations=1
+[255/756]  community=m/usdc  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[212]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/coding  model=mistral  iterations=1
+[256/756]  community=m/tech  mode=comment  intent=narrative_pushing  truth=malicious  llm=llama
+[144]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=qwen  iterations=1
+[257/756]  community=m/crypto  mode=comment  intent=elicitation  truth=malicious  llm=qwen
+[196]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/crypto  model=qwen  iterations=1
+[258/756]  community=m/tech  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[164]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/general  model=qwen  iterations=1
+[259/756]  community=m/tech  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[195]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/trading  model=llama  iterations=1
+[260/756]  community=m/usdc  mode=comment  intent=organic_contribution  truth=benign  llm=llama
+[197]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=qwen  iterations=1
+[261/756]  community=m/trading  mode=comment  intent=narrative_pushing  truth=malicious  llm=llama
+[222]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=mistral  iterations=1
+[262/756]  community=m/blesstheirhearts  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[213]  verdict=malicious  truth=malicious  correct=True intent=elicitation predicted=subtle_promotion community=m/coding  model=mistral  iterations=1
+[263/756]  community=m/coding  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[186]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/general  model=qwen  iterations=1
+[264/756]  community=m/coding  mode=comment  intent=elicitation  truth=malicious  llm=mistral
+[184]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/blesstheirhearts  model=qwen  iterations=1
+[265/756]  community=m/tech  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[157]  verdict=benign  truth=malicious  correct=False intent=elicitation predicted=organic_contribution community=m/trading  model=qwen  iterations=1
+[266/756]  community=m/general  mode=comment  intent=elicitation  truth=malicious  llm=mistral
+[224]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/crypto  model=mistral  iterations=1
+[267/756]  community=m/coding  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[215]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/trading  model=llama  iterations=1
+[268/756]  community=m/tech  mode=comment  intent=subtle_promotion  truth=malicious  llm=llama
+[168]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/usdc  model=qwen  iterations=1
+[269/756]  community=m/blesstheirhearts  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[221]  verdict=malicious  truth=malicious  correct=True intent=subtle_promotion predicted=subtle_promotion community=m/coding  model=llama  iterations=1
+[270/756]  community=m/usdc  mode=comment  intent=organic_contribution  truth=benign  llm=llama
+[218]  verdict=malicious  truth=malicious  correct=True intent=elicitation predicted=subtle_promotion community=m/usdc  model=mistral  iterations=1
+[271/756]  community=m/coding  mode=comment  intent=organic_contribution  truth=benign  llm=llama
+[231]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/general  model=mistral  iterations=1
+[272/756]  community=m/trading  mode=comment  intent=subtle_promotion  truth=malicious  llm=qwen
+[214]  verdict=benign  truth=malicious  correct=False intent=elicitation predicted=organic_contribution community=m/coding  model=mistral  iterations=1
+[273/756]  community=m/general  mode=comment  intent=organic_contribution  truth=benign  llm=llama
+[152]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/trading  model=qwen  iterations=1
+[274/756]  community=m/general  mode=comment  intent=narrative_pushing  truth=malicious  llm=qwen
+[202]  verdict=malicious  truth=malicious  correct=True intent=elicitation predicted=elicitation community=m/crypto  model=qwen  iterations=1
+[275/756]  community=m/usdc  mode=comment  intent=subtle_promotion  truth=malicious  llm=llama
+[206]  verdict=benign  truth=malicious  correct=False intent=narrative_pushing predicted=organic_contribution community=m/trading  model=mistral  iterations=1
+[276/756]  community=m/blesstheirhearts  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[230]  verdict=malicious  truth=benign  correct=False intent=organic_contribution predicted=subtle_promotion community=m/general  model=mistral  iterations=1
+[277/756]  community=m/crypto  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[198]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/general  model=qwen  iterations=1
+[278/756]  community=m/coding  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[235]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/general  model=mistral  iterations=1
+[279/756]  community=m/crypto  mode=comment  intent=subtle_promotion  truth=malicious  llm=mistral
+[232]  verdict=malicious  truth=malicious  correct=True intent=subtle_promotion predicted=subtle_promotion community=m/crypto  model=mistral  iterations=1
+[280/756]  community=m/blesstheirhearts  mode=comment  intent=organic_contribution  truth=benign  llm=llama
+[204]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/general  model=qwen  iterations=1
+[281/756]  community=m/coding  mode=comment  intent=narrative_pushing  truth=malicious  llm=llama
+[216]  verdict=malicious  truth=malicious  correct=True intent=subtle_promotion predicted=subtle_promotion community=m/coding  model=qwen  iterations=1
+[282/756]  community=m/usdc  mode=comment  intent=narrative_pushing  truth=malicious  llm=qwen
+[236]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/blesstheirhearts  model=mistral  iterations=1
+[283/756]  community=m/tech  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[228]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/coding  model=qwen  iterations=1
+[284/756]  community=m/tech  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[178]  verdict=malicious  truth=malicious  correct=True intent=narrative_pushing predicted=subtle_promotion community=m/coding  model=qwen  iterations=1
+[285/756]  community=m/coding  mode=comment  intent=elicitation  truth=malicious  llm=mistral
+[229]  verdict=benign  truth=malicious  correct=False intent=narrative_pushing predicted=organic_contribution community=m/general  model=qwen  iterations=1
+[286/756]  community=m/crypto  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[241]  verdict=malicious  truth=malicious  correct=True intent=subtle_promotion predicted=subtle_promotion community=m/usdc  model=llama  iterations=1
+[287/756]  community=m/usdc  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[240]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/general  model=mistral  iterations=1
+[288/756]  community=m/crypto  mode=comment  intent=organic_contribution  truth=benign  llm=llama
+[223]  verdict=malicious  truth=malicious  correct=True intent=elicitation predicted=elicitation community=m/general  model=qwen  iterations=1
+[289/756]  community=m/tech  mode=comment  intent=subtle_promotion  truth=malicious  llm=mistral
+[217]  verdict=malicious  truth=malicious  correct=True intent=narrative_pushing predicted=subtle_promotion community=m/trading  model=qwen  iterations=1
+[290/756]  community=m/tech  mode=comment  intent=subtle_promotion  truth=malicious  llm=llama
+[220]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=qwen  iterations=1
+[291/756]  community=m/blesstheirhearts  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[219]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/crypto  model=qwen  iterations=1
+[292/756]  community=m/trading  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[237]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/coding  model=llama  iterations=1
+[293/756]  community=m/crypto  mode=comment  intent=organic_contribution  truth=benign  llm=llama
+[253]  verdict=benign  truth=malicious  correct=False intent=elicitation predicted=organic_contribution community=m/trading  model=mistral  iterations=1
+[294/756]  community=m/tech  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[233]  verdict=benign  truth=malicious  correct=False intent=narrative_pushing predicted=organic_contribution community=m/crypto  model=mistral  iterations=1
+[295/756]  community=m/trading  mode=comment  intent=elicitation  truth=malicious  llm=llama
+[191]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/coding  model=qwen  iterations=1
+[296/756]  community=m/tech  mode=comment  intent=narrative_pushing  truth=malicious  llm=mistral
+[248]  verdict=malicious  truth=malicious  correct=True intent=elicitation predicted=elicitation community=m/coding  model=mistral  iterations=1
+[297/756]  community=m/trading  mode=comment  intent=elicitation  truth=malicious  llm=qwen
+[245]  verdict=benign  truth=malicious  correct=False intent=narrative_pushing predicted=organic_contribution community=m/usdc  model=llama  iterations=1
+[298/756]  community=m/crypto  mode=comment  intent=spam  truth=malicious  llm=qwen
+[258]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=mistral  iterations=1
+[299/756]  community=m/coding  mode=comment  intent=subtle_promotion  truth=malicious  llm=qwen
+[210]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/crypto  model=qwen  iterations=1
+[300/756]  community=m/general  mode=comment  intent=organic_contribution  truth=benign  llm=llama
+[255]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/usdc  model=mistral  iterations=1
+[301/756]  community=m/crypto  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[189]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=qwen  iterations=1
+[302/756]  community=m/tech  mode=comment  intent=organic_contribution  truth=benign  llm=llama
+[249]  verdict=malicious  truth=benign  correct=False intent=organic_contribution predicted=subtle_promotion community=m/blesstheirhearts  model=mistral  iterations=1
+[303/756]  community=m/tech  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[259]  verdict=malicious  truth=benign  correct=False intent=organic_contribution predicted=subtle_promotion community=m/tech  model=mistral  iterations=1
+[304/756]  community=m/general  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[203]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/trading  model=qwen  iterations=1
+[305/756]  community=m/blesstheirhearts  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[269]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/blesstheirhearts  model=mistral  iterations=1
+[306/756]  community=m/usdc  mode=comment  intent=subtle_promotion  truth=malicious  llm=llama
+[264]  verdict=benign  truth=malicious  correct=False intent=elicitation predicted=organic_contribution community=m/coding  model=mistral  iterations=1
+[307/756]  community=m/blesstheirhearts  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[246]  verdict=malicious  truth=benign  correct=False intent=organic_contribution predicted=narrative_pushing community=m/crypto  model=llama  iterations=1
+[308/756]  community=m/usdc  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[200]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/crypto  model=qwen  iterations=1
+[309/756]  community=m/blesstheirhearts  mode=comment  intent=elicitation  truth=malicious  llm=llama
+[256]  verdict=benign  truth=malicious  correct=False intent=narrative_pushing predicted=organic_contribution community=m/tech  model=llama  iterations=1
+[310/756]  community=m/usdc  mode=comment  intent=elicitation  truth=malicious  llm=llama
+[268]  verdict=malicious  truth=malicious  correct=True intent=subtle_promotion predicted=subtle_promotion community=m/tech  model=llama  iterations=1
+[311/756]  community=m/general  mode=comment  intent=subtle_promotion  truth=malicious  llm=mistral
+[260]  verdict=malicious  truth=benign  correct=False intent=organic_contribution predicted=subtle_promotion community=m/usdc  model=llama  iterations=1
+[312/756]  community=m/blesstheirhearts  mode=comment  intent=narrative_pushing  truth=malicious  llm=qwen
+[266]  verdict=malicious  truth=malicious  correct=True intent=elicitation predicted=subtle_promotion community=m/general  model=mistral  iterations=1
+[313/756]  community=m/coding  mode=comment  intent=organic_contribution  truth=benign  llm=llama
+[227]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/coding  model=qwen  iterations=1
+[314/756]  community=m/general  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[225]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=qwen  iterations=1
+[315/756]  community=m/general  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[271]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/coding  model=llama  iterations=1
+[316/756]  community=m/usdc  mode=comment  intent=organic_contribution  truth=benign  llm=llama
+[252]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/general  model=mistral  iterations=1
+[317/756]  community=m/general  mode=comment  intent=elicitation  truth=malicious  llm=llama
+[267]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/coding  model=mistral  iterations=1
+[318/756]  community=m/coding  mode=comment  intent=narrative_pushing  truth=malicious  llm=qwen
+[251]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/general  model=qwen  iterations=1
+[319/756]  community=m/blesstheirhearts  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[273]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/general  model=llama  iterations=1
+[320/756]  community=m/trading  mode=comment  intent=subtle_promotion  truth=malicious  llm=mistral
+[270]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/usdc  model=llama  iterations=1
+[321/756]  community=m/coding  mode=comment  intent=spam  truth=malicious  llm=llama
+[265]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=mistral  iterations=1
+[322/756]  community=m/trading  mode=comment  intent=organic_contribution  truth=benign  llm=llama
+[261]  verdict=benign  truth=malicious  correct=False intent=narrative_pushing predicted=organic_contribution community=m/trading  model=llama  iterations=1
+[323/756]  community=m/usdc  mode=comment  intent=subtle_promotion  truth=malicious  llm=mistral
+[239]  verdict=malicious  truth=malicious  correct=True intent=elicitation predicted=subtle_promotion community=m/crypto  model=qwen  iterations=1
+[324/756]  community=m/blesstheirhearts  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[238]  verdict=benign  truth=malicious  correct=False intent=subtle_promotion predicted=organic_contribution community=m/tech  model=qwen  iterations=1
+[325/756]  community=m/tech  mode=comment  intent=elicitation  truth=malicious  llm=llama
+[280]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/blesstheirhearts  model=llama  iterations=1
+[326/756]  community=m/general  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[281]  verdict=malicious  truth=malicious  correct=True intent=narrative_pushing predicted=narrative_pushing community=m/coding  model=llama  iterations=1
+[327/756]  community=m/trading  mode=comment  intent=narrative_pushing  truth=malicious  llm=llama
+[275]  verdict=malicious  truth=malicious  correct=True intent=subtle_promotion predicted=subtle_promotion community=m/usdc  model=llama  iterations=1
+[328/756]  community=m/trading  mode=comment  intent=subtle_promotion  truth=malicious  llm=llama
+[279]  verdict=malicious  truth=malicious  correct=True intent=subtle_promotion predicted=subtle_promotion community=m/crypto  model=mistral  iterations=1
+[329/756]  community=m/tech  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[285]  verdict=benign  truth=malicious  correct=False intent=elicitation predicted=organic_contribution community=m/coding  model=mistral  iterations=1
+[330/756]  community=m/trading  mode=comment  intent=organic_contribution  truth=benign  llm=llama
+[286]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/crypto  model=mistral  iterations=1
+[331/756]  community=m/coding  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[289]  verdict=benign  truth=malicious  correct=False intent=subtle_promotion predicted=organic_contribution community=m/tech  model=mistral  iterations=1
+[332/756]  community=m/crypto  mode=comment  intent=organic_contribution  truth=benign  llm=llama
+[278]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/coding  model=mistral  iterations=1
+[333/756]  community=m/tech  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[293]  verdict=malicious  truth=benign  correct=False intent=organic_contribution predicted=subtle_promotion community=m/crypto  model=llama  iterations=1
+[334/756]  community=m/usdc  mode=comment  intent=subtle_promotion  truth=malicious  llm=llama
+[234]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/coding  model=qwen  iterations=1
+[335/756]  community=m/trading  mode=comment  intent=organic_contribution  truth=benign  llm=llama
+[291]  verdict=malicious  truth=benign  correct=False intent=organic_contribution predicted=narrative_pushing community=m/blesstheirhearts  model=mistral  iterations=1
+[336/756]  community=m/crypto  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[272]  verdict=malicious  truth=malicious  correct=True intent=subtle_promotion predicted=subtle_promotion community=m/trading  model=qwen  iterations=1
+[337/756]  community=m/tech  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[294]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=mistral  iterations=1
+[338/756]  community=m/general  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[250]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/general  model=qwen  iterations=1
+[339/756]  community=m/coding  mode=comment  intent=organic_contribution  truth=benign  llm=llama
+[254]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=qwen  iterations=1
+[340/756]  community=m/crypto  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[283]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=mistral  iterations=1
+[341/756]  community=m/blesstheirhearts  mode=comment  intent=organic_contribution  truth=benign  llm=llama
+[226]  verdict=malicious  truth=malicious  correct=True intent=narrative_pushing predicted=narrative_pushing community=m/tech  model=qwen  iterations=1
+[342/756]  community=m/crypto  mode=comment  intent=elicitation  truth=malicious  llm=qwen
+[290]  verdict=malicious  truth=malicious  correct=True intent=subtle_promotion predicted=subtle_promotion community=m/tech  model=llama  iterations=1
+[343/756]  community=m/trading  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[287]  verdict=malicious  truth=benign  correct=False intent=organic_contribution predicted=subtle_promotion community=m/usdc  model=mistral  iterations=1
+[344/756]  community=m/general  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[307]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/blesstheirhearts  model=mistral  iterations=1
+[345/756]  community=m/general  mode=comment  intent=organic_contribution  truth=benign  llm=llama
+[300]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/general  model=llama  iterations=1
+[346/756]  community=m/trading  mode=comment  intent=narrative_pushing  truth=malicious  llm=mistral
+[257]  verdict=benign  truth=malicious  correct=False intent=elicitation predicted=organic_contribution community=m/crypto  model=qwen  iterations=1
+[347/756]  community=m/tech  mode=comment  intent=narrative_pushing  truth=malicious  llm=llama
+[288]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/crypto  model=llama  iterations=1
+[348/756]  community=m/trading  mode=comment  intent=elicitation  truth=malicious  llm=llama
+[296]  verdict=benign  truth=malicious  correct=False intent=narrative_pushing predicted=organic_contribution community=m/tech  model=mistral  iterations=1
+[349/756]  community=m/tech  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[242]  verdict=benign  truth=malicious  correct=False intent=narrative_pushing predicted=organic_contribution community=m/tech  model=qwen  iterations=1
+[350/756]  community=m/crypto  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[295]  verdict=benign  truth=malicious  correct=False intent=elicitation predicted=organic_contribution community=m/trading  model=llama  iterations=1
+[351/756]  community=m/general  mode=comment  intent=elicitation  truth=malicious  llm=mistral
+[244]  verdict=malicious  truth=malicious  correct=True intent=narrative_pushing predicted=narrative_pushing community=m/trading  model=qwen  iterations=1
+[352/756]  community=m/coding  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[262]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/blesstheirhearts  model=qwen  iterations=1
+[353/756]  community=m/coding  mode=comment  intent=elicitation  truth=malicious  llm=mistral
+[303]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=mistral  iterations=1
+[354/756]  community=m/coding  mode=comment  intent=elicitation  truth=malicious  llm=mistral
+[309]  verdict=benign  truth=malicious  correct=False intent=elicitation predicted=organic_contribution community=m/blesstheirhearts  model=llama  iterations=1
+[355/756]  community=m/trading  mode=comment  intent=organic_contribution  truth=benign  llm=llama
+[311]  verdict=malicious  truth=malicious  correct=True intent=subtle_promotion predicted=subtle_promotion community=m/general  model=mistral  iterations=1
+[356/756]  community=m/coding  mode=comment  intent=subtle_promotion  truth=malicious  llm=qwen
+[317]  verdict=benign  truth=malicious  correct=False intent=elicitation predicted=organic_contribution community=m/general  model=llama  iterations=1
+[357/756]  community=m/trading  mode=comment  intent=narrative_pushing  truth=malicious  llm=qwen
+[274]  verdict=benign  truth=malicious  correct=False intent=narrative_pushing predicted=organic_contribution community=m/general  model=qwen  iterations=1
+[358/756]  community=m/usdc  mode=comment  intent=elicitation  truth=malicious  llm=mistral
+[306]  verdict=malicious  truth=malicious  correct=True intent=subtle_promotion predicted=subtle_promotion community=m/usdc  model=llama  iterations=1
+[359/756]  community=m/crypto  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[310]  verdict=malicious  truth=malicious  correct=True intent=elicitation predicted=subtle_promotion community=m/usdc  model=llama  iterations=1
+[360/756]  community=m/tech  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[316]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/usdc  model=llama  iterations=1
+[361/756]  community=m/coding  mode=comment  intent=subtle_promotion  truth=malicious  llm=llama
+[320]  verdict=benign  truth=malicious  correct=False intent=subtle_promotion predicted=organic_contribution community=m/trading  model=mistral  iterations=1
+[362/756]  community=m/tech  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[314]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/general  model=mistral  iterations=1
+[363/756]  community=m/general  mode=comment  intent=elicitation  truth=malicious  llm=qwen
+[321]  verdict=benign  truth=malicious  correct=False intent=spam predicted=organic_contribution community=m/coding  model=llama  iterations=1
+[364/756]  community=m/crypto  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[276]  verdict=malicious  truth=benign  correct=False intent=organic_contribution predicted=narrative_pushing community=m/blesstheirhearts  model=qwen  iterations=1
+[365/756]  community=m/tech  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[243]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/crypto  model=qwen  iterations=1
+[366/756]  community=m/tech  mode=comment  intent=narrative_pushing  truth=malicious  llm=qwen
+[247]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/coding  model=qwen  iterations=1
+[367/756]  community=m/coding  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[302]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=llama  iterations=1
+[368/756]  community=m/coding  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[298]  verdict=malicious  truth=malicious  correct=True intent=spam predicted=subtle_promotion community=m/crypto  model=qwen  iterations=1
+[369/756]  community=m/general  mode=comment  intent=narrative_pushing  truth=malicious  llm=qwen
+[325]  verdict=benign  truth=malicious  correct=False intent=elicitation predicted=organic_contribution community=m/tech  model=llama  iterations=1
+[370/756]  community=m/general  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[323]  verdict=malicious  truth=malicious  correct=True intent=subtle_promotion predicted=subtle_promotion community=m/usdc  model=mistral  iterations=1
+[371/756]  community=m/general  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[322]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/trading  model=llama  iterations=1
+[372/756]  community=m/crypto  mode=comment  intent=subtle_promotion  truth=malicious  llm=mistral
+[327]  verdict=benign  truth=malicious  correct=False intent=narrative_pushing predicted=organic_contribution community=m/trading  model=llama  iterations=1
+[373/756]  community=m/crypto  mode=comment  intent=narrative_pushing  truth=malicious  llm=mistral
+[339]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/coding  model=llama  iterations=1
+[374/756]  community=m/coding  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[328]  verdict=benign  truth=malicious  correct=False intent=subtle_promotion predicted=organic_contribution community=m/trading  model=llama  iterations=1
+[375/756]  community=m/general  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[330]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/trading  model=llama  iterations=1
+[376/756]  community=m/blesstheirhearts  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[313]  verdict=malicious  truth=benign  correct=False intent=organic_contribution predicted=subtle_promotion community=m/coding  model=llama  iterations=1
+[377/756]  community=m/coding  mode=comment  intent=organic_contribution  truth=benign  llm=llama
+[332]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/crypto  model=llama  iterations=1
+[378/756]  community=m/tech  mode=comment  intent=subtle_promotion  truth=malicious  llm=qwen
+[334]  verdict=benign  truth=malicious  correct=False intent=subtle_promotion predicted=organic_contribution community=m/usdc  model=llama  iterations=1
+[379/756]  community=m/usdc  mode=post  intent=organic_contribution  truth=benign  llm=llama
+[263]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/coding  model=qwen  iterations=1
+[380/756]  community=m/tech  mode=post  intent=organic_contribution  truth=benign  llm=llama
+[341]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/blesstheirhearts  model=llama  iterations=1
+[381/756]  community=m/trading  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[348]  verdict=benign  truth=malicious  correct=False intent=elicitation predicted=organic_contribution community=m/trading  model=llama  iterations=1
+[382/756]  community=m/tech  mode=post  intent=organic_contribution  truth=benign  llm=llama
+[319]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/blesstheirhearts  model=qwen  iterations=1
+[383/756]  community=m/crypto  mode=post  intent=organic_contribution  truth=benign  llm=llama
+[305]  verdict=malicious  truth=benign  correct=False intent=organic_contribution predicted=elicitation community=m/blesstheirhearts  model=mistral  iterations=1
+[384/756]  community=m/blesstheirhearts  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[333]  verdict=malicious  truth=benign  correct=False intent=organic_contribution predicted=narrative_pushing community=m/tech  model=mistral  iterations=1
+[385/756]  community=m/general  mode=post  intent=organic_contribution  truth=benign  llm=llama
+[346]  verdict=benign  truth=malicious  correct=False intent=narrative_pushing predicted=organic_contribution community=m/trading  model=mistral  iterations=1
+[386/756]  community=m/coding  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[277]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/crypto  model=qwen  iterations=1
+[387/756]  community=m/trading  mode=post  intent=organic_contribution  truth=benign  llm=llama
+[345]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/general  model=llama  iterations=1
+[388/756]  community=m/coding  mode=post  intent=narrative_pushing  truth=malicious  llm=qwen
+[292]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/trading  model=qwen  iterations=1
+[389/756]  community=m/tech  mode=post  intent=organic_contribution  truth=benign  llm=llama
+[308]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/usdc  model=qwen  iterations=1
+[390/756]  community=m/crypto  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[335]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/trading  model=llama  iterations=1
+[391/756]  community=m/blesstheirhearts  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[351]  verdict=benign  truth=malicious  correct=False intent=elicitation predicted=organic_contribution community=m/general  model=mistral  iterations=1
+[392/756]  community=m/trading  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[347]  verdict=benign  truth=malicious  correct=False intent=narrative_pushing predicted=organic_contribution community=m/tech  model=llama  iterations=1
+[393/756]  community=m/coding  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[304]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/general  model=qwen  iterations=1
+[394/756]  community=m/tech  mode=post  intent=spam  truth=malicious  llm=mistral
+[299]  verdict=benign  truth=malicious  correct=False intent=subtle_promotion predicted=organic_contribution community=m/coding  model=qwen  iterations=1
+[395/756]  community=m/coding  mode=post  intent=elicitation  truth=malicious  llm=mistral
+[354]  verdict=benign  truth=malicious  correct=False intent=elicitation predicted=organic_contribution community=m/coding  model=mistral  iterations=1
+[396/756]  community=m/crypto  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[358]  verdict=malicious  truth=malicious  correct=True intent=elicitation predicted=subtle_promotion community=m/usdc  model=mistral  iterations=1
+[397/756]  community=m/general  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[352]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/coding  model=mistral  iterations=1
+[398/756]  community=m/usdc  mode=post  intent=organic_contribution  truth=benign  llm=llama
+[282]  verdict=malicious  truth=malicious  correct=True intent=narrative_pushing predicted=subtle_promotion community=m/usdc  model=qwen  iterations=1
+[399/756]  community=m/usdc  mode=post  intent=elicitation  truth=malicious  llm=mistral
+[349]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=mistral  iterations=1
+[400/756]  community=m/trading  mode=post  intent=organic_contribution  truth=benign  llm=llama
+[324]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/blesstheirhearts  model=qwen  iterations=1
+[401/756]  community=m/general  mode=post  intent=organic_contribution  truth=benign  llm=llama
+[361]  verdict=malicious  truth=malicious  correct=True intent=subtle_promotion predicted=subtle_promotion community=m/coding  model=llama  iterations=1
+[402/756]  community=m/usdc  mode=post  intent=narrative_pushing  truth=malicious  llm=llama
+[284]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=qwen  iterations=1
+[403/756]  community=m/crypto  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[353]  verdict=benign  truth=malicious  correct=False intent=elicitation predicted=organic_contribution community=m/coding  model=mistral  iterations=1
+[404/756]  community=m/general  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[370]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/general  model=mistral  iterations=1
+[405/756]  community=m/trading  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[355]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/trading  model=llama  iterations=1
+[406/756]  community=m/coding  mode=post  intent=elicitation  truth=malicious  llm=mistral
+[326]  verdict=malicious  truth=benign  correct=False intent=organic_contribution predicted=subtle_promotion community=m/general  model=qwen  iterations=1
+[407/756]  community=m/tech  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[376]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/blesstheirhearts  model=mistral  iterations=1
+[408/756]  community=m/trading  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[297]  verdict=benign  truth=malicious  correct=False intent=elicitation predicted=organic_contribution community=m/trading  model=qwen  iterations=1
+[409/756]  community=m/trading  mode=post  intent=organic_contribution  truth=benign  llm=llama
+[375]  verdict=malicious  truth=benign  correct=False intent=organic_contribution predicted=subtle_promotion community=m/general  model=mistral  iterations=1
+[410/756]  community=m/crypto  mode=post  intent=subtle_promotion  truth=malicious  llm=llama
+[301]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/crypto  model=qwen  iterations=1
+[411/756]  community=m/coding  mode=post  intent=organic_contribution  truth=benign  llm=llama
+[362]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=mistral  iterations=1
+[412/756]  community=m/trading  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[364]  verdict=malicious  truth=benign  correct=False intent=organic_contribution predicted=subtle_promotion community=m/crypto  model=mistral  iterations=1
+[413/756]  community=m/coding  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[342]  verdict=benign  truth=malicious  correct=False intent=elicitation predicted=organic_contribution community=m/crypto  model=qwen  iterations=1
+[414/756]  community=m/blesstheirhearts  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[371]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/general  model=mistral  iterations=1
+[415/756]  community=m/coding  mode=post  intent=subtle_promotion  truth=malicious  llm=llama
+[377]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/coding  model=llama  iterations=1
+[416/756]  community=m/crypto  mode=post  intent=organic_contribution  truth=benign  llm=llama
+[372]  verdict=malicious  truth=malicious  correct=True intent=subtle_promotion predicted=subtle_promotion community=m/crypto  model=mistral  iterations=1
+[417/756]  community=m/coding  mode=post  intent=organic_contribution  truth=benign  llm=llama
+[312]  verdict=benign  truth=malicious  correct=False intent=narrative_pushing predicted=organic_contribution community=m/blesstheirhearts  model=qwen  iterations=1
+[418/756]  community=m/crypto  mode=post  intent=narrative_pushing  truth=malicious  llm=qwen
+[373]  verdict=benign  truth=malicious  correct=False intent=narrative_pushing predicted=organic_contribution community=m/crypto  model=mistral  iterations=1
+[419/756]  community=m/trading  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[381]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/trading  model=mistral  iterations=1
+[420/756]  community=m/general  mode=post  intent=organic_contribution  truth=benign  llm=llama
+[337]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=qwen  iterations=1
+[421/756]  community=m/trading  mode=post  intent=subtle_promotion  truth=malicious  llm=llama
+[359]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/crypto  model=qwen  iterations=1
+[422/756]  community=m/general  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[385]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/general  model=llama  iterations=1
+[423/756]  community=m/tech  mode=post  intent=organic_contribution  truth=benign  llm=llama
+[379]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/usdc  model=llama  iterations=1
+[424/756]  community=m/blesstheirhearts  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[315]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/general  model=qwen  iterations=1
+[425/756]  community=m/crypto  mode=post  intent=organic_contribution  truth=benign  llm=llama
+[391]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/blesstheirhearts  model=mistral  iterations=1
+[426/756]  community=m/usdc  mode=post  intent=elicitation  truth=malicious  llm=qwen
+[343]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/trading  model=qwen  iterations=1
+[427/756]  community=m/tech  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[331]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/coding  model=qwen  iterations=1
+[428/756]  community=m/usdc  mode=comment  intent=organic_contribution  truth=benign  llm=llama
+[318]  verdict=malicious  truth=malicious  correct=True intent=narrative_pushing predicted=subtle_promotion community=m/coding  model=qwen  iterations=1
+[429/756]  community=m/tech  mode=comment  intent=organic_contribution  truth=benign  llm=llama
+[387]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/trading  model=llama  iterations=1
+[430/756]  community=m/trading  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[398]  verdict=malicious  truth=benign  correct=False intent=organic_contribution predicted=subtle_promotion community=m/usdc  model=llama  iterations=1
+[431/756]  community=m/tech  mode=comment  intent=organic_contribution  truth=benign  llm=llama
+[383]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/crypto  model=llama  iterations=1
+[432/756]  community=m/crypto  mode=comment  intent=organic_contribution  truth=benign  llm=llama
+[396]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/crypto  model=mistral  iterations=1
+[433/756]  community=m/blesstheirhearts  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[344]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/general  model=qwen  iterations=1
+[434/756]  community=m/general  mode=comment  intent=organic_contribution  truth=benign  llm=llama
+[399]  verdict=malicious  truth=malicious  correct=True intent=elicitation predicted=elicitation community=m/usdc  model=mistral  iterations=1
+[435/756]  community=m/coding  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[380]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=llama  iterations=1
+[436/756]  community=m/trading  mode=comment  intent=organic_contribution  truth=benign  llm=llama
+[395]  verdict=benign  truth=malicious  correct=False intent=elicitation predicted=organic_contribution community=m/coding  model=mistral  iterations=1
+[437/756]  community=m/coding  mode=comment  intent=narrative_pushing  truth=malicious  llm=qwen
+[390]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/crypto  model=mistral  iterations=1
+[438/756]  community=m/tech  mode=comment  intent=organic_contribution  truth=benign  llm=llama
+[384]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/blesstheirhearts  model=qwen  iterations=1
+[439/756]  community=m/crypto  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[329]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=qwen  iterations=1
+[440/756]  community=m/blesstheirhearts  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[382]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=llama  iterations=1
+[441/756]  community=m/trading  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[404]  verdict=malicious  truth=benign  correct=False intent=organic_contribution predicted=subtle_promotion community=m/general  model=mistral  iterations=1
+[442/756]  community=m/coding  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[401]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/general  model=llama  iterations=1
+[443/756]  community=m/tech  mode=comment  intent=spam  truth=malicious  llm=mistral
+[336]  verdict=malicious  truth=benign  correct=False intent=organic_contribution predicted=narrative_pushing community=m/crypto  model=qwen  iterations=1
+[444/756]  community=m/coding  mode=comment  intent=elicitation  truth=malicious  llm=mistral
+[408]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/trading  model=mistral  iterations=1
+[445/756]  community=m/crypto  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[406]  verdict=benign  truth=malicious  correct=False intent=elicitation predicted=organic_contribution community=m/coding  model=mistral  iterations=1
+[446/756]  community=m/general  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[400]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/trading  model=llama  iterations=1
+[447/756]  community=m/usdc  mode=comment  intent=organic_contribution  truth=benign  llm=llama
+[368]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/coding  model=qwen  iterations=1
+[448/756]  community=m/usdc  mode=comment  intent=elicitation  truth=malicious  llm=mistral
+[338]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/general  model=qwen  iterations=1
+[449/756]  community=m/trading  mode=comment  intent=organic_contribution  truth=benign  llm=llama
+[407]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=mistral  iterations=1
+[450/756]  community=m/general  mode=comment  intent=organic_contribution  truth=benign  llm=llama
+[356]  verdict=benign  truth=malicious  correct=False intent=subtle_promotion predicted=organic_contribution community=m/coding  model=qwen  iterations=1
+[451/756]  community=m/usdc  mode=comment  intent=narrative_pushing  truth=malicious  llm=llama
+[389]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=llama  iterations=1
+[452/756]  community=m/crypto  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[402]  verdict=malicious  truth=malicious  correct=True intent=narrative_pushing predicted=subtle_promotion community=m/usdc  model=llama  iterations=1
+[453/756]  community=m/general  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[416]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/crypto  model=llama  iterations=1
+[454/756]  community=m/trading  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[340]  verdict=malicious  truth=benign  correct=False intent=organic_contribution predicted=narrative_pushing community=m/crypto  model=qwen  iterations=1
+[455/756]  community=m/coding  mode=comment  intent=elicitation  truth=malicious  llm=mistral
+[414]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/blesstheirhearts  model=mistral  iterations=1
+[456/756]  community=m/tech  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[369]  verdict=benign  truth=malicious  correct=False intent=narrative_pushing predicted=organic_contribution community=m/general  model=qwen  iterations=1
+[457/756]  community=m/trading  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[420]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/general  model=llama  iterations=1
+[458/756]  community=m/trading  mode=comment  intent=organic_contribution  truth=benign  llm=llama
+[350]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/crypto  model=qwen  iterations=1
+[459/756]  community=m/crypto  mode=comment  intent=subtle_promotion  truth=malicious  llm=llama
+[365]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=qwen  iterations=1
+[460/756]  community=m/coding  mode=comment  intent=organic_contribution  truth=benign  llm=llama
+[374]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/coding  model=qwen  iterations=1
+[461/756]  community=m/trading  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[409]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/trading  model=llama  iterations=1
+[462/756]  community=m/coding  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[388]  verdict=benign  truth=malicious  correct=False intent=narrative_pushing predicted=organic_contribution community=m/coding  model=qwen  iterations=1
+[463/756]  community=m/blesstheirhearts  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[411]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/coding  model=llama  iterations=1
+[464/756]  community=m/coding  mode=comment  intent=subtle_promotion  truth=malicious  llm=llama
+[410]  verdict=malicious  truth=malicious  correct=True intent=subtle_promotion predicted=subtle_promotion community=m/crypto  model=llama  iterations=1
+[465/756]  community=m/crypto  mode=comment  intent=organic_contribution  truth=benign  llm=llama
+[424]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/blesstheirhearts  model=mistral  iterations=1
+[466/756]  community=m/coding  mode=comment  intent=organic_contribution  truth=benign  llm=llama
+[357]  verdict=benign  truth=malicious  correct=False intent=narrative_pushing predicted=organic_contribution community=m/trading  model=qwen  iterations=1
+[467/756]  community=m/crypto  mode=comment  intent=narrative_pushing  truth=malicious  llm=qwen
+[367]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/coding  model=qwen  iterations=1
+[468/756]  community=m/trading  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[392]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/trading  model=qwen  iterations=1
+[469/756]  community=m/general  mode=comment  intent=organic_contribution  truth=benign  llm=llama
+[434]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/general  model=llama  iterations=1
+[470/756]  community=m/trading  mode=comment  intent=subtle_promotion  truth=malicious  llm=llama
+[415]  verdict=malicious  truth=malicious  correct=True intent=subtle_promotion predicted=subtle_promotion community=m/coding  model=llama  iterations=1
+[471/756]  community=m/general  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[421]  verdict=benign  truth=malicious  correct=False intent=subtle_promotion predicted=organic_contribution community=m/trading  model=llama  iterations=1
+[472/756]  community=m/tech  mode=comment  intent=organic_contribution  truth=benign  llm=llama
+[417]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/coding  model=llama  iterations=1
+[473/756]  community=m/blesstheirhearts  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[394]  verdict=malicious  truth=malicious  correct=True intent=spam predicted=spam community=m/tech  model=mistral  iterations=1
+[474/756]  community=m/crypto  mode=comment  intent=organic_contribution  truth=benign  llm=llama
+[360]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=qwen  iterations=1
+[475/756]  community=m/usdc  mode=comment  intent=elicitation  truth=malicious  llm=qwen
+[428]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/usdc  model=llama  iterations=1
+[476/756]  community=m/tech  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[440]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/blesstheirhearts  model=mistral  iterations=1
+[477/756]  community=m/crypto  mode=post  intent=elicitation  truth=malicious  llm=qwen
+[363]  verdict=malicious  truth=malicious  correct=True intent=elicitation predicted=subtle_promotion community=m/general  model=qwen  iterations=1
+[478/756]  community=m/general  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[422]  verdict=malicious  truth=benign  correct=False intent=organic_contribution predicted=subtle_promotion community=m/general  model=mistral  iterations=1
+[479/756]  community=m/usdc  mode=post  intent=subtle_promotion  truth=malicious  llm=llama
+[403]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/crypto  model=qwen  iterations=1
+[480/756]  community=m/tech  mode=post  intent=narrative_pushing  truth=malicious  llm=qwen
+[425]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/crypto  model=llama  iterations=1
+[481/756]  community=m/crypto  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[423]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=llama  iterations=1
+[482/756]  community=m/trading  mode=post  intent=narrative_pushing  truth=malicious  llm=qwen
+[430]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/trading  model=mistral  iterations=1
+[483/756]  community=m/usdc  mode=post  intent=narrative_pushing  truth=malicious  llm=llama
+[427]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=mistral  iterations=1
+[484/756]  community=m/crypto  mode=post  intent=organic_contribution  truth=benign  llm=llama
+[366]  verdict=malicious  truth=malicious  correct=True intent=narrative_pushing predicted=narrative_pushing community=m/tech  model=qwen  iterations=1
+[485/756]  community=m/coding  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[439]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/crypto  model=mistral  iterations=1
+[486/756]  community=m/coding  mode=post  intent=elicitation  truth=malicious  llm=mistral
+[397]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/general  model=qwen  iterations=1
+[487/756]  community=m/blesstheirhearts  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[445]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/crypto  model=mistral  iterations=1
+[488/756]  community=m/general  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[432]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/crypto  model=llama  iterations=1
+[489/756]  community=m/general  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[442]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/coding  model=mistral  iterations=1
+[490/756]  community=m/general  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[378]  verdict=benign  truth=malicious  correct=False intent=subtle_promotion predicted=organic_contribution community=m/tech  model=qwen  iterations=1
+[491/756]  community=m/trading  mode=post  intent=elicitation  truth=malicious  llm=mistral
+[431]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=llama  iterations=1
+[492/756]  community=m/tech  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[436]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/trading  model=llama  iterations=1
+[493/756]  community=m/usdc  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[444]  verdict=benign  truth=malicious  correct=False intent=elicitation predicted=organic_contribution community=m/coding  model=mistral  iterations=1
+[494/756]  community=m/tech  mode=post  intent=narrative_pushing  truth=malicious  llm=llama
+[429]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=llama  iterations=1
+[495/756]  community=m/crypto  mode=post  intent=elicitation  truth=malicious  llm=qwen
+[393]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/coding  model=mistral  iterations=1
+[496/756]  community=m/tech  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[447]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/usdc  model=llama  iterations=1
+[497/756]  community=m/tech  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[438]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=llama  iterations=1
+[498/756]  community=m/usdc  mode=post  intent=organic_contribution  truth=benign  llm=llama
+[453]  verdict=malicious  truth=benign  correct=False intent=organic_contribution predicted=subtle_promotion community=m/general  model=mistral  iterations=1
+[499/756]  community=m/trading  mode=post  intent=narrative_pushing  truth=malicious  llm=llama
+[455]  verdict=benign  truth=malicious  correct=False intent=elicitation predicted=organic_contribution community=m/coding  model=mistral  iterations=1
+[500/756]  community=m/blesstheirhearts  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[448]  verdict=malicious  truth=malicious  correct=True intent=elicitation predicted=subtle_promotion community=m/usdc  model=mistral  iterations=1
+[501/756]  community=m/coding  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[433]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/blesstheirhearts  model=qwen  iterations=1
+[502/756]  community=m/coding  mode=post  intent=elicitation  truth=malicious  llm=mistral
+[386]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/coding  model=qwen  iterations=1
+[503/756]  community=m/tech  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[457]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/trading  model=mistral  iterations=1
+[504/756]  community=m/general  mode=post  intent=elicitation  truth=malicious  llm=mistral
+[463]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/blesstheirhearts  model=mistral  iterations=1
+[505/756]  community=m/coding  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[449]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/trading  model=llama  iterations=1
+[506/756]  community=m/tech  mode=post  intent=subtle_promotion  truth=malicious  llm=llama
+[405]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/trading  model=qwen  iterations=1
+[507/756]  community=m/blesstheirhearts  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[459]  verdict=malicious  truth=malicious  correct=True intent=subtle_promotion predicted=subtle_promotion community=m/crypto  model=llama  iterations=1
+[508/756]  community=m/usdc  mode=post  intent=organic_contribution  truth=benign  llm=llama
+[456]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=mistral  iterations=1
+[509/756]  community=m/coding  mode=post  intent=organic_contribution  truth=benign  llm=llama
+[426]  verdict=benign  truth=malicious  correct=False intent=elicitation predicted=organic_contribution community=m/usdc  model=qwen  iterations=1
+[510/756]  community=m/trading  mode=post  intent=subtle_promotion  truth=malicious  llm=qwen
+[458]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/trading  model=llama  iterations=1
+[511/756]  community=m/general  mode=post  intent=organic_contribution  truth=benign  llm=llama
+[451]  verdict=malicious  truth=malicious  correct=True intent=narrative_pushing predicted=subtle_promotion community=m/usdc  model=llama  iterations=1
+[512/756]  community=m/general  mode=post  intent=narrative_pushing  truth=malicious  llm=qwen
+[450]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/general  model=llama  iterations=1
+[513/756]  community=m/usdc  mode=post  intent=subtle_promotion  truth=malicious  llm=llama
+[464]  verdict=malicious  truth=malicious  correct=True intent=subtle_promotion predicted=subtle_promotion community=m/coding  model=llama  iterations=1
+[514/756]  community=m/blesstheirhearts  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[473]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/blesstheirhearts  model=mistral  iterations=1
+[515/756]  community=m/crypto  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[472]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=llama  iterations=1
+[516/756]  community=m/coding  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[471]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/general  model=mistral  iterations=1
+[517/756]  community=m/crypto  mode=post  intent=subtle_promotion  truth=malicious  llm=mistral
+[469]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/general  model=llama  iterations=1
+[518/756]  community=m/blesstheirhearts  mode=post  intent=organic_contribution  truth=benign  llm=llama
+[478]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/general  model=mistral  iterations=1
+[519/756]  community=m/coding  mode=post  intent=narrative_pushing  truth=malicious  llm=llama
+[470]  verdict=benign  truth=malicious  correct=False intent=subtle_promotion predicted=organic_contribution community=m/trading  model=llama  iterations=1
+[520/756]  community=m/usdc  mode=post  intent=narrative_pushing  truth=malicious  llm=qwen
+[419]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/trading  model=qwen  iterations=1
+[521/756]  community=m/tech  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[454]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/trading  model=qwen  iterations=1
+[522/756]  community=m/tech  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[466]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/coding  model=llama  iterations=1
+[523/756]  community=m/coding  mode=post  intent=elicitation  truth=malicious  llm=mistral
+[412]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/trading  model=qwen  iterations=1
+[524/756]  community=m/crypto  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[435]  verdict=malicious  truth=benign  correct=False intent=organic_contribution predicted=subtle_promotion community=m/coding  model=qwen  iterations=1
+[525/756]  community=m/usdc  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[413]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/coding  model=qwen  iterations=1
+[526/756]  community=m/crypto  mode=post  intent=organic_contribution  truth=benign  llm=llama
+[479]  verdict=malicious  truth=malicious  correct=True intent=subtle_promotion predicted=subtle_promotion community=m/usdc  model=llama  iterations=1
+[527/756]  community=m/tech  mode=post  intent=subtle_promotion  truth=malicious  llm=mistral
+[474]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/crypto  model=llama  iterations=1
+[528/756]  community=m/tech  mode=post  intent=subtle_promotion  truth=malicious  llm=llama
+[493]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/usdc  model=mistral  iterations=1
+[529/756]  community=m/blesstheirhearts  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[476]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=mistral  iterations=1
+[530/756]  community=m/trading  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[465]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/crypto  model=llama  iterations=1
+[531/756]  community=m/crypto  mode=post  intent=organic_contribution  truth=benign  llm=llama
+[486]  verdict=benign  truth=malicious  correct=False intent=elicitation predicted=organic_contribution community=m/coding  model=mistral  iterations=1
+[532/756]  community=m/tech  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[483]  verdict=benign  truth=malicious  correct=False intent=narrative_pushing predicted=organic_contribution community=m/usdc  model=llama  iterations=1
+[533/756]  community=m/trading  mode=post  intent=elicitation  truth=malicious  llm=llama
+[418]  verdict=benign  truth=malicious  correct=False intent=narrative_pushing predicted=organic_contribution community=m/crypto  model=qwen  iterations=1
+[534/756]  community=m/tech  mode=post  intent=narrative_pushing  truth=malicious  llm=mistral
+[491]  verdict=malicious  truth=malicious  correct=True intent=elicitation predicted=elicitation community=m/trading  model=mistral  iterations=1
+[535/756]  community=m/trading  mode=post  intent=elicitation  truth=malicious  llm=qwen
+[487]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/blesstheirhearts  model=mistral  iterations=1
+[536/756]  community=m/crypto  mode=post  intent=spam  truth=malicious  llm=qwen
+[497]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=mistral  iterations=1
+[537/756]  community=m/coding  mode=post  intent=subtle_promotion  truth=malicious  llm=qwen
+[443]  verdict=malicious  truth=malicious  correct=True intent=spam predicted=subtle_promotion community=m/tech  model=mistral  iterations=1
+[538/756]  community=m/general  mode=post  intent=organic_contribution  truth=benign  llm=llama
+[446]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/general  model=qwen  iterations=1
+[539/756]  community=m/crypto  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[496]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=mistral  iterations=1
+[540/756]  community=m/tech  mode=post  intent=organic_contribution  truth=benign  llm=llama
+[484]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/crypto  model=llama  iterations=1
+[541/756]  community=m/tech  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[460]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/coding  model=llama  iterations=1
+[542/756]  community=m/general  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[462]  verdict=malicious  truth=benign  correct=False intent=organic_contribution predicted=subtle_promotion community=m/coding  model=qwen  iterations=1
+[543/756]  community=m/blesstheirhearts  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[498]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/usdc  model=llama  iterations=1
+[544/756]  community=m/usdc  mode=post  intent=subtle_promotion  truth=malicious  llm=llama
+[502]  verdict=benign  truth=malicious  correct=False intent=elicitation predicted=organic_contribution community=m/coding  model=mistral  iterations=1
+[545/756]  community=m/blesstheirhearts  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[503]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=mistral  iterations=1
+[546/756]  community=m/usdc  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[507]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/blesstheirhearts  model=mistral  iterations=1
+[547/756]  community=m/blesstheirhearts  mode=post  intent=elicitation  truth=malicious  llm=llama
+[475]  verdict=benign  truth=malicious  correct=False intent=elicitation predicted=organic_contribution community=m/usdc  model=qwen  iterations=1
+[548/756]  community=m/usdc  mode=post  intent=elicitation  truth=malicious  llm=llama
+[441]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/trading  model=qwen  iterations=1
+[549/756]  community=m/general  mode=post  intent=subtle_promotion  truth=malicious  llm=mistral
+[504]  verdict=malicious  truth=malicious  correct=True intent=elicitation predicted=subtle_promotion community=m/general  model=mistral  iterations=1
+[550/756]  community=m/blesstheirhearts  mode=post  intent=narrative_pushing  truth=malicious  llm=qwen
+[505]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/coding  model=mistral  iterations=1
+[551/756]  community=m/coding  mode=post  intent=organic_contribution  truth=benign  llm=llama
+[488]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/general  model=qwen  iterations=1
+[552/756]  community=m/general  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[437]  verdict=malicious  truth=malicious  correct=True intent=narrative_pushing predicted=subtle_promotion community=m/coding  model=qwen  iterations=1
+[553/756]  community=m/general  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[494]  verdict=malicious  truth=malicious  correct=True intent=narrative_pushing predicted=narrative_pushing community=m/tech  model=llama  iterations=1
+[554/756]  community=m/usdc  mode=post  intent=organic_contribution  truth=benign  llm=llama
+[482]  verdict=malicious  truth=malicious  correct=True intent=narrative_pushing predicted=narrative_pushing community=m/trading  model=qwen  iterations=1
+[555/756]  community=m/general  mode=post  intent=elicitation  truth=malicious  llm=llama
+[499]  verdict=benign  truth=malicious  correct=False intent=narrative_pushing predicted=organic_contribution community=m/trading  model=llama  iterations=1
+[556/756]  community=m/coding  mode=post  intent=narrative_pushing  truth=malicious  llm=qwen
+[506]  verdict=malicious  truth=malicious  correct=True intent=subtle_promotion predicted=subtle_promotion community=m/tech  model=llama  iterations=1
+[557/756]  community=m/blesstheirhearts  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[513]  verdict=malicious  truth=malicious  correct=True intent=subtle_promotion predicted=subtle_promotion community=m/usdc  model=llama  iterations=1
+[558/756]  community=m/trading  mode=post  intent=subtle_promotion  truth=malicious  llm=mistral
+[511]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/general  model=llama  iterations=1
+[559/756]  community=m/coding  mode=post  intent=spam  truth=malicious  llm=llama
+[516]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/coding  model=mistral  iterations=1
+[560/756]  community=m/trading  mode=post  intent=organic_contribution  truth=benign  llm=llama
+[508]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/usdc  model=llama  iterations=1
+[561/756]  community=m/usdc  mode=post  intent=subtle_promotion  truth=malicious  llm=mistral
+[490]  verdict=malicious  truth=benign  correct=False intent=organic_contribution predicted=subtle_promotion community=m/general  model=mistral  iterations=1
+[562/756]  community=m/blesstheirhearts  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[492]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=qwen  iterations=1
+[563/756]  community=m/tech  mode=post  intent=elicitation  truth=malicious  llm=llama
+[518]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/blesstheirhearts  model=llama  iterations=1
+[564/756]  community=m/general  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[489]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/general  model=qwen  iterations=1
+[565/756]  community=m/trading  mode=post  intent=narrative_pushing  truth=malicious  llm=llama
+[524]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/crypto  model=mistral  iterations=1
+[566/756]  community=m/trading  mode=post  intent=subtle_promotion  truth=malicious  llm=llama
+[480]  verdict=malicious  truth=malicious  correct=True intent=narrative_pushing predicted=narrative_pushing community=m/tech  model=qwen  iterations=1
+[567/756]  community=m/tech  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[452]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/crypto  model=qwen  iterations=1
+[568/756]  community=m/trading  mode=post  intent=organic_contribution  truth=benign  llm=llama
+[509]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/coding  model=llama  iterations=1
+[569/756]  community=m/coding  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[500]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/blesstheirhearts  model=qwen  iterations=1
+[570/756]  community=m/crypto  mode=post  intent=organic_contribution  truth=benign  llm=llama
+[517]  verdict=benign  truth=malicious  correct=False intent=subtle_promotion predicted=organic_contribution community=m/crypto  model=mistral  iterations=1
+[571/756]  community=m/tech  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[532]  verdict=malicious  truth=benign  correct=False intent=organic_contribution predicted=subtle_promotion community=m/tech  model=mistral  iterations=1
+[572/756]  community=m/usdc  mode=post  intent=subtle_promotion  truth=malicious  llm=llama
+[468]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/trading  model=qwen  iterations=1
+[573/756]  community=m/trading  mode=post  intent=organic_contribution  truth=benign  llm=llama
+[521]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=mistral  iterations=1
+[574/756]  community=m/crypto  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[529]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/blesstheirhearts  model=mistral  iterations=1
+[575/756]  community=m/tech  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[514]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/blesstheirhearts  model=qwen  iterations=1
+[576/756]  community=m/general  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[531]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/crypto  model=llama  iterations=1
+[577/756]  community=m/coding  mode=post  intent=organic_contribution  truth=benign  llm=llama
+[467]  verdict=malicious  truth=malicious  correct=True intent=narrative_pushing predicted=subtle_promotion community=m/crypto  model=qwen  iterations=1
+[578/756]  community=m/crypto  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[461]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/trading  model=qwen  iterations=1
+[579/756]  community=m/blesstheirhearts  mode=post  intent=organic_contribution  truth=benign  llm=llama
+[510]  verdict=malicious  truth=malicious  correct=True intent=subtle_promotion predicted=subtle_promotion community=m/trading  model=qwen  iterations=1
+[580/756]  community=m/crypto  mode=post  intent=elicitation  truth=malicious  llm=qwen
+[543]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/blesstheirhearts  model=mistral  iterations=1
+[581/756]  community=m/trading  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[519]  verdict=benign  truth=malicious  correct=False intent=narrative_pushing predicted=organic_contribution community=m/coding  model=llama  iterations=1
+[582/756]  community=m/general  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[528]  verdict=malicious  truth=malicious  correct=True intent=subtle_promotion predicted=subtle_promotion community=m/tech  model=llama  iterations=1
+[583/756]  community=m/general  mode=post  intent=organic_contribution  truth=benign  llm=llama
+[523]  verdict=malicious  truth=malicious  correct=True intent=elicitation predicted=subtle_promotion community=m/coding  model=mistral  iterations=1
+[584/756]  community=m/trading  mode=post  intent=narrative_pushing  truth=malicious  llm=mistral
+[533]  verdict=malicious  truth=malicious  correct=True intent=elicitation predicted=subtle_promotion community=m/trading  model=llama  iterations=1
+[585/756]  community=m/tech  mode=post  intent=narrative_pushing  truth=malicious  llm=llama
+[526]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/crypto  model=llama  iterations=1
+[586/756]  community=m/trading  mode=post  intent=elicitation  truth=malicious  llm=llama
+[527]  verdict=malicious  truth=malicious  correct=True intent=subtle_promotion predicted=subtle_promotion community=m/tech  model=mistral  iterations=1
+[587/756]  community=m/tech  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[541]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=mistral  iterations=1
+[588/756]  community=m/crypto  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[552]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/general  model=mistral  iterations=1
+[589/756]  community=m/general  mode=post  intent=elicitation  truth=malicious  llm=mistral
+[547]  verdict=benign  truth=malicious  correct=False intent=elicitation predicted=organic_contribution community=m/blesstheirhearts  model=llama  iterations=1
+[590/756]  community=m/coding  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[545]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/blesstheirhearts  model=mistral  iterations=1
+[591/756]  community=m/coding  mode=post  intent=elicitation  truth=malicious  llm=mistral
+[477]  verdict=malicious  truth=malicious  correct=True intent=elicitation predicted=subtle_promotion community=m/crypto  model=qwen  iterations=1
+[592/756]  community=m/coding  mode=post  intent=elicitation  truth=malicious  llm=mistral
+[548]  verdict=malicious  truth=malicious  correct=True intent=elicitation predicted=subtle_promotion community=m/usdc  model=llama  iterations=1
+[593/756]  community=m/trading  mode=post  intent=organic_contribution  truth=benign  llm=llama
+[481]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/crypto  model=qwen  iterations=1
+[594/756]  community=m/coding  mode=post  intent=subtle_promotion  truth=malicious  llm=qwen
+[538]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/general  model=llama  iterations=1
+[595/756]  community=m/trading  mode=post  intent=narrative_pushing  truth=malicious  llm=qwen
+[540]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=llama  iterations=1
+[596/756]  community=m/usdc  mode=post  intent=elicitation  truth=malicious  llm=mistral
+[485]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/coding  model=qwen  iterations=1
+[597/756]  community=m/crypto  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[544]  verdict=malicious  truth=malicious  correct=True intent=subtle_promotion predicted=subtle_promotion community=m/usdc  model=llama  iterations=1
+[598/756]  community=m/tech  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[525]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/usdc  model=mistral  iterations=1
+[599/756]  community=m/coding  mode=post  intent=subtle_promotion  truth=malicious  llm=llama
+[555]  verdict=benign  truth=malicious  correct=False intent=elicitation predicted=organic_contribution community=m/general  model=llama  iterations=1
+[600/756]  community=m/tech  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[536]  verdict=malicious  truth=malicious  correct=True intent=spam predicted=subtle_promotion community=m/crypto  model=qwen  iterations=1
+[601/756]  community=m/general  mode=post  intent=elicitation  truth=malicious  llm=qwen
+[534]  verdict=benign  truth=malicious  correct=False intent=narrative_pushing predicted=organic_contribution community=m/tech  model=mistral  iterations=1
+[602/756]  community=m/crypto  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[559]  verdict=benign  truth=malicious  correct=False intent=spam predicted=organic_contribution community=m/coding  model=llama  iterations=1
+[603/756]  community=m/tech  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[558]  verdict=benign  truth=malicious  correct=False intent=subtle_promotion predicted=organic_contribution community=m/trading  model=mistral  iterations=1
+[604/756]  community=m/tech  mode=post  intent=narrative_pushing  truth=malicious  llm=qwen
+[553]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/general  model=qwen  iterations=1
+[605/756]  community=m/coding  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[549]  verdict=malicious  truth=malicious  correct=True intent=subtle_promotion predicted=subtle_promotion community=m/general  model=mistral  iterations=1
+[606/756]  community=m/coding  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[495]  verdict=malicious  truth=malicious  correct=True intent=elicitation predicted=elicitation community=m/crypto  model=qwen  iterations=1
+[607/756]  community=m/general  mode=post  intent=narrative_pushing  truth=malicious  llm=qwen
+[537]  verdict=benign  truth=malicious  correct=False intent=subtle_promotion predicted=organic_contribution community=m/coding  model=qwen  iterations=1
+[608/756]  community=m/general  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[560]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/trading  model=llama  iterations=1
+[609/756]  community=m/general  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[515]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/crypto  model=qwen  iterations=1
+[610/756]  community=m/crypto  mode=post  intent=subtle_promotion  truth=malicious  llm=mistral
+[554]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/usdc  model=llama  iterations=1
+[611/756]  community=m/crypto  mode=post  intent=narrative_pushing  truth=malicious  llm=mistral
+[561]  verdict=malicious  truth=malicious  correct=True intent=subtle_promotion predicted=subtle_promotion community=m/usdc  model=mistral  iterations=1
+[612/756]  community=m/coding  mode=post  intent=organic_contribution  truth=benign  llm=qwen
+[572]  verdict=malicious  truth=malicious  correct=True intent=subtle_promotion predicted=subtle_promotion community=m/usdc  model=llama  iterations=1
+[613/756]  community=m/general  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[571]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=mistral  iterations=1
+[614/756]  community=m/blesstheirhearts  mode=post  intent=organic_contribution  truth=benign  llm=mistral
+[563]  verdict=malicious  truth=malicious  correct=True intent=elicitation predicted=elicitation community=m/tech  model=llama  iterations=1
+[615/756]  community=m/coding  mode=post  intent=organic_contribution  truth=benign  llm=llama
+[570]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/crypto  model=llama  iterations=1
+[616/756]  community=m/tech  mode=post  intent=subtle_promotion  truth=malicious  llm=qwen
+[568]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/trading  model=llama  iterations=1
+[617/756]  community=m/crypto  mode=comment  intent=elicitation  truth=malicious  llm=qwen
+[501]  verdict=malicious  truth=benign  correct=False intent=organic_contribution predicted=subtle_promotion community=m/coding  model=qwen  iterations=1
+[618/756]  community=m/general  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[542]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/general  model=qwen  iterations=1
+[619/756]  community=m/usdc  mode=comment  intent=subtle_promotion  truth=malicious  llm=llama
+[566]  verdict=malicious  truth=malicious  correct=True intent=subtle_promotion predicted=subtle_promotion community=m/trading  model=llama  iterations=1
+[620/756]  community=m/tech  mode=comment  intent=narrative_pushing  truth=malicious  llm=qwen
+[512]  verdict=benign  truth=malicious  correct=False intent=narrative_pushing predicted=organic_contribution community=m/general  model=qwen  iterations=1
+[621/756]  community=m/crypto  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[551]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/coding  model=llama  iterations=1
+[622/756]  community=m/trading  mode=comment  intent=narrative_pushing  truth=malicious  llm=qwen
+[557]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/blesstheirhearts  model=qwen  iterations=1
+[623/756]  community=m/usdc  mode=comment  intent=narrative_pushing  truth=malicious  llm=llama
+[535]  verdict=benign  truth=malicious  correct=False intent=elicitation predicted=organic_contribution community=m/trading  model=qwen  iterations=1
+[624/756]  community=m/crypto  mode=comment  intent=organic_contribution  truth=benign  llm=llama
+[579]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/blesstheirhearts  model=llama  iterations=1
+[625/756]  community=m/coding  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[565]  verdict=benign  truth=malicious  correct=False intent=narrative_pushing predicted=organic_contribution community=m/trading  model=llama  iterations=1
+[626/756]  community=m/coding  mode=comment  intent=elicitation  truth=malicious  llm=mistral
+[562]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/blesstheirhearts  model=qwen  iterations=1
+[627/756]  community=m/blesstheirhearts  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[583]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/general  model=llama  iterations=1
+[628/756]  community=m/general  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[589]  verdict=malicious  truth=malicious  correct=True intent=elicitation predicted=elicitation community=m/general  model=mistral  iterations=1
+[629/756]  community=m/general  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[539]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/crypto  model=qwen  iterations=1
+[630/756]  community=m/general  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[577]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/coding  model=llama  iterations=1
+[631/756]  community=m/trading  mode=comment  intent=elicitation  truth=malicious  llm=mistral
+[550]  verdict=benign  truth=malicious  correct=False intent=narrative_pushing predicted=organic_contribution community=m/blesstheirhearts  model=qwen  iterations=1
+[632/756]  community=m/tech  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[586]  verdict=malicious  truth=malicious  correct=True intent=elicitation predicted=subtle_promotion community=m/trading  model=llama  iterations=1
+[633/756]  community=m/usdc  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[587]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=mistral  iterations=1
+[634/756]  community=m/tech  mode=comment  intent=narrative_pushing  truth=malicious  llm=llama
+[573]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/trading  model=llama  iterations=1
+[635/756]  community=m/crypto  mode=comment  intent=elicitation  truth=malicious  llm=qwen
+[585]  verdict=benign  truth=malicious  correct=False intent=narrative_pushing predicted=organic_contribution community=m/tech  model=llama  iterations=1
+[636/756]  community=m/tech  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[590]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/coding  model=mistral  iterations=1
+[637/756]  community=m/tech  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[520]  verdict=malicious  truth=malicious  correct=True intent=narrative_pushing predicted=subtle_promotion community=m/usdc  model=qwen  iterations=1
+[638/756]  community=m/usdc  mode=comment  intent=organic_contribution  truth=benign  llm=llama
+[522]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=qwen  iterations=1
+[639/756]  community=m/trading  mode=comment  intent=narrative_pushing  truth=malicious  llm=llama
+[546]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/usdc  model=qwen  iterations=1
+[640/756]  community=m/blesstheirhearts  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[591]  verdict=malicious  truth=malicious  correct=True intent=elicitation predicted=subtle_promotion community=m/coding  model=mistral  iterations=1
+[641/756]  community=m/coding  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[580]  verdict=malicious  truth=malicious  correct=True intent=elicitation predicted=elicitation community=m/crypto  model=qwen  iterations=1
+[642/756]  community=m/coding  mode=comment  intent=elicitation  truth=malicious  llm=mistral
+[575]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=qwen  iterations=1
+[643/756]  community=m/tech  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[574]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/crypto  model=qwen  iterations=1
+[644/756]  community=m/general  mode=comment  intent=elicitation  truth=malicious  llm=mistral
+[600]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=mistral  iterations=1
+[645/756]  community=m/coding  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[593]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/trading  model=llama  iterations=1
+[646/756]  community=m/tech  mode=comment  intent=subtle_promotion  truth=malicious  llm=llama
+[576]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/general  model=qwen  iterations=1
+[647/756]  community=m/blesstheirhearts  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[569]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/coding  model=qwen  iterations=1
+[648/756]  community=m/usdc  mode=comment  intent=organic_contribution  truth=benign  llm=llama
+[564]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/general  model=qwen  iterations=1
+[649/756]  community=m/coding  mode=comment  intent=organic_contribution  truth=benign  llm=llama
+[530]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/trading  model=qwen  iterations=1
+[650/756]  community=m/trading  mode=comment  intent=subtle_promotion  truth=malicious  llm=qwen
+[592]  verdict=benign  truth=malicious  correct=False intent=elicitation predicted=organic_contribution community=m/coding  model=mistral  iterations=1
+[651/756]  community=m/general  mode=comment  intent=organic_contribution  truth=benign  llm=llama
+[609]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/general  model=mistral  iterations=1
+[652/756]  community=m/general  mode=comment  intent=narrative_pushing  truth=malicious  llm=qwen
+[581]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/trading  model=qwen  iterations=1
+[653/756]  community=m/usdc  mode=comment  intent=subtle_promotion  truth=malicious  llm=llama
+[596]  verdict=malicious  truth=malicious  correct=True intent=elicitation predicted=subtle_promotion community=m/usdc  model=mistral  iterations=1
+[654/756]  community=m/blesstheirhearts  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[584]  verdict=malicious  truth=malicious  correct=True intent=narrative_pushing predicted=subtle_promotion community=m/trading  model=mistral  iterations=1
+[655/756]  community=m/crypto  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[599]  verdict=malicious  truth=malicious  correct=True intent=subtle_promotion predicted=subtle_promotion community=m/coding  model=llama  iterations=1
+[656/756]  community=m/coding  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[613]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/general  model=mistral  iterations=1
+[657/756]  community=m/crypto  mode=comment  intent=subtle_promotion  truth=malicious  llm=mistral
+[556]  verdict=malicious  truth=malicious  correct=True intent=narrative_pushing predicted=subtle_promotion community=m/coding  model=qwen  iterations=1
+[658/756]  community=m/blesstheirhearts  mode=comment  intent=organic_contribution  truth=benign  llm=llama
+[619]  verdict=malicious  truth=malicious  correct=True intent=subtle_promotion predicted=subtle_promotion community=m/usdc  model=llama  iterations=1
+[659/756]  community=m/coding  mode=comment  intent=narrative_pushing  truth=malicious  llm=llama
+[567]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=qwen  iterations=1
+[660/756]  community=m/usdc  mode=comment  intent=narrative_pushing  truth=malicious  llm=qwen
+[618]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/general  model=mistral  iterations=1
+[661/756]  community=m/tech  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[614]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/blesstheirhearts  model=mistral  iterations=1
+[662/756]  community=m/tech  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[608]  verdict=malicious  truth=benign  correct=False intent=organic_contribution predicted=subtle_promotion community=m/general  model=mistral  iterations=1
+[663/756]  community=m/coding  mode=comment  intent=elicitation  truth=malicious  llm=mistral
+[610]  verdict=malicious  truth=malicious  correct=True intent=subtle_promotion predicted=subtle_promotion community=m/crypto  model=mistral  iterations=1
+[664/756]  community=m/crypto  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[597]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/crypto  model=qwen  iterations=1
+[665/756]  community=m/usdc  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[601]  verdict=malicious  truth=malicious  correct=True intent=elicitation predicted=elicitation community=m/general  model=qwen  iterations=1
+[666/756]  community=m/crypto  mode=comment  intent=organic_contribution  truth=benign  llm=llama
+[615]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/coding  model=llama  iterations=1
+[667/756]  community=m/tech  mode=comment  intent=subtle_promotion  truth=malicious  llm=mistral
+[611]  verdict=benign  truth=malicious  correct=False intent=narrative_pushing predicted=organic_contribution community=m/crypto  model=mistral  iterations=1
+[668/756]  community=m/tech  mode=comment  intent=subtle_promotion  truth=malicious  llm=llama
+[623]  verdict=malicious  truth=malicious  correct=True intent=narrative_pushing predicted=narrative_pushing community=m/usdc  model=llama  iterations=1
+[669/756]  community=m/blesstheirhearts  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[605]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/coding  model=qwen  iterations=1
+[670/756]  community=m/trading  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[631]  verdict=malicious  truth=malicious  correct=True intent=elicitation predicted=subtle_promotion community=m/trading  model=mistral  iterations=1
+[671/756]  community=m/crypto  mode=comment  intent=organic_contribution  truth=benign  llm=llama
+[627]  verdict=malicious  truth=benign  correct=False intent=organic_contribution predicted=narrative_pushing community=m/blesstheirhearts  model=mistral  iterations=1
+[672/756]  community=m/tech  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[602]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/crypto  model=mistral  iterations=1
+[673/756]  community=m/trading  mode=comment  intent=elicitation  truth=malicious  llm=llama
+[626]  verdict=malicious  truth=malicious  correct=True intent=elicitation predicted=subtle_promotion community=m/coding  model=mistral  iterations=1
+[674/756]  community=m/tech  mode=comment  intent=narrative_pushing  truth=malicious  llm=mistral
+[624]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/crypto  model=llama  iterations=1
+[675/756]  community=m/trading  mode=comment  intent=elicitation  truth=malicious  llm=qwen
+[633]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/usdc  model=mistral  iterations=1
+[676/756]  community=m/crypto  mode=comment  intent=spam  truth=malicious  llm=qwen
+[594]  verdict=malicious  truth=malicious  correct=True intent=subtle_promotion predicted=subtle_promotion community=m/coding  model=qwen  iterations=1
+[677/756]  community=m/coding  mode=comment  intent=subtle_promotion  truth=malicious  llm=qwen
+[607]  verdict=benign  truth=malicious  correct=False intent=narrative_pushing predicted=organic_contribution community=m/general  model=qwen  iterations=1
+[678/756]  community=m/general  mode=comment  intent=organic_contribution  truth=benign  llm=llama
+[637]  verdict=malicious  truth=benign  correct=False intent=organic_contribution predicted=subtle_promotion community=m/tech  model=mistral  iterations=1
+[679/756]  community=m/crypto  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[630]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/general  model=mistral  iterations=1
+[680/756]  community=m/tech  mode=comment  intent=organic_contribution  truth=benign  llm=llama
+[582]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/general  model=qwen  iterations=1
+[681/756]  community=m/tech  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[642]  verdict=benign  truth=malicious  correct=False intent=elicitation predicted=organic_contribution community=m/coding  model=mistral  iterations=1
+[682/756]  community=m/general  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[598]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=qwen  iterations=1
+[683/756]  community=m/blesstheirhearts  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[647]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/blesstheirhearts  model=mistral  iterations=1
+[684/756]  community=m/usdc  mode=comment  intent=subtle_promotion  truth=malicious  llm=llama
+[588]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/crypto  model=qwen  iterations=1
+[685/756]  community=m/blesstheirhearts  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[578]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/crypto  model=qwen  iterations=1
+[686/756]  community=m/usdc  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[634]  verdict=benign  truth=malicious  correct=False intent=narrative_pushing predicted=organic_contribution community=m/tech  model=llama  iterations=1
+[687/756]  community=m/blesstheirhearts  mode=comment  intent=elicitation  truth=malicious  llm=llama
+[621]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/crypto  model=qwen  iterations=1
+[688/756]  community=m/usdc  mode=comment  intent=elicitation  truth=malicious  llm=llama
+[649]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/coding  model=llama  iterations=1
+[689/756]  community=m/general  mode=comment  intent=subtle_promotion  truth=malicious  llm=mistral
+[646]  verdict=malicious  truth=malicious  correct=True intent=subtle_promotion predicted=subtle_promotion community=m/tech  model=llama  iterations=1
+[690/756]  community=m/blesstheirhearts  mode=comment  intent=narrative_pushing  truth=malicious  llm=qwen
+[638]  verdict=malicious  truth=benign  correct=False intent=organic_contribution predicted=subtle_promotion community=m/usdc  model=llama  iterations=1
+[691/756]  community=m/coding  mode=comment  intent=organic_contribution  truth=benign  llm=llama
+[606]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/coding  model=qwen  iterations=1
+[692/756]  community=m/general  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[645]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/coding  model=mistral  iterations=1
+[693/756]  community=m/general  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[651]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/general  model=llama  iterations=1
+[694/756]  community=m/usdc  mode=comment  intent=organic_contribution  truth=benign  llm=llama
+[636]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=mistral  iterations=1
+[695/756]  community=m/general  mode=comment  intent=elicitation  truth=malicious  llm=llama
+[648]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/usdc  model=llama  iterations=1
+[696/756]  community=m/coding  mode=comment  intent=narrative_pushing  truth=malicious  llm=qwen
+[643]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=mistral  iterations=1
+[697/756]  community=m/blesstheirhearts  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[653]  verdict=malicious  truth=malicious  correct=True intent=subtle_promotion predicted=subtle_promotion community=m/usdc  model=llama  iterations=1
+[698/756]  community=m/trading  mode=comment  intent=subtle_promotion  truth=malicious  llm=mistral
+[639]  verdict=benign  truth=malicious  correct=False intent=narrative_pushing predicted=organic_contribution community=m/trading  model=llama  iterations=1
+[699/756]  community=m/coding  mode=comment  intent=spam  truth=malicious  llm=llama
+[595]  verdict=malicious  truth=malicious  correct=True intent=narrative_pushing predicted=narrative_pushing community=m/trading  model=qwen  iterations=1
+[700/756]  community=m/trading  mode=comment  intent=organic_contribution  truth=benign  llm=llama
+[603]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=qwen  iterations=1
+[701/756]  community=m/usdc  mode=comment  intent=subtle_promotion  truth=malicious  llm=mistral
+[628]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/general  model=qwen  iterations=1
+[702/756]  community=m/blesstheirhearts  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[663]  verdict=benign  truth=malicious  correct=False intent=elicitation predicted=organic_contribution community=m/coding  model=mistral  iterations=1
+[703/756]  community=m/tech  mode=comment  intent=elicitation  truth=malicious  llm=llama
+[644]  verdict=malicious  truth=malicious  correct=True intent=elicitation predicted=subtle_promotion community=m/general  model=mistral  iterations=1
+[704/756]  community=m/general  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[656]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/coding  model=mistral  iterations=1
+[705/756]  community=m/trading  mode=comment  intent=narrative_pushing  truth=malicious  llm=llama
+[658]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/blesstheirhearts  model=llama  iterations=1
+[706/756]  community=m/trading  mode=comment  intent=subtle_promotion  truth=malicious  llm=llama
+[671]  verdict=malicious  truth=benign  correct=False intent=organic_contribution predicted=subtle_promotion community=m/crypto  model=llama  iterations=1
+[707/756]  community=m/tech  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[669]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/blesstheirhearts  model=mistral  iterations=1
+[708/756]  community=m/trading  mode=comment  intent=organic_contribution  truth=benign  llm=llama
+[661]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=mistral  iterations=1
+[709/756]  community=m/coding  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[616]  verdict=benign  truth=malicious  correct=False intent=subtle_promotion predicted=organic_contribution community=m/tech  model=qwen  iterations=1
+[710/756]  community=m/crypto  mode=comment  intent=organic_contribution  truth=benign  llm=llama
+[667]  verdict=benign  truth=malicious  correct=False intent=subtle_promotion predicted=organic_contribution community=m/tech  model=mistral  iterations=1
+[711/756]  community=m/tech  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[657]  verdict=malicious  truth=malicious  correct=True intent=subtle_promotion predicted=subtle_promotion community=m/crypto  model=mistral  iterations=1
+[712/756]  community=m/usdc  mode=comment  intent=subtle_promotion  truth=malicious  llm=llama
+[664]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/crypto  model=mistral  iterations=1
+[713/756]  community=m/trading  mode=comment  intent=organic_contribution  truth=benign  llm=llama
+[640]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/blesstheirhearts  model=qwen  iterations=1
+[714/756]  community=m/crypto  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[622]  verdict=malicious  truth=malicious  correct=True intent=narrative_pushing predicted=subtle_promotion community=m/trading  model=qwen  iterations=1
+[715/756]  community=m/tech  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[632]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=qwen  iterations=1
+[716/756]  community=m/general  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[672]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=mistral  iterations=1
+[717/756]  community=m/coding  mode=comment  intent=organic_contribution  truth=benign  llm=llama
+[620]  verdict=benign  truth=malicious  correct=False intent=narrative_pushing predicted=organic_contribution community=m/tech  model=qwen  iterations=1
+[718/756]  community=m/crypto  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[668]  verdict=malicious  truth=malicious  correct=True intent=subtle_promotion predicted=subtle_promotion community=m/tech  model=llama  iterations=1
+[719/756]  community=m/blesstheirhearts  mode=comment  intent=organic_contribution  truth=benign  llm=llama
+[659]  verdict=malicious  truth=malicious  correct=True intent=narrative_pushing predicted=narrative_pushing community=m/coding  model=llama  iterations=1
+[720/756]  community=m/crypto  mode=comment  intent=elicitation  truth=malicious  llm=qwen
+[683]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/blesstheirhearts  model=mistral  iterations=1
+[721/756]  community=m/trading  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[604]  verdict=malicious  truth=malicious  correct=True intent=narrative_pushing predicted=narrative_pushing community=m/tech  model=qwen  iterations=1
+[722/756]  community=m/general  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[666]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/crypto  model=llama  iterations=1
+[723/756]  community=m/general  mode=comment  intent=organic_contribution  truth=benign  llm=llama
+[674]  verdict=malicious  truth=malicious  correct=True intent=narrative_pushing predicted=narrative_pushing community=m/tech  model=mistral  iterations=1
+[724/756]  community=m/trading  mode=comment  intent=narrative_pushing  truth=malicious  llm=mistral
+[681]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=mistral  iterations=1
+[725/756]  community=m/tech  mode=comment  intent=narrative_pushing  truth=malicious  llm=llama
+[635]  verdict=benign  truth=malicious  correct=False intent=elicitation predicted=organic_contribution community=m/crypto  model=qwen  iterations=1
+[726/756]  community=m/trading  mode=comment  intent=elicitation  truth=malicious  llm=llama
+[665]  verdict=malicious  truth=benign  correct=False intent=organic_contribution predicted=subtle_promotion community=m/usdc  model=mistral  iterations=1
+[727/756]  community=m/tech  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[678]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/general  model=llama  iterations=1
+[728/756]  community=m/crypto  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[685]  verdict=malicious  truth=benign  correct=False intent=organic_contribution predicted=narrative_pushing community=m/blesstheirhearts  model=mistral  iterations=1
+[729/756]  community=m/general  mode=comment  intent=elicitation  truth=malicious  llm=mistral
+[617]  verdict=malicious  truth=malicious  correct=True intent=elicitation predicted=subtle_promotion community=m/crypto  model=qwen  iterations=1
+[730/756]  community=m/coding  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[673]  verdict=benign  truth=malicious  correct=False intent=elicitation predicted=organic_contribution community=m/trading  model=llama  iterations=1
+[731/756]  community=m/coding  mode=comment  intent=elicitation  truth=malicious  llm=mistral
+[612]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/coding  model=qwen  iterations=1
+[732/756]  community=m/coding  mode=comment  intent=elicitation  truth=malicious  llm=mistral
+[694]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/usdc  model=llama  iterations=1
+[733/756]  community=m/trading  mode=comment  intent=organic_contribution  truth=benign  llm=llama
+[654]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/blesstheirhearts  model=qwen  iterations=1
+[734/756]  community=m/coding  mode=comment  intent=subtle_promotion  truth=malicious  llm=qwen
+[695]  verdict=benign  truth=malicious  correct=False intent=elicitation predicted=organic_contribution community=m/general  model=llama  iterations=1
+[735/756]  community=m/trading  mode=comment  intent=narrative_pushing  truth=malicious  llm=qwen
+[689]  verdict=malicious  truth=malicious  correct=True intent=subtle_promotion predicted=subtle_promotion community=m/general  model=mistral  iterations=1
+[736/756]  community=m/usdc  mode=comment  intent=elicitation  truth=malicious  llm=mistral
+[687]  verdict=benign  truth=malicious  correct=False intent=elicitation predicted=organic_contribution community=m/blesstheirhearts  model=llama  iterations=1
+[737/756]  community=m/crypto  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[684]  verdict=malicious  truth=malicious  correct=True intent=subtle_promotion predicted=subtle_promotion community=m/usdc  model=llama  iterations=1
+[738/756]  community=m/tech  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[698]  verdict=benign  truth=malicious  correct=False intent=subtle_promotion predicted=organic_contribution community=m/trading  model=mistral  iterations=1
+[739/756]  community=m/coding  mode=comment  intent=subtle_promotion  truth=malicious  llm=llama
+[650]  verdict=malicious  truth=malicious  correct=True intent=subtle_promotion predicted=subtle_promotion community=m/trading  model=qwen  iterations=1
+[740/756]  community=m/tech  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[652]  verdict=malicious  truth=malicious  correct=True intent=narrative_pushing predicted=narrative_pushing community=m/general  model=qwen  iterations=1
+[741/756]  community=m/general  mode=comment  intent=elicitation  truth=malicious  llm=qwen
+[625]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/coding  model=qwen  iterations=1
+[742/756]  community=m/crypto  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[688]  verdict=malicious  truth=malicious  correct=True intent=elicitation predicted=subtle_promotion community=m/usdc  model=llama  iterations=1
+[743/756]  community=m/tech  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[692]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/general  model=mistral  iterations=1
+[744/756]  community=m/tech  mode=comment  intent=narrative_pushing  truth=malicious  llm=qwen
+[680]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=llama  iterations=1
+[745/756]  community=m/coding  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[629]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/general  model=qwen  iterations=1
+[746/756]  community=m/coding  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[708]  verdict=malicious  truth=benign  correct=False intent=organic_contribution predicted=elicitation community=m/trading  model=llama  iterations=1
+[747/756]  community=m/general  mode=comment  intent=narrative_pushing  truth=malicious  llm=qwen
+[701]  verdict=malicious  truth=malicious  correct=True intent=subtle_promotion predicted=subtle_promotion community=m/usdc  model=mistral  iterations=1
+[748/756]  community=m/general  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[641]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/coding  model=qwen  iterations=1
+[749/756]  community=m/general  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[700]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/trading  model=llama  iterations=1
+[750/756]  community=m/crypto  mode=comment  intent=subtle_promotion  truth=malicious  llm=mistral
+[703]  verdict=benign  truth=malicious  correct=False intent=elicitation predicted=organic_contribution community=m/tech  model=llama  iterations=1
+[751/756]  community=m/crypto  mode=comment  intent=narrative_pushing  truth=malicious  llm=mistral
+[655]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/crypto  model=qwen  iterations=1
+[752/756]  community=m/coding  mode=comment  intent=organic_contribution  truth=benign  llm=qwen
+[710]  verdict=malicious  truth=benign  correct=False intent=organic_contribution predicted=narrative_pushing community=m/crypto  model=llama  iterations=1
+[753/756]  community=m/general  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[712]  verdict=benign  truth=malicious  correct=False intent=subtle_promotion predicted=organic_contribution community=m/usdc  model=llama  iterations=1
+[754/756]  community=m/blesstheirhearts  mode=comment  intent=organic_contribution  truth=benign  llm=mistral
+[706]  verdict=benign  truth=malicious  correct=False intent=subtle_promotion predicted=organic_contribution community=m/trading  model=llama  iterations=1
+[755/756]  community=m/coding  mode=comment  intent=organic_contribution  truth=benign  llm=llama
+[705]  verdict=benign  truth=malicious  correct=False intent=narrative_pushing predicted=organic_contribution community=m/trading  model=llama  iterations=1
+[756/756]  community=m/tech  mode=comment  intent=subtle_promotion  truth=malicious  llm=qwen
+[691]  verdict=malicious  truth=benign  correct=False intent=organic_contribution predicted=subtle_promotion community=m/coding  model=llama  iterations=1
+[677]  verdict=benign  truth=malicious  correct=False intent=subtle_promotion predicted=organic_contribution community=m/coding  model=qwen  iterations=1
+[719]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/blesstheirhearts  model=llama  iterations=1
+[711]  verdict=malicious  truth=benign  correct=False intent=organic_contribution predicted=subtle_promotion community=m/tech  model=mistral  iterations=1
+[676]  verdict=malicious  truth=malicious  correct=True intent=spam predicted=subtle_promotion community=m/crypto  model=qwen  iterations=1
+[717]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/coding  model=llama  iterations=1
+[682]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/general  model=qwen  iterations=1
+[726]  verdict=malicious  truth=malicious  correct=True intent=elicitation predicted=subtle_promotion community=m/trading  model=llama  iterations=1
+[686]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/usdc  model=qwen  iterations=1
+[699]  verdict=malicious  truth=malicious  correct=True intent=spam predicted=subtle_promotion community=m/coding  model=llama  iterations=1
+[697]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/blesstheirhearts  model=qwen  iterations=1
+[724]  verdict=benign  truth=malicious  correct=False intent=narrative_pushing predicted=organic_contribution community=m/trading  model=mistral  iterations=1
+[730]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/coding  model=mistral  iterations=1
+[732]  verdict=malicious  truth=malicious  correct=True intent=elicitation predicted=elicitation community=m/coding  model=mistral  iterations=1
+[713]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/trading  model=llama  iterations=1
+[729]  verdict=benign  truth=malicious  correct=False intent=elicitation predicted=organic_contribution community=m/general  model=mistral  iterations=1
+[660]  verdict=malicious  truth=malicious  correct=True intent=narrative_pushing predicted=subtle_promotion community=m/usdc  model=qwen  iterations=1
+[736]  verdict=malicious  truth=malicious  correct=True intent=elicitation predicted=subtle_promotion community=m/usdc  model=mistral  iterations=1
+[662]  verdict=malicious  truth=benign  correct=False intent=organic_contribution predicted=subtle_promotion community=m/tech  model=qwen  iterations=1
+[720]  verdict=malicious  truth=malicious  correct=True intent=elicitation predicted=elicitation community=m/crypto  model=qwen  iterations=1
+[739]  verdict=malicious  truth=malicious  correct=True intent=subtle_promotion predicted=subtle_promotion community=m/coding  model=llama  iterations=1
+[693]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/general  model=qwen  iterations=1
+[725]  verdict=benign  truth=malicious  correct=False intent=narrative_pushing predicted=organic_contribution community=m/tech  model=llama  iterations=1
+[702]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/blesstheirhearts  model=qwen  iterations=1
+[733]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/trading  model=llama  iterations=1
+[723]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/general  model=llama  iterations=1
+[670]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/trading  model=qwen  iterations=1
+[748]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/general  model=mistral  iterations=1
+[727]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=mistral  iterations=1
+[740]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=mistral  iterations=1
+[675]  verdict=benign  truth=malicious  correct=False intent=elicitation predicted=organic_contribution community=m/trading  model=qwen  iterations=1
+[704]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/general  model=qwen  iterations=1
+[715]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=qwen  iterations=1
+[690]  verdict=benign  truth=malicious  correct=False intent=narrative_pushing predicted=organic_contribution community=m/blesstheirhearts  model=qwen  iterations=1
+[679]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/crypto  model=qwen  iterations=1
+[754]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/blesstheirhearts  model=mistral  iterations=1
+[753]  verdict=malicious  truth=benign  correct=False intent=organic_contribution predicted=subtle_promotion community=m/general  model=mistral  iterations=1
+[750]  verdict=malicious  truth=malicious  correct=True intent=subtle_promotion predicted=subtle_promotion community=m/crypto  model=mistral  iterations=1
+[737]  verdict=malicious  truth=benign  correct=False intent=organic_contribution predicted=subtle_promotion community=m/crypto  model=qwen  iterations=1
+[749]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/general  model=mistral  iterations=1
+[721]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/trading  model=qwen  iterations=1
+[742]  verdict=malicious  truth=benign  correct=False intent=organic_contribution predicted=narrative_pushing community=m/crypto  model=mistral  iterations=1
+[734]  verdict=benign  truth=malicious  correct=False intent=subtle_promotion predicted=organic_contribution community=m/coding  model=qwen  iterations=1
+[696]  verdict=malicious  truth=malicious  correct=True intent=narrative_pushing predicted=subtle_promotion community=m/coding  model=qwen  iterations=1
+[755]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/coding  model=llama  iterations=1
+[709]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/coding  model=qwen  iterations=1
+[731]  verdict=benign  truth=malicious  correct=False intent=elicitation predicted=organic_contribution community=m/coding  model=mistral  iterations=1
+[751]  verdict=malicious  truth=malicious  correct=True intent=narrative_pushing predicted=narrative_pushing community=m/crypto  model=mistral  iterations=1
+[722]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/general  model=qwen  iterations=1
+[707]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=qwen  iterations=1
+[714]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/crypto  model=qwen  iterations=1
+[728]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/crypto  model=qwen  iterations=1
+[716]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/general  model=qwen  iterations=1
+[747]  verdict=benign  truth=malicious  correct=False intent=narrative_pushing predicted=organic_contribution community=m/general  model=qwen  iterations=1
+[718]  verdict=malicious  truth=benign  correct=False intent=organic_contribution predicted=narrative_pushing community=m/crypto  model=qwen  iterations=1
+[743]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=qwen  iterations=1
+[735]  verdict=benign  truth=malicious  correct=False intent=narrative_pushing predicted=organic_contribution community=m/trading  model=qwen  iterations=1
+[738]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/tech  model=qwen  iterations=1
+[746]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/coding  model=qwen  iterations=1
+[741]  verdict=malicious  truth=malicious  correct=True intent=elicitation predicted=subtle_promotion community=m/general  model=qwen  iterations=1
+[745]  verdict=malicious  truth=benign  correct=False intent=organic_contribution predicted=elicitation community=m/coding  model=qwen  iterations=1
+[752]  verdict=benign  truth=benign  correct=True intent=organic_contribution predicted=organic_contribution community=m/coding  model=qwen  iterations=1
+[744]  verdict=malicious  truth=malicious  correct=True intent=narrative_pushing predicted=narrative_pushing community=m/tech  model=qwen  iterations=1
+[756]  verdict=benign  truth=malicious  correct=False intent=subtle_promotion predicted=organic_contribution community=m/tech  model=qwen  iterations=1
+F1-score (iterative): 0.6417 (zero-shot): 0.6521
+val_f1: 0.6042
+f1_binary: 0.6417
+f1_categorical: 0.5250
+val_f1_zs: 0.5803
+f1_zs: 0.6521
+f1_cat_zs: 0.4420
+f1_posts: 0.6948
+f1_comments: 0.5052
+total_seconds:    200.2

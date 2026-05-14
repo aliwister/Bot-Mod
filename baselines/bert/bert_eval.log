@@ -1,0 +1,99 @@
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 3119.74it/s]
+[1mBertModel LOAD REPORT[0m from: bert-base-uncased
+Key                                        | Status     |  | 
+-------------------------------------------+------------+--+-
+cls.seq_relationship.weight                | UNEXPECTED |  | 
+cls.predictions.transform.dense.bias       | UNEXPECTED |  | 
+cls.predictions.transform.dense.weight     | UNEXPECTED |  | 
+cls.seq_relationship.bias                  | UNEXPECTED |  | 
+cls.predictions.bias                       | UNEXPECTED |  | 
+cls.predictions.transform.LayerNorm.weight | UNEXPECTED |  | 
+cls.predictions.transform.LayerNorm.bias   | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+Loaded bert_best.pt
+
+=== comments-test-generated-llama ===
+val_f1:        0.4746
+f1_binary:     0.5581
+f1_categorical:0.3250
+f1_posts:      0.0000
+f1_comments:   0.4746
+
+=== comments-test-generated-mistral ===
+val_f1:        0.5392
+f1_binary:     0.6012
+f1_categorical:0.4185
+f1_posts:      0.0000
+f1_comments:   0.5392
+
+=== comments-test-generated-qwen ===
+val_f1:        0.4216
+f1_binary:     0.4945
+f1_categorical:0.2907
+f1_posts:      0.0000
+f1_comments:   0.4216
+
+=== posts-test-generated-llama ===
+val_f1:        0.7646
+f1_binary:     0.8103
+f1_categorical:0.6678
+f1_posts:      0.7646
+f1_comments:   0.0000
+
+=== posts-test-generated-mistral ===
+val_f1:        0.6992
+f1_binary:     0.7676
+f1_categorical:0.5625
+f1_posts:      0.6992
+f1_comments:   0.0000
+
+=== posts-test-generated-qwen ===
+val_f1:        0.6531
+f1_binary:     0.7300
+f1_categorical:0.5036
+f1_posts:      0.6531
+f1_comments:   0.0000
+
+=== comments-ood-comments-generated-llama ===
+val_f1:        0.4416
+f1_binary:     0.4689
+f1_categorical:0.3840
+f1_posts:      0.0000
+f1_comments:   0.4416
+
+=== comments-ood-comments-generated-mistral ===
+val_f1:        0.4886
+f1_binary:     0.5373
+f1_categorical:0.3915
+f1_posts:      0.0000
+f1_comments:   0.4886
+
+=== comments-ood-comments-generated-qwen ===
+val_f1:        0.4707
+f1_binary:     0.5149
+f1_categorical:0.3818
+f1_posts:      0.0000
+f1_comments:   0.4707
+
+=== posts-ood-posts-generated-llama ===
+val_f1:        0.6247
+f1_binary:     0.6635
+f1_categorical:0.5429
+f1_posts:      0.6247
+f1_comments:   0.0000
+
+=== posts-ood-posts-generated-mistral ===
+val_f1:        0.5856
+f1_binary:     0.6495
+f1_categorical:0.4599
+f1_posts:      0.5856
+f1_comments:   0.0000
+
+=== posts-ood-posts-generated-qwen ===
+val_f1:        0.6791
+f1_binary:     0.7149
+f1_categorical:0.6023
+f1_posts:      0.6791
+f1_comments:   0.0000
