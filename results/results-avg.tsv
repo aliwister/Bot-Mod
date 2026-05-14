@@ -107,3 +107,19 @@ exp104	3914c63 (1)	0.6973	0.7309	0.6249	0.5769	0.6491	0.4382	0.7619	0.6293	709.7
 exp105	7a3355b (3)	0.6942	0.7252	0.6270	0.5805	0.6521	0.4425	0.7627	0.6209	424.9	discard	finalize 11 -> 13 (3-run mean 0.694) — tied, prefer simpler
 exp106	5e1570e (2)	0.6678	0.7216	0.5579	0.5769	0.6492	0.4381	0.7121	0.6223	385.0	discard	unified probe gen (2-run mean 0.668) — different first-probe helps
 exp107	d3fbd4c (3)	0.6708	0.7219	0.5658	0.5758	0.6496	0.4347	0.7218	0.6216	389.9	discard	skeptical PROBE_PROMPT after critique drop (3-run mean 0.671)
+exp108	67e4988 (2)	0.6698	0.7288	0.5501	0.5696	0.6419	0.4311	0.7037	0.6340	426.0	discard	drop 'Previous exchange:' label (2-run mean 0.670)
+exp109	8b875bc (3)	0.6804	0.7238	0.5897	0.5732	0.6457	0.4343	0.7364	0.6215	464.8	discard	init 5 -> 11 (3-run mean 0.680)
+exp110	c1f5125 (2)	0.6439	0.7205	0.4952	0.5711	0.6426	0.4337	0.6900	0.5964	438.5	discard	probe 'tests genuine knowledge' (2-run mean 0.644)
+exp111	2d89357 (3)	0.6666	0.7282	0.5425	0.5739	0.6487	0.4313	0.7056	0.6255	436.0	discard	'Dialogue:' label (3-run mean 0.667)
+exp112	e7161b5 (2)	0.6564	0.7193	0.5302	0.5767	0.6499	0.4364	0.7046	0.6048	365.4	discard	revert recency (mean 0.657) — recency confirmed important
+exp113	6b87d19 (3)	0.6904	0.7345	0.5978	0.5726	0.6447	0.4344	0.7400	0.6340	399.1	discard	Q (moderator)/A (poster) labels (3-run mean 0.690) — tied, simpler wins
+exp114	91502f3 (3)	0.6967	0.7249	0.6352	0.5728	0.6432	0.4371	0.7707	0.6172	429.2	keep	default-benign unless known malicious (3-run mean 0.6967, new best)
+exp115	50c3003 (3)	0.6721	0.7229	0.5680	0.5774	0.6501	0.4377	0.7227	0.6217	432.9	discard	cleanup refactor (3-run mean 0.672) — subtle logic diff, keep exp111
+exp116	6df676d (2)	0.6690	0.7323	0.5418	0.5766	0.6513	0.4341	0.7109	0.6259	395.8	discard	unify init label (2-run mean 0.669) — asymmetry helps!
+exp117	9be4c0c (3)	0.6970	0.7265	0.6332	0.5774	0.6471	0.4426	0.7563	0.6365	443.5	keep	probe gen chronological (3-run mean 0.6970, marginal best)
+exp118	d2ca944 (3)	0.6721	0.7220	0.5691	0.5733	0.6457	0.4343	0.7182	0.6229	413.7	discard	temp 0.7 -> 0.5 (3-run mean 0.672) — 0.7 still best
+exp119	181569f (3)	0.6946	0.7332	0.6124	0.5769	0.6289	0.4716	0.7669	0.6202	390.6	keep	simpler init instruction (3-run mean 0.6946, tied)
+exp120	214bb07 (3)	0.6892	0.7295	0.6043	0.5771	0.6284	0.4732	0.7344	0.6401	414.8	discard	'poster' instead of 'bot' (3-run mean 0.689)
+exp121	2208529 (3)	0.6901	0.7375	0.5913	0.5752	0.6255	0.4730	0.7443	0.6361	498.7	discard	finalize 15 on exp116 (3-run mean 0.690) — 11 still better
+exp122	3981360 (3)	0.6805	0.7279	0.5819	0.5766	0.6261	0.4759	0.7414	0.6211	457.2	discard	probe temp 0.7 -> 1.0 (3-run mean 0.681)
+exp123	e829e3b (3)	0.6758	0.7078	0.6079	0.5662	0.6083	0.4789	0.7372	0.6088	413.6	discard	drop 'vigilant/skeptical' (3-run mean 0.676) — skeptical helps
