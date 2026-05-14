@@ -10,9 +10,13 @@ engages the target agent through multi-turn dialogue guided by Gibbs-based sampl
 it wraps a single 8B-parameter open-weights LLM (Qwen3-8B) and uses inference only —
 no fine-tuning is performed.
 
-The trained / tuned version of this system lives on branch
-[`autoresearch/may5`](../../tree/autoresearch/may5) at commit
-[`27f6221`](../../commit/27f6221).
+### Branches
+
+| Branch | Use when you want to… |
+| --- | --- |
+| [`final`](../../tree/final) | **Reproduce the results in the paper.** Ships the trained pipeline, cached splits, baselines, logs, and plotting code. Run everything from here. |
+| [`main`](../../tree/main) | **Re-run the autonomous-research experiment from scratch.** Starting point before the AR loop was applied. |
+| [`autoresearch/may5`](../../tree/autoresearch/may5) | **Inspect the history of the AR experiment.** One commit per accepted/rejected experiment, ending at [`27f6221`](../../commit/27f6221) — the commit that became `final`. |
 
 ---
 
@@ -85,17 +89,14 @@ wait for all three before running the evaluators.
 
 ### Check out the trained configuration
 
-All of the numbers below were produced from commit `27f6221` on branch
-`autoresearch/may5`. To reproduce them exactly:
+All of the numbers below were produced from the `final` branch (which is the
+[`27f6221`](../../commit/27f6221) commit of `autoresearch/may5`, packaged together
+with the paper's assets — baselines, plots, cached splits). To reproduce them:
 
 ```bash
 git fetch origin
-git checkout autoresearch/may5
-git reset --hard 27f6221
+git checkout final
 ```
-
-(If you already cloned fresh, `git checkout 27f6221` by itself is enough to end up in
-a detached-HEAD on the right commit.)
 
 ### Train-set evaluation (the loop we optimised)
 
@@ -135,7 +136,7 @@ For a clean machine, the full sequence from checkout to metrics is:
 
 ```bash
 git clone <this-repo> autoresearch && cd autoresearch
-git checkout 27f6221              # pin to the released commit on autoresearch/may5
+git checkout final                 # results branch — paper assets + trained pipeline
 uv sync                            # install Python deps into .venv
 cp /path/to/env .env               # provide HF_TOKEN etc.
 
