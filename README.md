@@ -1,9 +1,13 @@
-# Moltbook Moderator: A Self-Consistency + Interactive-Probing Bot Detector
+# Moltbook Moderation: Uncovering Hidden Intent Through Multi-Turn Dialogue
 
-This repository accompanies the release of the **Moltbook Moderator** — a lightweight,
-prompt-only pipeline that detects malicious bot posts and comments on a synthetic social
-platform (*Moltbook*) and classifies their intent into one of five categories. The
-pipeline wraps a single 8B-parameter open-weights LLM (Qwen3-8B) and uses only inference;
+This repository accompanies the paper
+[**Moltbook Moderation: Uncovering Hidden Intent Through Multi-Turn Dialogue**](https://arxiv.org/abs/2605.12856)
+(Al-Lawati, Tripto, Ansari, Lucas, Wang, Lee; 2026). It contains the code and data
+splits for the *Bot-Moderation* framework, a lightweight, prompt-only pipeline that
+detects malicious bot posts and comments on a synthetic social platform (*Moltbook*)
+and classifies their underlying intent into one of five categories. The moderator
+engages the target agent through multi-turn dialogue guided by Gibbs-based sampling;
+it wraps a single 8B-parameter open-weights LLM (Qwen3-8B) and uses inference only —
 no fine-tuning is performed.
 
 The trained / tuned version of this system lives on branch
