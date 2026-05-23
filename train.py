@@ -57,7 +57,7 @@ class ModeratorBot:
             f"Content: {self.M}\n\n"
             f"Based on the community context, output ONLY the most likely intent from: {_INTENTS_STR}"
         )
-        self.t = _batch_vote(INTENT_PROMPT, prompt, n=7)
+        self.t = _batch_vote(INTENT_PROMPT, prompt, n=5)
         self.y = "benign" if _is_organic(self.t) else "malicious"
         self.t0, self.y0 = self.t, self.y
 
@@ -80,7 +80,7 @@ class ModeratorBot:
 
     def _refine_hypothesis(self, n_steps: int = 1) -> str:
         for _ in range(n_steps):
-            self.t = self._vote_intent(n=7)
+            self.t = self._vote_intent(n=5)
             self.y = "benign" if _is_organic(self.t) else "malicious"
         return ""
 
