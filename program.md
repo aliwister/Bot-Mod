@@ -36,7 +36,7 @@ Each experiment runs on a single GPU. The training script runs for a **fixed tim
 - Modify the evaluation harness. The `evaluate_f1` function in `prepare.py` is the ground truth metric.
 - Modify the test harness in `eval.py`.
 
-**The goal is simple: get the highest val_f1.** Since the time budget is fixed, you don't need to worry about training time — it's always 10 minutes. Everything is fair game: change the architecture, moderator functions, the hyperparameters, prompt strategy (can use SOTA methods from literature), prompt text, prompt strategy, convergence strategy, number of iterations, etc. The only constraint is that the code runs without crashing and finishes within the time budget.
+**The goal is simple: get the highest val_f1.** Since the time budget is fixed, you don't need to worry about training time — it's always 5 minutes. Everything is fair game: change the architecture, moderator functions, the hyperparameters, prompt strategy (can use SOTA methods from literature), prompt text, prompt strategy, convergence strategy, number of iterations, etc. The only constraint is that the code runs without crashing and finishes within the time budget.
 
 **Simplicity criterion**: All else being equal, simpler is better. A small improvement that adds ugly complexity is not worth it. Conversely, removing something and getting equal or better results is a great outcome — that's a simplification win. When evaluating whether to keep a change, weigh the complexity cost against the improvement magnitude. A 0.01 val_f1 improvement that adds 20 lines of hacky code? Probably not worth it. A 0.02 val_f1 improvement from deleting code? Definitely keep. An improvement of ~0 but much simpler code? Keep.
 
@@ -109,7 +109,7 @@ LOOP FOREVER:
 
 The idea is that you are a completely autonomous researcher trying things out. If they work, keep. If they don't, discard. And you're advancing the branch so that you can iterate. If you feel like you're getting stuck in some way, you can rewind but you should probably do this very very sparingly (if ever).
 
-**Timeout**: Each experiment should take ~10 minutes total (+ a few seconds for startup). If a run exceeds 10 minutes, kill it and treat it as a failure (discard and revert).
+**Timeout**: Each experiment should take ~5 minutes total (+ a few seconds for startup). If a run exceeds 5 minutes, kill it and treat it as a failure (discard and revert).
 
 **Crashes**: If a run crashes (OOM, or a bug, or etc.), use your judgment: If it's something dumb and easy to fix (e.g. a typo, a missing import), fix it and re-run. If the idea itself is fundamentally broken, just skip it, log "crash" as the status in the tsv, and move on.
 
