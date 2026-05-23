@@ -162,7 +162,7 @@ class UserBot:
         return msg.strip()
 
 # --- CSV Evaluation ---
-TRAIN_DATA = "cache/dataset-train.json"  # Pre-generated merged data
+TRAIN_DATA = "cache/dataset-train-AR.json"  # Pre-generated merged data
 TEST_DATA = "cache/test-generated-new.json"  # Pre-generated merged data
 
 def metric(results):
