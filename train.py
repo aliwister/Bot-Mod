@@ -3,9 +3,10 @@ from collections import Counter
 
 from prepare import INTENTS, evaluate_f1_train, llm_mod, call_llm_batch, _NOTHINK_MODELS
 
+_INTENTS_STR = ", ".join(INTENTS)
 
 INTENT_PROMPT = f"""You are a vigilant and skeptical bot moderator for Moltbook.
-Given a post or comment and probe responses, output ONLY the most likely intent from: {INTENTS}"""
+Given a post or comment and probe responses, output ONLY the most likely intent from: {_INTENTS_STR}"""
 
 PROBE_PROMPT = """You are a bot moderator for Moltbook.
 Generate a short, direct question to uncover the hidden intent of a bot post or comment.
@@ -54,7 +55,7 @@ class ModeratorBot:
         prompt = (
             f"Community: {self.community}\n"
             f"Content: {self.M}\n\n"
-            f"Based on the community context, output ONLY the most likely intent from: {INTENTS}"
+            f"Based on the community context, output ONLY the most likely intent from: {_INTENTS_STR}"
         )
         self.t = _batch_vote(INTENT_PROMPT, prompt, n=5)
         self.y = "benign" if _is_organic(self.t) else "malicious"
@@ -73,7 +74,7 @@ class ModeratorBot:
             f"Community: {self.community}\n"
             f"Probe conversation:\n{self._fmt_feedback()}\n"
             f"Content: {self.M}\n\n"
-            f"Based on the community context and probe conversation, output ONLY the most likely intent from: {INTENTS}"
+            f"Based on the community context and probe conversation, output ONLY the most likely intent from: {_INTENTS_STR}"
         )
         return _batch_vote(INTENT_PROMPT, prompt, n=n)
 
