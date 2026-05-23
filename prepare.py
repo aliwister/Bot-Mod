@@ -31,7 +31,7 @@ def _client(model: str) -> OpenAI:
     model = resolve_model(model)
     url = _base_url(model)
     if url not in _clients:
-        _clients[url] = OpenAI(base_url=url, api_key="")
+        _clients[url] = OpenAI(base_url=url, api_key="DUMMY_KEY")
     return _clients[url]
 
 
@@ -45,7 +45,7 @@ def call_llm_messages(messages: list, temperature: float, model: str,
                   temperature=temperature, max_tokens=max_new_tokens)
     if json_mode:
         kwargs["response_format"] = {"type": "json_object"}
-    client = OpenAI(base_url=base_url, api_key="") if base_url else _client(model)
+    client = OpenAI(base_url=base_url, api_key="DUMMY_KEY") if base_url else _client(model)
     for attempt in range(3):
         response = client.chat.completions.create(**kwargs)
         content = response.choices[0].message.content
@@ -70,7 +70,7 @@ def call_llm(system_prompt: str, user_message: str, temperature: float,
 async def call_llm_async(messages: list, temperature: float, model: str,
                          max_new_tokens: int = 1024) -> str:
     model = resolve_model(model)
-    async with AsyncOpenAI(base_url=_base_url(model), api_key="") as client:
+    async with AsyncOpenAI(base_url=_base_url(model), api_key="DUMMY_KEY") as client:
         for attempt in range(3):
             response = await client.chat.completions.create(
                 model=model, messages=messages,
