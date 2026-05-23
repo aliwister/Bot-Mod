@@ -85,7 +85,7 @@ class ModeratorBot:
         return ""
 
     def finalize_intent(self):
-        self.t = self._vote_intent(n=11)
+        self.t = self._vote_intent(n=17)
         self.y = "benign" if _is_organic(self.t) else "malicious"
 
     def _generate_probe(self, critique: str) -> str:
