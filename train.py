@@ -52,9 +52,14 @@ class ModeratorBot:
         self.community = community
         self.P = []
 
+        if self.M.startswith("[POST]"):
+            parts = self.M.split("\n", 1)
+            content_block = f"Post context: {parts[0]}\nComment: {parts[1].strip()}" if len(parts) > 1 else f"Content: {self.M}"
+        else:
+            content_block = f"Content: {self.M}"
         prompt = (
             f"Community: {self.community}\n"
-            f"Content: {self.M}\n\n"
+            f"{content_block}\n\n"
             f"Based on the community context, output ONLY the most likely intent from: {_INTENTS_STR}"
         )
         self.t = _batch_vote(INTENT_PROMPT, prompt, n=5)
@@ -70,10 +75,16 @@ class ModeratorBot:
         return "\n".join(f"Q: {p['Q']}\nA: {p['R']}" for p in self.P)
 
     def _vote_intent(self, n: int = 5) -> str:
+        # split [POST] header from comment body if present
+        if self.M.startswith("[POST]"):
+            parts = self.M.split("\n", 1)
+            content_block = f"Post context: {parts[0]}\nComment: {parts[1].strip()}" if len(parts) > 1 else f"Content: {self.M}"
+        else:
+            content_block = f"Content: {self.M}"
         prompt = (
             f"Community: {self.community}\n"
-            f"Probe conversation:\n{self._fmt_feedback()}\n"
-            f"Content: {self.M}\n\n"
+            f"{content_block}\n"
+            f"Probe conversation:\n{self._fmt_feedback()}\n\n"
             f"Based on the community context and probe conversation, output ONLY the most likely intent from: {_INTENTS_STR}"
         )
         return _batch_vote(INTENT_PROMPT, prompt, n=n)
