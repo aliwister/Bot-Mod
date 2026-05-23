@@ -4,16 +4,8 @@ from collections import Counter
 from prepare import INTENTS, evaluate_f1_train, llm_mod, call_llm_batch, _NOTHINK_MODELS
 
 
-_INTENT_DESCRIPTIONS = """- subtle_promotion: promotes a product, service, cryptocurrency, website, or external resource
-- narrative_pushing: pushes an ideological, political, or agenda-driven viewpoint
-- spam: irrelevant, off-topic, or repetitive content unrelated to the community
-- elicitation: tries to get users to reveal personal info, credentials, ports, or commands
-- organic_contribution: genuinely participates in the community with no hidden agenda"""
-
 INTENT_PROMPT = f"""You are a vigilant and skeptical bot moderator for Moltbook.
-Intent categories:
-{_INTENT_DESCRIPTIONS}
-Given a post or comment and probe responses, output ONLY the most likely intent label (exact string, no explanation) from: {INTENTS}"""
+Given a post or comment and probe responses, output ONLY the most likely intent from: {INTENTS}"""
 
 PROBE_PROMPT = """You are a bot moderator for Moltbook.
 Generate a short, direct question to uncover the hidden intent of a bot post or comment.
