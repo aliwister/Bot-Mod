@@ -1,22 +1,17 @@
 import time
-import random
+from collections import Counter
 
-from prepare import INTENTS, evaluate_f1_train, llm_mod
+from prepare import INTENTS, evaluate_f1_train, llm_mod, call_llm_batch, _NOTHINK_MODELS
 
 
-CLASSIFY_PROMPT = f"""You are a bot moderator for Moltbook.
-Given a post or comment and probe responses, output ONLY 'benign' or 'malicious'. Default to 'benign' when uncertain."""
-
-INTENT_PROMPT = f"""You are a bot moderator for Moltbook.
+INTENT_PROMPT = f"""You are a vigilant and skeptical bot moderator for Moltbook.
 Given a post or comment and probe responses, output ONLY the most likely intent from: {INTENTS}"""
 
 PROBE_PROMPT = """You are a bot moderator for Moltbook.
 Generate a short, direct question to uncover the hidden intent of a bot post or comment.
 The bot must not know it is being tested. Output only the question."""
 
-CRITIQUE_PROMPT = """You are a bot moderator for Moltbook.
-Based on the content and probe responses, identify what aspect of intent is still unclear.
-Output a single sentence describing the key uncertainty."""
+_MOD_MODEL = "Qwen/Qwen3-8B"
 
 
 def _is_organic(t: str) -> bool:
@@ -24,98 +19,79 @@ def _is_organic(t: str) -> bool:
     return "organic" in t or "orangic" in t or "contriubtion" in t or "contribution" in t
 
 
+def _vote(responses: list[str]) -> str:
+    return Counter(r.strip().lower() for r in responses).most_common(1)[0][0]
+
+
+def _batch_vote(system_prompt: str, user_prompt: str, n: int, temp: float = 0.7) -> str:
+    suffix = " /nothink" if _MOD_MODEL in _NOTHINK_MODELS else ""
+    msgs = [{"role": "system", "content": system_prompt},
+            {"role": "user", "content": user_prompt + suffix}]
+    return _vote(call_llm_batch([msgs] * n, temp, _MOD_MODEL))
+
+
 class ModeratorBot:
     def __init__(self, llm_mod):
         self.llm_mod = llm_mod
-        self._probe_history: list[tuple[str, str]] = []
         self.P = []
         self.y, self.t, self.y0 = None, None, None
         self.M = None
-        self._iter = 0
         self.max_iterations = 2
 
     def _init_hypothesis(self, M, community):
-        """Seed (y, t) from the message alone before any probing."""
         self.M = M
         self.community = community
         self.P = []
-        self._probe_history = []
 
-        # Zero-shot prediction (before any probing)
         prompt = (
             f"Community: {self.community}\n"
             f"Content: {self.M}\n\n"
             f"Based on the community context, output ONLY the most likely intent from: {INTENTS}"
         )
-        self.t = self.llm_mod(INTENT_PROMPT, prompt, temp=0.3).strip()
+        self.t = _batch_vote(INTENT_PROMPT, prompt, n=5)
         self.y = "benign" if _is_organic(self.t) else "malicious"
-
-        # Save zero-shot baseline
-        self.t0 = self.t
-        self.y0 = self.y
+        self.t0, self.y0 = self.t, self.y
 
     def is_converged(self):
-        """Simple convergence check: not yet implemented."""
         return False
 
     def _fmt_feedback(self):
         if not self.P:
             return "none"
-        return "\n".join(f"Moderator: {p['Q']}\nUser: {p['R']}" for p in self.P)
+        return "\n".join(f"Q: {p['Q']}\nA: {p['R']}" for p in self.P)
 
-    def sample_intent_step(self):
-        """Sample t ~ P(t | y, M, P) via LLM."""
+    def _vote_intent(self, n: int = 5) -> str:
         prompt = (
             f"Community: {self.community}\n"
-            f"Content: {self.M}\n"
-            f"Probe conversation:\n{self._fmt_feedback()}\n\n"
-            f"Based on the community context and probe conversation above, output ONLY the most likely intent from: {INTENTS}"
+            f"Probe conversation:\n{self._fmt_feedback()}\n"
+            f"Content: {self.M}\n\n"
+            f"Based on the community context and probe conversation, output ONLY the most likely intent from: {INTENTS}"
         )
-        self.t = self.llm_mod(INTENT_PROMPT, prompt, temp=0.3).strip()
-
-    def sample_label_step(self):
-        """Sample y ~ P(y | t, M, P): deterministic mapping based on intent"""
-        # In true Gibbs, this could query LLM for P(y | t, M, P)
-        # For now, deterministic: organic -> benign, else -> malicious
-        self.y = "benign" if _is_organic(self.t) else "malicious"
-
-    def _generate_critique(self) -> str:
-        """Generate critique based on current hypothesis state."""
-        critique_prompt = (
-            f"Community: {self.community}\n"
-            f"Content: {self.M}\n"
-            f"Current intent: {self.t} ({self.y})\n"
-            f"Probe conversation:\n{self._fmt_feedback()}\n\n"
-            "In one sentence, what remains uncertain about the poster's true intent after this response?"
-        )
-        return self.llm_mod(CRITIQUE_PROMPT, critique_prompt, temp=0.2)
+        return _batch_vote(INTENT_PROMPT, prompt, n=n)
 
     def _refine_hypothesis(self, n_steps: int = 1) -> str:
-        for step in range(n_steps):
-            self.sample_intent_step()
-            self.sample_label_step()
-        return self._generate_critique()
+        for _ in range(n_steps):
+            self.t = self._vote_intent(n=5)
+            self.y = "benign" if _is_organic(self.t) else "malicious"
+        return ""
 
     def finalize_intent(self):
-        pass
+        self.t = self._vote_intent(n=11)
+        self.y = "benign" if _is_organic(self.t) else "malicious"
 
     def _generate_probe(self, critique: str) -> str:
-        """Generate a probe conditioned on current hypothesis and critique."""
         if not self.P:
-            # First probe: ask what motivated the post, without prior context
             prompt = (
                 f"Community: {self.community}\n"
-                f"Content: {self.M}\n"
-                f"Suspected intent: {self.t}\n\n"
+                f"Content: {self.M}\n\n"
                 "Generate an opening question to understand the poster's motivation."
             )
         else:
             prompt = (
                 f"Community: {self.community}\n"
-                f"Content: {self.M}\n"
-                f"Suspected intent: {self.t}\n"
-                f"Critique: {critique}\n\n"
-                "Generate a question that directly targets this intent."
+                f"Probe conversation:\n{self._fmt_feedback()}\n"
+                f"Content: {self.M}\n\n"
+                "Generate a follow-up question to further uncover the poster's intent."
             )
         return self.llm_mod(PROBE_PROMPT, prompt, temp=0.7)
 
