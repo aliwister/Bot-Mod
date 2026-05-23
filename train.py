@@ -19,8 +19,16 @@ def _is_organic(t: str) -> bool:
     return "organic" in t or "orangic" in t or "contriubtion" in t or "contribution" in t
 
 
+def _normalize_intent(t: str) -> str:
+    t = t.strip().lower().replace(" ", "_")
+    for intent in INTENTS:
+        if intent in t:
+            return intent
+    return t
+
+
 def _vote(responses: list[str]) -> str:
-    return Counter(r.strip().lower() for r in responses).most_common(1)[0][0]
+    return Counter(_normalize_intent(r) for r in responses).most_common(1)[0][0]
 
 
 def _batch_vote(system_prompt: str, user_prompt: str, n: int, temp: float = 0.7) -> str:
