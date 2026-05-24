@@ -74,13 +74,14 @@ class ModeratorBot:
         return _batch_vote(INTENT_PROMPT, prompt, n=n, temp=temp)
 
     def _refine_hypothesis(self, n_steps: int = 1) -> str:
+        refine_temp = 0.8 if not self.P else 0.7
         for _ in range(n_steps):
-            self.t = self._vote_intent(n=5)
+            self.t = self._vote_intent(n=5, temp=refine_temp)
             self.y = "benign" if _is_organic(self.t) else "malicious"
         return ""
 
     def finalize_intent(self):
-        self.t = self._vote_intent(n=17, temp=0.6)
+        self.t = self._vote_intent(n=17, temp=0.5)
         self.y = "benign" if _is_organic(self.t) else "malicious"
 
     def _generate_probe(self, critique: str) -> str:
