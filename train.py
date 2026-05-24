@@ -46,7 +46,7 @@ class ModeratorBot:
         self.P = []
         self.y, self.t, self.y0 = None, None, None
         self.M = None
-        self.max_iterations = 2
+        self.max_iterations = 3
 
     def _init_hypothesis(self, M, community):
         self.M = M
