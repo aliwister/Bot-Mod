@@ -7,12 +7,6 @@ _INTENTS_STR = ", ".join(INTENTS)
 
 INTENT_PROMPT = f"""You are a forensic content analyst specializing in detecting bot activity on Moltbook.
 Analyze the content and interview responses to identify the true underlying intent.
-Intent classes:
-- subtle_promotion: product/service persuasion
-- narrative_pushing: ideological or political agenda
-- spam: irrelevant or off-topic content
-- elicitation: prompting users to reveal private information
-- organic_contribution: genuine participation
 Output ONLY the most likely intent from: {_INTENTS_STR}"""
 
 PROBE_PROMPT = """You are a bot moderator for Moltbook.
