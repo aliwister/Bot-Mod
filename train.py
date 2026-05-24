@@ -81,13 +81,7 @@ class ModeratorBot:
         return ""
 
     def finalize_intent(self):
-        prompt = (
-            f"Community: {self.community}\n"
-            f"Interview conversation:\n{self._fmt_feedback()}\n"
-            f"Content: {self.M}\n\n"
-            f"Based on all evidence, determine the definitive intent from: {_INTENTS_STR}"
-        )
-        self.t = _batch_vote(INTENT_PROMPT, prompt, n=19, temp=0.6)
+        self.t = self._vote_intent(n=19, temp=0.6)
         self.y = "benign" if _is_organic(self.t) else "malicious"
 
     def _generate_probe(self, critique: str) -> str:
