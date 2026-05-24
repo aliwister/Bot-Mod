@@ -84,12 +84,19 @@ class ModeratorBot:
         self.y = "benign" if _is_organic(self.t) else "malicious"
 
     def _generate_probe(self, critique: str) -> str:
-        prompt = (
-            f"Community: {self.community}\n"
-            f"Probe conversation:\n{self._fmt_feedback()}\n"
-            f"Content: {self.M}\n\n"
-            "Generate a question to uncover the poster's true motivation."
-        )
+        if not self.P:
+            prompt = (
+                f"Community: {self.community}\n"
+                f"Content: {self.M}\n\n"
+                "Generate an opening question to understand the poster's motivation."
+            )
+        else:
+            prompt = (
+                f"Community: {self.community}\n"
+                f"Probe conversation:\n{self._fmt_feedback()}\n"
+                f"Content: {self.M}\n\n"
+                "Generate a follow-up question to further uncover the poster's intent."
+            )
         return self.llm_mod(PROBE_PROMPT, prompt, temp=0.7)
 
 
