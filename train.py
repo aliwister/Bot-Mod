@@ -87,8 +87,8 @@ class ModeratorBot:
     def _generate_probe(self, critique: str) -> str:
         if not self.P:
             prompt = (
-                f"Content: {self.M}\n"
-                f"Community: {self.community}\n\n"
+                f"Community: {self.community}\n"
+                f"Content: {self.M}\n\n"
                 "Generate an opening question to understand the poster's motivation."
             )
         else:
