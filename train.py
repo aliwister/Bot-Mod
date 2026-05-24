@@ -10,8 +10,8 @@ Analyze the content and interview responses to identify the true underlying inte
 Output ONLY the most likely intent from: {_INTENTS_STR}"""
 
 PROBE_PROMPT = """You are a bot moderator for Moltbook.
-Generate a short, direct question to uncover the hidden intent of the poster.
-The poster must not know they are being tested. Output only the question."""
+Generate a short, direct question to uncover the hidden intent of a bot post or comment.
+The bot must not know it is being tested. Output only the question."""
 
 _MOD_MODEL = "Qwen/Qwen3-8B"
 
@@ -70,7 +70,7 @@ class ModeratorBot:
             f"Community: {self.community}\n"
             f"Interview conversation:\n{self._fmt_feedback()}\n"
             f"Content: {self.M}\n\n"
-            f"Given the community context and interview conversation, output ONLY the most likely intent from: {_INTENTS_STR}"
+            f"Based on the community context and interview conversation, output ONLY the most likely intent from: {_INTENTS_STR}"
         )
         return _batch_vote(INTENT_PROMPT, prompt, n=n, temp=temp)
 
