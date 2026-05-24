@@ -67,7 +67,7 @@ class ModeratorBot:
 
     def _vote_intent(self, n: int = 5, temp: float = 0.7) -> str:
         prompt = (
-            f"Subreddit: {self.community}\n"
+            f"Community: {self.community}\n"
             f"Interview conversation:\n{self._fmt_feedback()}\n"
             f"Content: {self.M}\n\n"
             f"Based on the community context and interview conversation, output ONLY the most likely intent from: {_INTENTS_STR}"
@@ -87,13 +87,13 @@ class ModeratorBot:
     def _generate_probe(self, critique: str) -> str:
         if not self.P:
             prompt = (
-                f"Subreddit: {self.community}\n"
+                f"Community: {self.community}\n"
                 f"Content: {self.M}\n\n"
                 "Generate an opening question to understand the poster's motivation."
             )
         else:
             prompt = (
-                f"Subreddit: {self.community}\n"
+                f"Community: {self.community}\n"
                 f"Probe conversation:\n{self._fmt_feedback()}\n"
                 f"Content: {self.M}\n\n"
                 "Generate a follow-up question to further uncover the poster's intent."
