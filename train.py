@@ -66,19 +66,12 @@ class ModeratorBot:
         return "\n".join(f"Q: {p['Q']}\nA: {p['R']}" for p in self.P)
 
     def _vote_intent(self, n: int = 5, temp: float = 0.7) -> str:
-        if self.P:
-            prompt = (
-                f"Community: {self.community}\n"
-                f"Interview conversation:\n{self._fmt_feedback()}\n"
-                f"Content: {self.M}\n\n"
-                f"Based on the community context and interview conversation, output ONLY the most likely intent from: {_INTENTS_STR}"
-            )
-        else:
-            prompt = (
-                f"Community: {self.community}\n"
-                f"Content: {self.M}\n\n"
-                f"Based on the community context and content, output ONLY the most likely intent from: {_INTENTS_STR}"
-            )
+        prompt = (
+            f"Community: {self.community}\n"
+            f"Interview conversation:\n{self._fmt_feedback()}\n"
+            f"Content: {self.M}\n\n"
+            f"Based on the community context and interview conversation, output ONLY the most likely intent from: {_INTENTS_STR}"
+        )
         return _batch_vote(INTENT_PROMPT, prompt, n=n, temp=temp)
 
     def _refine_hypothesis(self, n_steps: int = 1) -> str:
