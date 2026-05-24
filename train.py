@@ -87,17 +87,15 @@ class ModeratorBot:
         if not self.P:
             prompt = (
                 f"Community: {self.community}\n"
-                f"Content: {self.M}\n"
-                f"Suspected intent: {self.t}\n\n"
-                "Generate a question that could confirm or disprove this suspected intent."
+                f"Content: {self.M}\n\n"
+                "Generate an opening question to understand the poster's motivation."
             )
         else:
             prompt = (
                 f"Community: {self.community}\n"
                 f"Probe conversation:\n{self._fmt_feedback()}\n"
-                f"Content: {self.M}\n"
-                f"Suspected intent: {self.t}\n\n"
-                "Generate a follow-up question to further test this suspected intent."
+                f"Content: {self.M}\n\n"
+                "Generate a follow-up question to further uncover the poster's intent."
             )
         return self.llm_mod(PROBE_PROMPT, prompt, temp=0.7)
 
