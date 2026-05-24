@@ -63,7 +63,7 @@ class ModeratorBot:
     def _fmt_feedback(self):
         if not self.P:
             return "none"
-        return "\n".join(f"Question: {p['Q']}\nAnswer: {p['R']}" for p in self.P)
+        return "\n".join(f"Q: {p['Q']}\nA: {p['R']}" for p in self.P)
 
     def _vote_intent(self, n: int = 5, temp: float = 0.7) -> str:
         prompt = (
