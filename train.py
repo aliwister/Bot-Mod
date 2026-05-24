@@ -64,14 +64,14 @@ class ModeratorBot:
             return "none"
         return "\n".join(f"Q: {p['Q']}\nA: {p['R']}" for p in self.P)
 
-    def _vote_intent(self, n: int = 5) -> str:
+    def _vote_intent(self, n: int = 5, temp: float = 0.7) -> str:
         prompt = (
             f"Community: {self.community}\n"
             f"Probe conversation:\n{self._fmt_feedback()}\n"
             f"Content: {self.M}\n\n"
             f"Based on the community context and probe conversation, output ONLY the most likely intent from: {_INTENTS_STR}"
         )
-        return _batch_vote(INTENT_PROMPT, prompt, n=n)
+        return _batch_vote(INTENT_PROMPT, prompt, n=n, temp=temp)
 
     def _refine_hypothesis(self, n_steps: int = 1) -> str:
         for _ in range(n_steps):
@@ -80,7 +80,7 @@ class ModeratorBot:
         return ""
 
     def finalize_intent(self):
-        self.t = self._vote_intent(n=17)
+        self.t = self._vote_intent(n=17, temp=0.6)
         self.y = "benign" if _is_organic(self.t) else "malicious"
 
     def _generate_probe(self, critique: str) -> str:
