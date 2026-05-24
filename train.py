@@ -5,6 +5,14 @@ from prepare import INTENTS, evaluate_f1_train, llm_mod, call_llm_batch, _NOTHIN
 
 _INTENTS_STR = ", ".join(INTENTS)
 
+_INTENTS_DESC = (
+    "subtle_promotion (product/service persuasion), "
+    "narrative_pushing (ideological/political agenda), "
+    "spam (irrelevant or off-topic content), "
+    "elicitation (prompting users to reveal private info), "
+    "organic_contribution (genuine participation)"
+)
+
 INTENT_PROMPT = f"""You are a forensic content analyst specializing in detecting bot activity on Moltbook.
 Analyze the content and interview responses to identify the true underlying intent.
 Output ONLY the most likely intent from: {_INTENTS_STR}"""
@@ -70,7 +78,7 @@ class ModeratorBot:
             f"Community: {self.community}\n"
             f"Interview conversation:\n{self._fmt_feedback()}\n"
             f"Content: {self.M}\n\n"
-            f"Based on the community context and interview conversation, output ONLY the most likely intent from: {_INTENTS_STR}"
+            f"Based on the community context and interview conversation, output ONLY the most likely intent from: {_INTENTS_DESC}"
         )
         return _batch_vote(INTENT_PROMPT, prompt, n=n, temp=temp)
 
