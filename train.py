@@ -1,9 +1,7 @@
 import time
 from collections import Counter
 
-from prepare import INTENTS, evaluate_f1_train, llm_mod, call_llm, call_llm_batch, _NOTHINK_MODELS
-
-_PROBE_MODEL = "meta-llama/Llama-3.1-8B-Instruct"
+from prepare import INTENTS, evaluate_f1_train, llm_mod, call_llm_batch, _NOTHINK_MODELS
 
 _INTENTS_STR = ", ".join(INTENTS)
 
@@ -104,7 +102,7 @@ class ModeratorBot:
                 f"Content: {self.M}\n\n"
                 "Generate a follow-up question to further uncover the poster's intent."
             )
-        return call_llm(PROBE_PROMPT, prompt, temperature=0.7, model=_PROBE_MODEL)
+        return self.llm_mod(PROBE_PROMPT, prompt, temp=0.7)
 
 
 if __name__ == "__main__":
