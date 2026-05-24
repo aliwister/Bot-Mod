@@ -52,12 +52,7 @@ class ModeratorBot:
         self.community = community
         self.P = []
 
-        prompt = (
-            f"Community: {self.community}\n"
-            f"Content: {self.M}\n\n"
-            f"Based on the community context, output ONLY the most likely intent from: {_INTENTS_STR}"
-        )
-        self.t = _batch_vote(INTENT_PROMPT, prompt, n=5)
+        self.t = self._vote_intent(n=5)
         self.y = "benign" if _is_organic(self.t) else "malicious"
         self.t0, self.y0 = self.t, self.y
 
