@@ -39,18 +39,6 @@ def _batch_vote(system_prompt: str, user_prompt: str, n: int, temp: float = 0.7)
     return _vote(call_llm_batch([msgs] * n, temp, _MOD_MODEL))
 
 
-def _ensemble_vote(system_prompt: str, user_prompt: str, n_per_temp: int) -> str:
-    """Vote by combining samples from two temperatures."""
-    suffix = " /nothink" if _MOD_MODEL in _NOTHINK_MODELS else ""
-    msgs = [{"role": "system", "content": system_prompt},
-            {"role": "user", "content": user_prompt + suffix}]
-    responses = (
-        call_llm_batch([msgs] * n_per_temp, 0.5, _MOD_MODEL) +
-        call_llm_batch([msgs] * n_per_temp, 0.9, _MOD_MODEL)
-    )
-    return _vote(responses)
-
-
 class ModeratorBot:
     def __init__(self, llm_mod):
         self.llm_mod = llm_mod
@@ -92,13 +80,7 @@ class ModeratorBot:
         return ""
 
     def finalize_intent(self):
-        prompt = (
-            f"Community: {self.community}\n"
-            f"Probe conversation:\n{self._fmt_feedback()}\n"
-            f"Content: {self.M}\n\n"
-            f"Based on the community context and probe conversation, output ONLY the most likely intent from: {_INTENTS_STR}"
-        )
-        self.t = _ensemble_vote(INTENT_PROMPT, prompt, n_per_temp=9)
+        self.t = self._vote_intent(n=17, temp=0.6)
         self.y = "benign" if _is_organic(self.t) else "malicious"
 
     def _generate_probe(self, critique: str) -> str:
