@@ -89,7 +89,7 @@ class ModeratorBot:
             prompt = (
                 f"Community: {self.community}\n"
                 f"Content: {self.M}\n\n"
-                "Generate a casual opening question to understand the poster's motivation."
+                "Generate an opening question to understand the poster's motivation."
             )
         else:
             prompt = (
