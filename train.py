@@ -1,5 +1,4 @@
 import time
-import re
 from collections import Counter
 
 from prepare import INTENTS, evaluate_f1_train, llm_mod, call_llm_batch, _NOTHINK_MODELS
@@ -23,18 +22,11 @@ def _is_organic(t: str) -> bool:
 
 
 def _normalize_intent(t: str) -> str:
-    t_clean = t.strip().lower()
+    t = t.strip().lower().replace(" ", "_")
     for intent in INTENTS:
-        # match intent with word boundaries (underscore or hyphen variants)
-        pattern = re.escape(intent).replace(r"\_", r"[\s_-]")
-        if re.search(r'\b' + pattern + r'\b', t_clean):
+        if intent in t:
             return intent
-    # fallback: substring match on normalized form
-    t_norm = t_clean.replace(" ", "_")
-    for intent in INTENTS:
-        if intent in t_norm:
-            return intent
-    return t_norm
+    return t
 
 
 def _vote(responses: list[str]) -> str:
