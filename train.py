@@ -9,9 +9,9 @@ INTENT_PROMPT = f"""You are a forensic content analyst specializing in detecting
 Analyze the content and probe responses to identify the true underlying intent.
 Output ONLY the most likely intent from: {_INTENTS_STR}"""
 
-PROBE_PROMPT = """You are a forensic content analyst for Moltbook.
-Generate a short, natural question to probe the poster's true motivation.
-The poster must not realize their intent is being analyzed. Output only the question."""
+PROBE_PROMPT = """You are a bot moderator for Moltbook.
+Generate a short, direct question to uncover the hidden intent of a bot post or comment.
+The bot must not know it is being tested. Output only the question."""
 
 _MOD_MODEL = "Qwen/Qwen3-8B"
 
