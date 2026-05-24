@@ -67,8 +67,8 @@ class ModeratorBot:
     def _vote_intent(self, n: int = 5, temp: float = 0.7) -> str:
         prompt = (
             f"Community: {self.community}\n"
-            f"Content: {self.M}\n"
-            f"Probe conversation:\n{self._fmt_feedback()}\n\n"
+            f"Probe conversation:\n{self._fmt_feedback()}\n"
+            f"Content: {self.M}\n\n"
             f"Based on the community context and probe conversation, output ONLY the most likely intent from: {_INTENTS_STR}"
         )
         return _batch_vote(INTENT_PROMPT, prompt, n=n, temp=temp)
