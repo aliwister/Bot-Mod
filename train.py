@@ -80,7 +80,18 @@ class ModeratorBot:
         return ""
 
     def finalize_intent(self):
-        self.t = self._vote_intent(n=17, temp=0.6)
+        prompt = (
+            f"Community: {self.community}\n"
+            f"Probe conversation:\n{self._fmt_feedback()}\n"
+            f"Content: {self.M}\n\n"
+            f"Based on the community context and probe conversation, output ONLY the most likely intent from: {_INTENTS_STR}"
+        )
+        suffix = " /nothink" if _MOD_MODEL in _NOTHINK_MODELS else ""
+        msgs = [{"role": "system", "content": INTENT_PROMPT},
+                {"role": "user", "content": prompt + suffix}]
+        r1 = call_llm_batch([msgs] * 9, 0.6, _MOD_MODEL)
+        r2 = call_llm_batch([msgs] * 8, 0.7, _MOD_MODEL)
+        self.t = _vote(r1 + r2)
         self.y = "benign" if _is_organic(self.t) else "malicious"
 
     def _generate_probe(self, critique: str) -> str:
