@@ -36,7 +36,7 @@ def _batch_vote(system_prompt: str, user_prompt: str, n: int, temp: float = 0.7)
     suffix = " /nothink" if _MOD_MODEL in _NOTHINK_MODELS else ""
     msgs = [{"role": "system", "content": system_prompt},
             {"role": "user", "content": user_prompt + suffix}]
-    return _vote(call_llm_batch([msgs] * n, temp, _MOD_MODEL))
+    return _vote(call_llm_batch([msgs] * n, temp, _MOD_MODEL, max_new_tokens=32))
 
 
 class ModeratorBot:
