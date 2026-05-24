@@ -80,28 +80,8 @@ class ModeratorBot:
         return ""
 
     def finalize_intent(self):
-        # First pass: full 5-way vote to determine binary
-        t_full = self._vote_intent(n=9, temp=0.6)
-        if _is_organic(t_full):
-            self.t = t_full
-            self.y = "benign"
-        else:
-            # Second pass: focused vote among malicious intents only
-            malicious_intents = [i for i in INTENTS if i != "organic_contribution"]
-            mal_str = ", ".join(malicious_intents)
-            prompt = (
-                f"Community: {self.community}\n"
-                f"Probe conversation:\n{self._fmt_feedback()}\n"
-                f"Content: {self.M}\n\n"
-                f"This content is malicious. Output ONLY the most likely malicious intent from: {mal_str}"
-            )
-            suffix = " /nothink" if _MOD_MODEL in _NOTHINK_MODELS else ""
-            msgs = [{"role": "system", "content": INTENT_PROMPT},
-                    {"role": "user", "content": prompt + suffix}]
-            responses = call_llm_batch([msgs] * 9, 0.6, _MOD_MODEL)
-            mal_vote = Counter(_normalize_intent(r) for r in responses).most_common(1)[0][0]
-            self.t = mal_vote if mal_vote in malicious_intents else t_full
-            self.y = "malicious"
+        self.t = self._vote_intent(n=17, temp=0.6)
+        self.y = "benign" if _is_organic(self.t) else "malicious"
 
     def _generate_probe(self, critique: str) -> str:
         if not self.P:
