@@ -66,13 +66,11 @@ class ModeratorBot:
         return "\n".join(f"Q: {p['Q']}\nA: {p['R']}" for p in self.P)
 
     def _vote_intent(self, n: int = 5, temp: float = 0.7) -> str:
-        probe_info = self._fmt_feedback()
-        probe_context = f"Pay special attention to the probe conversation.\n" if probe_info != "none" else ""
         prompt = (
             f"Community: {self.community}\n"
-            f"Probe conversation:\n{probe_info}\n"
+            f"Probe conversation:\n{self._fmt_feedback()}\n"
             f"Content: {self.M}\n\n"
-            f"{probe_context}Based on the community context and probe conversation, output ONLY the most likely intent from: {_INTENTS_STR}"
+            f"Based on the community context and probe conversation, output ONLY the most likely intent from: {_INTENTS_STR}"
         )
         return _batch_vote(INTENT_PROMPT, prompt, n=n, temp=temp)
 
