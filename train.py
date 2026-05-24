@@ -97,7 +97,7 @@ class ModeratorBot:
                 f"Content: {self.M}\n\n"
                 "Generate a follow-up question to further uncover the poster's intent."
             )
-        return self.llm_mod(PROBE_PROMPT, prompt, temp=0.7, max_new_tokens=128)
+        return self.llm_mod(PROBE_PROMPT, prompt, temp=0.7)
 
 
 if __name__ == "__main__":
