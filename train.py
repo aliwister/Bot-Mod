@@ -45,7 +45,7 @@ class ModeratorBot:
         self.P = []
         self.y, self.t, self.y0 = None, None, None
         self.M = None
-        self.max_iterations = 1
+        self.max_iterations = 2
 
     def _init_hypothesis(self, M, community):
         self.M = M
@@ -85,7 +85,7 @@ class ModeratorBot:
         return ""
 
     def finalize_intent(self):
-        self.t = self._vote_intent(n=25)
+        self.t = self._vote_intent(n=17)
         self.y = "benign" if _is_organic(self.t) else "malicious"
 
     def _generate_probe(self, critique: str) -> str:
