@@ -76,7 +76,8 @@ class ModeratorBot:
 
     def _refine_hypothesis(self, n_steps: int = 1) -> str:
         for _ in range(n_steps):
-            self.t = self._vote_intent(n=5)
+            n = 5 if not self.P else 3
+            self.t = self._vote_intent(n=n)
             self.y = "benign" if _is_organic(self.t) else "malicious"
         return ""
 
