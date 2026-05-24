@@ -81,17 +81,7 @@ class ModeratorBot:
         return ""
 
     def finalize_intent(self):
-        suffix = ""  # allow thinking for final vote
-        msgs = [{"role": "system", "content": INTENT_PROMPT},
-                {"role": "user", "content": (
-                    f"Community: {self.community}\n"
-                    f"Interview conversation:\n{self._fmt_feedback()}\n"
-                    f"Content: {self.M}\n\n"
-                    f"Based on the community context and interview conversation, output ONLY the most likely intent from: {_INTENTS_STR}"
-                ) + suffix}]
-        from prepare import call_llm_batch
-        responses = call_llm_batch([msgs] * 11, 0.6, _MOD_MODEL)
-        self.t = _vote(responses)
+        self.t = self._vote_intent(n=17, temp=0.6)
         self.y = "benign" if _is_organic(self.t) else "malicious"
 
     def _generate_probe(self, critique: str) -> str:
