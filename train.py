@@ -70,7 +70,7 @@ class ModeratorBot:
             f"Community: {self.community}\n"
             f"Probe conversation:\n{self._fmt_feedback()}\n"
             f"Content: {self.M}\n\n"
-            f"Identify the true intent. Output ONLY one of: {_INTENTS_STR}"
+            f"Based on the community context and probe conversation, output ONLY the most likely intent from: {_INTENTS_STR}"
         )
         return _batch_vote(INTENT_PROMPT, prompt, n=n, temp=temp)
 
