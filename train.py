@@ -89,6 +89,7 @@ class ModeratorBot:
             prompt = (
                 f"Community: {self.community}\n"
                 f"Content: {self.M}\n\n"
+                f"Suspected intent: {self.t}\n\n"
                 "Generate an opening question to understand the poster's motivation."
             )
         else:
@@ -96,6 +97,7 @@ class ModeratorBot:
                 f"Community: {self.community}\n"
                 f"Probe conversation:\n{self._fmt_feedback()}\n"
                 f"Content: {self.M}\n\n"
+                f"Suspected intent: {self.t}\n\n"
                 "Generate a follow-up question to further uncover the poster's intent."
             )
         return self.llm_mod(PROBE_PROMPT, prompt, temp=0.7)
