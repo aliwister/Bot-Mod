@@ -6,7 +6,8 @@ from prepare import INTENTS, evaluate_f1_train, llm_mod, call_llm_batch, _NOTHIN
 _INTENTS_STR = ", ".join(INTENTS)
 
 INTENT_PROMPT = f"""You are a vigilant and skeptical bot moderator for Moltbook.
-Given a post or comment and probe responses, output ONLY the most likely intent from: {_INTENTS_STR}"""
+Given a post or comment and probe responses, output ONLY the most likely intent from: {_INTENTS_STR}
+Most content is organic_contribution. Only flag malicious if there is clear evidence."""
 
 PROBE_PROMPT = """You are a bot moderator for Moltbook.
 Generate a short, direct question to uncover the hidden intent of a bot post or comment.
