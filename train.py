@@ -85,19 +85,11 @@ class ModeratorBot:
         self.y = "benign" if _is_organic(self.t) else "malicious"
 
     def _generate_probe(self, critique: str) -> str:
-        is_last = len(self.P) >= self.max_iterations - 1
         if not self.P:
             prompt = (
                 f"Community: {self.community}\n"
                 f"Content: {self.M}\n\n"
                 "Generate an opening question to understand the poster's motivation."
-            )
-        elif is_last:
-            prompt = (
-                f"Community: {self.community}\n"
-                f"Probe conversation:\n{self._fmt_feedback()}\n"
-                f"Content: {self.M}\n\n"
-                "Generate a final direct question to conclusively determine whether this poster has a hidden agenda."
             )
         else:
             prompt = (
