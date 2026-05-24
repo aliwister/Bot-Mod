@@ -3,8 +3,7 @@ from collections import Counter
 
 from prepare import INTENTS, evaluate_f1_train, llm_mod, call_llm_batch, _NOTHINK_MODELS
 
-_INTENTS_LIST = ["organic_contribution"] + [i for i in INTENTS if i != "organic_contribution"]
-_INTENTS_STR = ", ".join(_INTENTS_LIST)
+_INTENTS_STR = ", ".join(INTENTS)
 
 INTENT_PROMPT = f"""You are a vigilant and skeptical bot moderator for Moltbook.
 Given a post or comment and probe responses, output ONLY the most likely intent from: {_INTENTS_STR}"""
