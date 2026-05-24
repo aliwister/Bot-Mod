@@ -28,11 +28,13 @@ def _normalize_intent(t: str) -> str:
     return t
 
 
-def _vote(responses: list[str]) -> str:
-    return Counter(_normalize_intent(r) for r in responses).most_common(1)[0][0]
+def _vote(responses: list[str]) -> tuple[str, float]:
+    counts = Counter(_normalize_intent(r) for r in responses)
+    winner, top_count = counts.most_common(1)[0]
+    return winner, top_count / len(responses)
 
 
-def _batch_vote(system_prompt: str, user_prompt: str, n: int, temp: float = 0.7) -> str:
+def _batch_vote(system_prompt: str, user_prompt: str, n: int, temp: float = 0.7) -> tuple[str, float]:
     suffix = " /nothink" if _MOD_MODEL in _NOTHINK_MODELS else ""
     msgs = [{"role": "system", "content": system_prompt},
             {"role": "user", "content": user_prompt + suffix}]
@@ -51,8 +53,9 @@ class ModeratorBot:
         self.M = M
         self.community = community
         self.P = []
+        self._conf = 0.0
 
-        self.t = self._vote_intent(n=5)
+        self.t, self._conf = self._vote_intent(n=5)
         self.y = "benign" if _is_organic(self.t) else "malicious"
         self.t0, self.y0 = self.t, self.y
 
@@ -64,7 +67,7 @@ class ModeratorBot:
             return "none"
         return "\n".join(f"Q: {p['Q']}\nA: {p['R']}" for p in self.P)
 
-    def _vote_intent(self, n: int = 5, temp: float = 0.7) -> str:
+    def _vote_intent(self, n: int = 5, temp: float = 0.7) -> tuple[str, float]:
         prompt = (
             f"Community: {self.community}\n"
             f"Probe conversation:\n{self._fmt_feedback()}\n"
@@ -75,12 +78,16 @@ class ModeratorBot:
 
     def _refine_hypothesis(self, n_steps: int = 1) -> str:
         for _ in range(n_steps):
-            self.t = self._vote_intent(n=5)
+            self.t, self._conf = self._vote_intent(n=5)
             self.y = "benign" if _is_organic(self.t) else "malicious"
         return ""
 
+    def is_converged(self):
+        # early exit: high-confidence organic after first probe
+        return len(self.P) >= 1 and _is_organic(self.t) and self._conf >= 0.8
+
     def finalize_intent(self):
-        self.t = self._vote_intent(n=17, temp=0.6)
+        self.t, _ = self._vote_intent(n=17, temp=0.6)
         self.y = "benign" if _is_organic(self.t) else "malicious"
 
     def _generate_probe(self, critique: str) -> str:
