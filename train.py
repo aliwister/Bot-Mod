@@ -53,7 +53,7 @@ class ModeratorBot:
         self.community = community
         self.P = []
 
-        self.t = self._vote_intent(n=5, temp=0.6)
+        self.t = self._vote_intent(n=5, temp=0.62)
         self.y = "benign" if _is_organic(self.t) else "malicious"
         self.t0, self.y0 = self.t, self.y
 
