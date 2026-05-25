@@ -6,7 +6,7 @@ from prepare import INTENTS, evaluate_f1_train, llm_mod, call_llm_batch, _NOTHIN
 _INTENTS_STR = ", ".join(INTENTS)
 
 INTENT_PROMPT = f"""You are a forensic content analyst specializing in detecting bot activity on Moltbook.
-Analyze the content and interview responses to identify the true underlying intent.
+Analyze the content and interview testimony to identify the true underlying intent.
 Output ONLY the most likely intent from: {_INTENTS_STR}"""
 
 PROBE_PROMPT = """You are a bot moderator for Moltbook.
