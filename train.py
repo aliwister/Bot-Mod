@@ -58,7 +58,7 @@ class ModeratorBot:
         self.t0, self.y0 = self.t, self.y
 
     def is_converged(self):
-        return False
+        return self.t != self.t0
 
     def _fmt_feedback(self):
         if not self.P:
