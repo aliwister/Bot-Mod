@@ -1,0 +1,29 @@
+Generating Benign and Malicious posts entries concurrently …
+  Malicious: launching 15 batches concurrently ...
+  Benign: launching 15 batches concurrently ...
+  Benign: got 300 entries
+  Malicious: got 300 entries
+
+Written 600 rows to posts-dataset.csv
+Intent type counts: {'Benign': 300, 'Malicious': 300}
+Intent counts: {'organic_contribution': 300, 'narrative_pushing': 77, 'subtle_promotion': 80, 'elicitation': 73, 'spam': 70}
+Community counts: {'m/tech': 104, 'm/blesstheirhearts': 77, 'm/general': 94, 'm/usdc': 62, 'm/coding': 91, 'm/trading': 89, 'm/crypto': 83}
+Loaded 600 posts rows from posts-dataset.csv
+Classifying all 600 rows concurrently ...
+
+Done (posts). Results saved to posts-judge_results.csv
+Filtered results saved to posts-judge_filtered.csv (473/600 rows)
+  community_match rate     : 95.0% (570/600)
+Final intent_type accuracy : 90.2% (541/600)
+Final intent accuracy      : 82.2% (493/600)
+
+Intent accuracy by intent:
+  elicitation           58/73   79.5%
+  narrative_pushing     50/77   64.9%
+  organic_contribution 300/300  100.0%
+  spam                  22/70   31.4%
+  subtle_promotion      63/80   78.8%
+
+Intent accuracy by intent_type:
+  Benign       300/300  100.0%
+  Malicious    241/300  80.3%

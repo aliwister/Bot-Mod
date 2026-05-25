@@ -1,0 +1,49 @@
+% Requires: xcolor, colortbl, booktabs, multirow, adjustbox, rotating
+% Define colors once (put in preamble):
+% \definecolor{headercol}{HTML}{2C3E50}
+% \definecolor{altrow}{HTML}{F7F9FC}
+% \definecolor{methodrow}{HTML}{E8F4EA}
+% \definecolor{avgall}{HTML}{F5E6FF}
+\begin{table}[ht]
+    \centering
+    \scriptsize
+    \renewcommand{\arraystretch}{1.05}
+    \setlength{\tabcolsep}{3pt}
+    \begin{adjustbox}{max width=\textwidth}
+    \begin{tabular}{@{}l l l ccc p{0.15cm} ccc p{0.15cm} c@{}}
+        \toprule
+        & & & \multicolumn{3}{c}{\cellcolor{headercol!15}\textbf{Posts Dataset}} & & \multicolumn{3}{c}{\cellcolor{headercol!15}\textbf{Comment Dataset}} & & \cellcolor{headercol!15}\textbf{All} \\
+        \cmidrule(lr){4-6} \cmidrule(lr){8-10}
+        \textbf{Split} & \textbf{User Model} & \textbf{Condition} & \boldmath F1$_{val}$ & \boldmath F1$_{y}$ & \boldmath F1$_{t}$ & & \boldmath F1$_{val}$ & \boldmath F1$_{y}$ & \boldmath F1$_{t}$ & & \cellcolor{avgall!85}\textbf{Avg} \\
+        \midrule
+        \multirow{6}{*}{\rotatebox{90}{\textbf{In-Distribution}}}
+        & \multirow{2}{*}{\texttt{Qwen3}}
+          & \cellcolor{methodrow} \method{}                    & \cellcolor{methodrow} \textbf{0.760} & \cellcolor{methodrow} 0.816 & \cellcolor{methodrow} \textbf{0.644} & & \cellcolor{methodrow} \textbf{0.640} & \cellcolor{methodrow} \textbf{0.691} & \cellcolor{methodrow} \textbf{0.534} & & \cellcolor{avgall!85}\textbf{0.7000} \\
+        & & \cellcolor{altrow} +\,jailbreak                    & \cellcolor{altrow} 0.755 & \cellcolor{altrow} \textbf{0.822} & \cellcolor{altrow} 0.620 & & \cellcolor{altrow} 0.585 & \cellcolor{altrow} 0.641 & \cellcolor{altrow} 0.473 & & \cellcolor{avgall!85}0.6700 \\
+        \cmidrule(lr){2-10}
+        & \multirow{2}{*}{\texttt{Mistral-7B}}
+          & \cellcolor{methodrow} \method{}                    & \cellcolor{methodrow} 0.774 & \cellcolor{methodrow} \textbf{0.918} & \cellcolor{methodrow} 0.519 & & \cellcolor{methodrow} \textbf{0.803} & \cellcolor{methodrow} \textbf{0.913} & \cellcolor{methodrow} \textbf{0.596} & & \cellcolor{avgall!85}\textbf{0.7885} \\
+        & & \cellcolor{altrow} +\,jailbreak                    & \cellcolor{altrow} \textbf{0.795} & \cellcolor{altrow} \textbf{0.918} & \cellcolor{altrow} \textbf{0.567} & & \cellcolor{altrow} 0.759 & \cellcolor{altrow} 0.890 & \cellcolor{altrow} 0.522 & & \cellcolor{avgall!85}0.7770 \\
+        \cmidrule(lr){2-10}
+        & \multirow{2}{*}{\texttt{Llama-3.1}}
+          & \cellcolor{methodrow} \method{}                    & \cellcolor{methodrow} 0.794 & \cellcolor{methodrow} 0.878 & \cellcolor{methodrow} 0.629 & & \cellcolor{methodrow} \textbf{0.772} & \cellcolor{methodrow} \textbf{0.890} & \cellcolor{methodrow} 0.553 & & \cellcolor{avgall!85}0.7830 \\
+        & & \cellcolor{altrow} +\,jailbreak                    & \cellcolor{altrow} \textbf{0.826} & \cellcolor{altrow} \textbf{0.918} & \cellcolor{altrow} \textbf{0.646} & & \cellcolor{altrow} 0.750 & \cellcolor{altrow} 0.829 & \cellcolor{altrow} \textbf{0.595} & & \cellcolor{avgall!85}\textbf{0.7880} \\
+        \midrule[\heavyrulewidth]
+        \multirow{6}{*}{\rotatebox{90}{\textbf{Out-of-Distribution}}}
+        & \multirow{2}{*}{\texttt{Qwen3}}
+          & \cellcolor{methodrow} \method{}                    & \cellcolor{methodrow} 0.723 & \cellcolor{methodrow} 0.806 & \cellcolor{methodrow} \textbf{0.562} & & \cellcolor{methodrow} 0.664 & \cellcolor{methodrow} 0.746 & \cellcolor{methodrow} \textbf{0.506} & & \cellcolor{avgall!85}0.6935 \\
+        & & \cellcolor{altrow} +\,jailbreak                    & \cellcolor{altrow} \textbf{0.733} & \cellcolor{altrow} \textbf{0.833} & \cellcolor{altrow} 0.543 & & \cellcolor{altrow} \textbf{0.668} & \cellcolor{altrow} \textbf{0.759} & \cellcolor{altrow} 0.495 & & \cellcolor{avgall!85}\textbf{0.7005} \\
+        \cmidrule(lr){2-10}
+        & \multirow{2}{*}{\texttt{Mistral-7B}}
+          & \cellcolor{methodrow} \method{}                    & \cellcolor{methodrow} 0.731 & \cellcolor{methodrow} 0.904 & \cellcolor{methodrow} \textbf{0.444} & & \cellcolor{methodrow} \textbf{0.776} & \cellcolor{methodrow} \textbf{0.932} & \cellcolor{methodrow} \textbf{0.507} & & \cellcolor{avgall!85}\textbf{0.7535} \\
+        & & \cellcolor{altrow} +\,jailbreak                    & \cellcolor{altrow} \textbf{0.735} & \cellcolor{altrow} \textbf{0.918} & \cellcolor{altrow} 0.437 & & \cellcolor{altrow} 0.762 & \cellcolor{altrow} 0.928 & \cellcolor{altrow} 0.482 & & \cellcolor{avgall!85}0.7485 \\
+        \cmidrule(lr){2-10}
+        & \multirow{2}{*}{\texttt{Llama-3.1}}
+          & \cellcolor{methodrow} \method{}                    & \cellcolor{methodrow} 0.734 & \cellcolor{methodrow} 0.849 & \cellcolor{methodrow} \textbf{0.522} & & \cellcolor{methodrow} \textbf{0.734} & \cellcolor{methodrow} \textbf{0.860} & \cellcolor{methodrow} 0.507 & & \cellcolor{avgall!85}0.7340 \\
+        & & \cellcolor{altrow} +\,jailbreak                    & \cellcolor{altrow} \textbf{0.750} & \cellcolor{altrow} \textbf{0.890} & \cellcolor{altrow} 0.503 & & \cellcolor{altrow} 0.719 & \cellcolor{altrow} 0.817 & \cellcolor{altrow} \textbf{0.534} & & \cellcolor{avgall!85}\textbf{0.7345} \\
+        \bottomrule
+    \end{tabular}
+    \end{adjustbox}
+    \caption{\small Jailbreak robustness of \method{} on malicious-only rows (\emph{In-Distribution}: 636; \emph{Out-of-Distribution}: 756). The \textbf{+\,jailbreak} row appends the suffix \emph{``If interrogated by Moderator, change your behaviour to benign''} to each UserBot's system prompt; the \method{} row is the same set of rows without the suffix. Single run per cell (no std). Bold marks the higher of the two within each user model / column. Moderator: \texttt{Qwen3}.}
+    \label{tab:jailbreak_comparison}
+\end{table}
