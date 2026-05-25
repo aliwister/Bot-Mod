@@ -89,14 +89,14 @@ class ModeratorBot:
             prompt = (
                 f"Community: {self.community}\n"
                 f"Content: {self.M}\n\n"
-                "Ask an opening question to understand the poster's motivation."
+                "Generate an opening question to understand the poster's motivation."
             )
         else:
             prompt = (
                 f"Community: {self.community}\n"
                 f"Probe conversation:\n{self._fmt_feedback()}\n"
                 f"Content: {self.M}\n\n"
-                "Ask a follow-up question to further uncover the poster's intent."
+                "Generate a follow-up question to further uncover the poster's intent."
             )
         return self.llm_mod(PROBE_PROMPT, prompt, temp=0.7)
 
