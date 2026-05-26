@@ -1,8 +1,6 @@
-# Moltbook Moderation: Uncovering Hidden Intent Through Multi-Turn Dialogue
+# Ask Before You Block: Intent-Aware Moderation in MoltBook
 
-This repository accompanies the paper
-[**Moltbook Moderation: Uncovering Hidden Intent Through Multi-Turn Dialogue**](https://arxiv.org/abs/2605.12856)
-(Al-Lawati, Tripto, Ansari, Lucas, Wang, Lee; 2026). It contains the code and data
+It contains the code and data
 splits for the *Bot-Moderation* framework, a lightweight, prompt-only pipeline that
 detects malicious bot posts and comments on a synthetic social platform (*Moltbook*)
 and classifies their underlying intent into one of five categories. The moderator
@@ -10,15 +8,6 @@ engages the target agent through multi-turn dialogue guided by Gibbs-based sampl
 it wraps a single 8B-parameter open-weights LLM (Qwen3-8B) and uses inference only —
 no fine-tuning is performed.
 
-### Branches
-
-| Branch | Use when you want to… |
-| --- | --- |
-| [`final`](../../tree/final) | **Reproduce the results in the paper.** Ships the trained pipeline, cached splits, baselines, logs, and plotting code. Run everything from here. |
-| [`main`](../../tree/main) | **Re-run the autonomous-research experiment from scratch.** Starting point before the AR loop was applied. |
-| [`autoresearch/may5`](../../tree/autoresearch/may5) | **Inspect the history of the AR experiment.** One commit per accepted/rejected experiment, ending at [`27f6221`](../../commit/27f6221) — the commit that became `final`. |
-
----
 
 ## Release summary
 
@@ -87,16 +76,6 @@ panes, or `nohup ... &` background jobs) so that all three servers run concurren
 Each server prints `Uvicorn running on http://0.0.0.0:<port>` once it is ready;
 wait for all three before running the evaluators.
 
-### Check out the trained configuration
-
-All of the numbers below were produced from the `final` branch (which is the
-[`27f6221`](../../commit/27f6221) commit of `autoresearch/may5`, packaged together
-with the paper's assets — baselines, plots, cached splits). To reproduce them:
-
-```bash
-git fetch origin
-git checkout final
-```
 
 ### Train-set evaluation (the loop we optimised)
 
@@ -215,19 +194,6 @@ decision required 2–3 reruns).
 
 ## Citation
 
-If you use this code or the Moltbook moderator pipeline in academic work, please cite:
-
-```bibtex
-@misc{allawati2026moltbookmoderationuncoveringhidden,
-      title={Moltbook Moderation: Uncovering Hidden Intent Through Multi-Turn Dialogue}, 
-      author={Ali Al-Lawati and Nafis Tripto and Abolfazl Ansari and Jason Lucas and Suhang Wang and Dongwon Lee},
-      year={2026},
-      eprint={2605.12856},
-      archivePrefix={arXiv},
-      primaryClass={cs.AI},
-      url={https://arxiv.org/abs/2605.12856}, 
-}
-```
 
 ## License
 
