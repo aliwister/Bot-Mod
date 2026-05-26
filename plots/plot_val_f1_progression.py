@@ -67,9 +67,9 @@ def plot_val_f1_progression(tsv_path: str, out_prefix: str = "progress_avg") -> 
     texts = []
     for idx, f1 in zip(frontier_idx, frontier_f1):
         desc = str(valid.loc[idx, "description"]).strip()
-        exp_label = str(valid.loc[idx, "exp"]).strip().lstrip("exp")
+        exp_col = str(valid.loc[idx, "exp"]).strip().lstrip("exp") if "exp" in valid.columns else str(idx)
         wrapped = "\n".join(textwrap.wrap(desc, width=22))
-        label = f"$\\mathbf{{exp\\ {exp_label}}}$\n{wrapped}"
+        label = f"$\\mathbf{{exp\\ {exp_col}}}$\n{wrapped}"
         y0 = f1 - 0.03 if idx in force_below else f1
         va = "top" if idx in force_below else "baseline"
         t = ax.text(idx, y0, label, fontsize=12.0, color="#1a7a3a", va=va)

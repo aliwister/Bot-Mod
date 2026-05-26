@@ -15,7 +15,7 @@ from pathlib import Path
 
 NUM_COLS = ["val_f1", "f1_bin", "f1_cat", "val_f1_zs", "f1_zs",
             "f1_cat_zs", "f1_posts", "f1_comments", "time"]
-OUT_COLS = ["exp", "commit", *NUM_COLS, "status", "description"]
+OUT_COLS = ["exp", "commit", "mean", *NUM_COLS, "status", "description"]
 
 
 def main() -> None:
@@ -40,11 +40,15 @@ def main() -> None:
         status = r[col["status"]]
 
         if status in ("keep", "discard"):
-            g = {"exp": f"exp{next_exp}", "hash": first, "rows": [r]}
-            groups.append(g)
-            by_commit[first] = len(groups) - 1
-            by_exp[g["exp"]] = len(groups) - 1
-            next_exp += 1
+            if first in by_commit:
+                # same hash seen again — attach to existing group
+                groups[by_commit[first]]["rows"].append(r)
+            else:
+                g = {"exp": f"exp{next_exp}", "hash": first, "rows": [r]}
+                groups.append(g)
+                by_commit[first] = len(groups) - 1
+                by_exp[g["exp"]] = len(groups) - 1
+                next_exp += 1
             continue
 
         # status == "-": attach to existing group or start orphan
@@ -74,7 +78,7 @@ def main() -> None:
             vals = [float(r[col[c]]) for r in g["rows"] if r[col[c]] != ""]
             avg[c] = sum(vals) / len(vals) if vals else float("nan")
         commit_str = f"{g['hash']} ({n})"
-        out = [g["exp"], commit_str]
+        out = [g["exp"], commit_str, f"{avg['val_f1']:.4f}"]
         for c in NUM_COLS:
             out.append(f"{avg[c]:.4f}" if c != "time" else f"{avg[c]:.1f}")
         out.append(first[col["status"]])
