@@ -75,8 +75,9 @@ class ModeratorBot:
         return _batch_vote(INTENT_PROMPT, prompt, n=n, temp=temp)
 
     def _refine_hypothesis(self, n_steps: int = 1) -> str:
+        temp = 0.6 if self.P else 0.7
         for _ in range(n_steps):
-            self.t = self._vote_intent(n=5)
+            self.t = self._vote_intent(n=5, temp=temp)
             self.y = "benign" if _is_organic(self.t) else "malicious"
         return ""
 
