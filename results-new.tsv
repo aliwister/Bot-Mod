@@ -1,0 +1,108 @@
+exp	commit	val_f1	f1_bin	f1_cat	val_f1_zs	f1_zs	f1_cat_zs	f1_posts	f1_comments	time	status	description
+exp1	7175f5b	0.564000	0.5742	0.5409	0.5599	0.5833	0.5088	0.5847	0.5439	140.3	keep	baseline
+exp2	164c182	0.614700	0.7341	0.4064	0.5906	0.6549	0.4641	0.6496	0.6209	164.8	keep	self-consistency voting 5-sample seed/refine 11-sample final; remove critique; compact QA format
+exp3	aa836f1	0.504900	0.5877	0.3543	0.4640	0.5051	0.3807	0.4594	0.5301	169.0	discard	add intent descriptions to system prompt
+exp4	0650252	0.681300	0.7664	0.5175	0.5865	0.6522	0.4579	0.6996	0.6553	164.5	keep	normalize intent labels in vote to fix fragmentation
+exp5	ae76c66	0.652000	0.7286	0.5031	0.5888	0.6549	0.4593	0.6893	0.6128	174.0	discard	increase vote samples refine n=7 final n=15
+exp6	b8f5863	0.668800	0.7029	0.5955	0.5862	0.6518	0.4576	0.7528	0.5795	258.2	discard	3 probe iterations instead of 2
+exp7	5b0d4f4	0.646800	0.7099	0.5204	0.5760	0.6400	0.4503	0.6811	0.6090	167.4	discard	lower seed temperature to 0.5
+exp8	e1a5717	0.632200	0.6970	0.5034	0.5883	0.6550	0.4579	0.6488	0.6118	164.0	discard	tighten probe prompt wording
+exp9	8eee089	0.656400	0.7174	0.5334	0.5924	0.6607	0.4593	0.6895	0.6132	145.6	discard	skip per-round refinement vote
+exp10	958286c	0.687300	0.7312	0.5948	0.6019	0.6446	0.5128	0.7458	0.6252	163.2	keep	format intents as comma-separated string not Python list repr
+exp11	8584c62	0.709800	0.7554	0.6138	0.6081	0.6529	0.5151	0.7717	0.6471	169.6	keep	increase final vote to n=17
+exp12	4008cb5	0.685800	0.7059	0.6411	0.6142	0.6612	0.5172	0.7730	0.6004	173.9	discard	push final vote to n=21 binary dropped
+exp13	8fab1c9	0.649700	0.6788	0.5865	0.6105	0.6557	0.5166	0.6989	0.6011	173.7	discard	final vote n=19 regression
+exp14	40c99a0	0.696600	0.7350	0.6146	0.6046	0.6475	0.5151	0.7788	0.6116	183.7	discard	add binary vote tiebreaker for organic_contribution
+exp15	0e543fa	0.664100	0.7164	0.5563	0.6011	0.6423	0.5151	0.6794	0.6500	167.3	discard	adversarial probe prompt
+exp16	f8c083f	0.642600	0.6718	0.5792	0.6081	0.6529	0.5151	0.7040	0.5761	175.7	keep	rerun of best config n=17 confirm variance
+exp17	2d99be4	0.672800	0.6963	0.6211	0.6124	0.6584	0.5172	0.7592	0.5857	181.2	discard	final vote n=25 binary dropped
+exp18	100a717	0.649000	0.7025	0.5395	0.6081	0.6529	0.5151	0.6839	0.6124	179.7	discard	seed and refine n=7
+exp19	2cc55f7	0.660500	0.7482	0.4937	0.6032	0.6420	0.5216	0.7785	0.5892	193.9	discard	dedicated binary vote reconciliation
+exp20	e063f52	0.605500	0.6608	0.4937	0.5944	0.6218	0.5349	0.6357	0.5716	163.4	discard	structured POST/comment framing hurt both metrics
+exp21	247a256	0.645300	0.7029	0.5287	0.6093	0.6500	0.5239	0.7026	0.5876	97.3	discard	1 probe iter n=25 final; probe round matters
+exp22	b29eae7	0.666500	0.7121	0.5712	0.6066	0.6471	0.5218	0.7191	0.6045	149.5	discard	Llama probe generation; worse than Qwen
+exp23	9407062	0.679900	0.7138	0.6071	0.6089	0.6531	0.5172	0.7613	0.5863	260.5	discard	Qwen think mode for probes; too slow
+exp24	e2c2dd0	0.620100	0.6693	0.5191	0.5815	0.5936	0.5543	0.6736	0.5622	172.1	discard	neutral expert framing worse than vigilant/skeptical
+exp25	52da352	0.692200	0.7273	0.6167	0.6179	0.6667	0.5177	0.7604	0.6258	166.0	keep	unify seed+refine prompts; simplification win ~= best
+exp26	13cf53e	0.626600	0.6989	0.4857	0.6100	0.6531	0.5202	0.6743	0.5767	152.8	discard	skip refine votes n=21 final; refine is critical
+exp27	eb0ff85	0.643500	0.6863	0.5537	0.6203	0.6612	0.5345	0.6810	0.6108	164.5	discard	unify probe prompt; first-probe specialization matters
+exp28	ec2fbf8	0.630700	0.6770	0.5344	0.6156	0.6640	0.5161	0.6900	0.5640	153.0	discard	conversational reply probe; worse
+exp29	c8dd8f1	0.698100	0.7299	0.6292	0.6126	0.6640	0.5077	0.7690	0.6231	167.6	keep	final vote temp=0.6; categorical near paper target
+exp30	2f69d7a	0.688100	0.7019	0.6569	0.6165	0.6586	0.5285	0.7650	0.6135	167.6	discard	refine temp=0.6 too; cat high but binary dropped
+exp31	ff0e4b7	0.659900	0.7220	0.5350	0.0000	0.0000	0.0000	0.0000	0.0000	165.9	keep	rerun confirms variance; mean ~0.68
+exp32	83da19e	0.652600	0.7019	0.5507	0.6230	0.6721	0.5219	0.7165	0.5862	167.3	discard	probe temp=0.9 worse
+exp33	3593712	0.668500	0.7537	0.5052	0.5986	0.6397	0.5127	0.7004	0.6374	182.5	discard	n=23 final worse; n=17 sweet spot
+exp34	2b01b3e	0.666100	0.7437	0.5152	0.6140	0.6559	0.5263	0.7075	0.6199	171.1	discard	seed temp=0.8 worse
+exp35	f82c513	0.679700	0.7116	0.6107	0.6041	0.6504	0.5085	0.7490	0.6109	167.7	discard	refine n=3 n=21 final; marginal regression
+exp36	51be2a7	0.665200	0.7185	0.5558	0.6232	0.6721	0.5226	0.7200	0.6105	165.8	discard	32 token limit for intent vote; worse
+exp37	6f05c01	0.631000	0.6783	0.5331	0.6171	0.6694	0.5105	0.6398	0.6220	152.2	discard	intent leakage in probes hurts; paper was right
+exp38	081139d	0.662500	0.6912	0.6001	0.6207	0.6667	0.5255	0.7460	0.5777	170.4	discard	ensemble temp 0.5+0.9 vote; worse
+exp39	faf8107	0.652500	0.7041	0.5463	0.6148	0.6667	0.5089	0.6985	0.6070	166.6	discard	128 token probe limit; worse
+exp40	38b0c41	0.652600	0.6642	0.6261	0.6327	0.6770	0.5402	0.7090	0.5964	173.9	discard	no explanation label prompt; binary dropped
+exp41	0fd2d05	0.652800	0.7179	0.5229	0.6142	0.6463	0.5454	0.6502	0.6474	165.4	discard	content before probe order; probe-last is better
+exp42	198d55c	0.673300	0.6885	0.6390	0.6457	0.6963	0.5414	0.7459	0.5988	168.5	discard	classify intent rephrasing; binary still drops with high cat
+exp43	15266fd	0.648600	0.6696	0.6021	0.5730	0.6288	0.4612	0.6768	0.6076	166.7	discard	binary rule in system prompt; binary dropped
+exp44	73d0d71	0.687700	0.7094	0.6395	0.6157	0.6586	0.5261	0.7666	0.6057	164.2	discard	two-pass finalize: binary first then focused malicious intent vote
+exp45	18fd9d2	0.595100	0.6544	0.4768	0.6088	0.6478	0.5268	0.6240	0.5548	171.4	discard	community-aware probe prompts: community name in opening/followup instructions
+exp46	c976ab0	0.650400	0.7170	0.5182	0.6111	0.6531	0.5235	0.6679	0.6266	166.8	discard	temperature annealing refine 0.8->0.7 final temp 0.5
+exp47	b10f3d5	0.672300	0.7279	0.5584	0.6100	0.6504	0.5252	0.7169	0.6260	269.0	discard	max_iterations=3 extra probe round within time budget
+exp48	874462f	0.503300	0.5815	0.3593	0.5156	0.5753	0.3993	0.5597	0.4374	165.6	discard	remove duplicate intent instruction from user prompt; breaks classification
+exp49	3887ef5	0.668600	0.6855	0.6307	0.5771	0.6154	0.4967	0.7104	0.6277	165.8	discard	reorder intents organic_contribution first; binary drops too much
+exp50	3ae917d	0.654700	0.6957	0.5683	0.6011	0.6585	0.4859	0.7166	0.5946	113.4	discard	early convergence on high-confidence organic; binary drops too much
+exp51	acc2dee	0.652000	0.7041	0.5449	0.6029	0.6475	0.5102	0.6930	0.6124	167.7	discard	final vote temp=0.65; worse than both 0.6 and 0.7
+exp52	18167be	0.664300	0.7203	0.5501	0.6136	0.6694	0.5008	0.7048	0.6179	174.2	discard	reverse probe order most recent first; worse
+exp53	835a7d0	0.441700	0.4181	0.5021	0.3311	0.3234	0.3500	0.4658	0.3939	165.4	discard	base-rate hint most content organic; massive binary drop
+exp54	738ae9a	0.649600	0.7174	0.5154	0.6161	0.6612	0.5225	0.6778	0.6201	175.1	discard	two-temp ensemble 9@0.6+8@0.7; no improvement
+exp55	8613770	0.689000	0.7399	0.5835	0.6081	0.6466	0.5269	0.7444	0.6328	167.6	keep	forensic analyst framing; promising rerun needed
+exp56	8613770	0.689500	0.7212	0.6210	0.6130	0.6579	0.5199	0.7566	0.6237	171.3	keep	forensic analyst framing confirmed; mean~0.689
+exp57	e7797ad	0.652800	0.7321	0.4997	0.6167	0.6550	0.5357	0.7050	0.5849	164.3	discard	forensic framing in probe too; hurt categorical
+exp58	7e89e08	0.632700	0.7103	0.4830	0.6180	0.6911	0.4762	0.6785	0.5901	167.1	discard	goal-oriented analysis hint; worse
+exp59	281a438	0.642700	0.7176	0.4970	0.6129	0.6638	0.5088	0.6722	0.6076	172.1	discard	refine n=7 on forensic framing; worse
+exp60	6d3a5b7	0.669700	0.7236	0.5678	0.5899	0.6614	0.4536	0.7253	0.6191	166.2	discard	bots disguise hint; high variance 0.697+0.648 mean~0.672
+exp61	b8fee44	0.677900	0.7075	0.6135	0.5995	0.6455	0.5047	0.7491	0.6025	167.7	discard	forensic classify evidence phrasing; mean~0.677 vs 0.689 original
+exp62	1ff4553	0.638400	0.7229	0.4776	0.5825	0.5877	0.5707	0.6736	0.5973	164.4	discard	Post vs Comment label in prompt; worse
+exp63	7b61f52	0.659500	0.7164	0.5436	0.6160	0.6638	0.5175	0.7262	0.5824	166.3	discard	seed n=7; no improvement
+exp64	e3efd1b	0.679200	0.7313	0.5716	0.6138	0.6579	0.5221	0.7423	0.6113	168.9	discard	follow-up probe different angle; slight regression
+exp65	forensic_rerun3	0.704300	0.7259	0.6562	0.6046	0.6522	0.5067	0.7576	0.6347	176.3	keep	forensic baseline run 3; confirmed mean~0.694
+exp66	05a51e1	0.667100	0.6990	0.5984	0.6360	0.6773	0.5492	0.7388	0.5958	167.5	discard	tighter identify true intent phrase; zs improves but full worse
+exp67	2d2761a	0.652500	0.7313	0.4999	0.6097	0.6550	0.5157	0.6919	0.6116	169.5	discard	word-boundary normalize; hurts despite theoretical improvement
+exp68	2787fcf	0.656200	0.7300	0.5117	0.6119	0.6550	0.5221	0.7039	0.6057	175.4	discard	final n=19 on forensic framing; n=17 is sweet spot
+exp69	bcc81a5	0.667100	0.7319	0.5372	0.6145	0.6638	0.5133	0.7070	0.6238	140.6	discard	opening probe hidden agenda; worse than forensic baseline
+exp70	7661251	0.673300	0.7537	0.5175	0.6151	0.6638	0.5149	0.7327	0.6140	169.7	discard	round numbers in probe format; binary up but cat drops
+exp71	884cea7	0.644000	0.7126	0.5084	0.6172	0.6725	0.5051	0.6976	0.5910	167.3	discard	attention hint on probe conversation; worse
+exp72	f3579cb	0.642300	0.7167	0.4973	0.6229	0.6802	0.5072	0.7142	0.5710	170.8	discard	expert deceptive analyst variant; forensic word is key
+exp73	2842b29	0.710000	0.7594	0.6070	0.5902	0.6920	0.4071	0.7487	0.6550	165.3	keep	forensic hidden bot intent; best single run 0.710
+exp74	2842b29	0.677600	0.7385	0.5558	0.6017	0.6881	0.4417	0.7199	0.6285	166.7	discard	forensic hidden bot intent; lucky first run mean~0.677 vs 0.694 baseline
+exp75	6317950	0.691400	0.7374	0.5955	0.6167	0.6623	0.5222	0.7459	0.6332	185.3	discard	dual framing 9+8 ensemble; no improvement over forensic alone, slower
+exp76	b5c22fd	0.711700	0.7266	0.6783	0.6197	0.6695	0.5174	0.7629	0.6608	166.5	keep	forensic interview responses; best run 0.711 rerun needed
+exp77	b5c22fd	0.701100	0.7355	0.6294	0.6244	0.6752	0.5202	0.7650	0.6369	166.6	keep	forensic interview responses confirmed; mean~0.701 vs 0.694 baseline
+exp78	2de8985	0.702400	0.7486	0.6065	0.6272	0.6761	0.5262	0.7694	0.6256	169.0	keep	consistent interview framing in user prompt; mean~0.702 best yet
+exp79	477d8d5	0.674000	0.7500	0.5252	0.6221	0.6723	0.5192	0.7088	0.6376	166.6	discard	simplify interview label; worse than full interview conversation
+exp80	6c0bf89	0.668000	0.7259	0.5503	0.6281	0.6751	0.5309	0.6770	0.6594	165.5	discard	forensic interviewer probe prompt; worse
+exp81	a1b80f8	0.650700	0.7356	0.4886	0.6183	0.6638	0.5240	0.7220	0.5707	166.4	discard	interview label in follow-up probe; worse
+exp82	2503745	0.695100	0.7423	0.6319	0.6446	0.6938	0.5429	0.7588	0.6277	165.7	discard	poster's true intent; mean~0.695 vs 0.702 baseline
+exp83	4a0e4d2	0.695900	0.7333	0.6158	0.6489	0.7045	0.5358	0.7688	0.6128	168.1	discard	identifying malicious bots; slightly below baseline
+exp84	dab357e	0.672500	0.7681	0.4932	0.6274	0.6724	0.5339	0.6785	0.6663	149.1	discard	opening probe organic vs hidden agenda; f1_cat tanks
+exp85	1c8cda8	0.674000	0.7396	0.5425	0.6316	0.6694	0.5513	0.7211	0.6264	167.4	discard	trim context reminder from vote_intent; worse
+exp86	bda5fc0	0.648000	0.6850	0.5693	0.5065	0.6019	0.3388	0.7234	0.5568	170.2	discard	intent descriptions in user prompt; binary f1 tanks
+exp87	540d46d	0.561400	0.5631	0.5574	0.4810	0.4699	0.5078	0.5972	0.5176	166.8	discard	intent descriptions in sys prompt; badly hurts binary
+exp88	3a55a79	0.694450	0.7392	0.6016	0.6278	0.6766	0.5272	0.7403	0.6453	264.0	discard	3 probing iterations; slower and mean below baseline
+exp89	6d16d4c	0.667300	0.7490	0.5096	0.6321	0.6780	0.5369	0.7284	0.6010	169.2	discard	refine temp=0.5; f1_cat tanks despite better binary
+exp90	bb5b9f0	0.673900	0.7245	0.5692	0.6263	0.6752	0.5256	0.7120	0.6355	183.9	discard	author vs poster in opening probe; slightly worse
+exp91	1ef29cd	0.660400	0.7544	0.4840	0.6305	0.6809	0.5272	0.7815	0.5784	694.5	discard	thinking final vote n=11; 4x slower and worse
+exp92	ed83743	0.680000	0.7559	0.5312	0.6282	0.6781	0.5256	0.7073	0.6490	162.7	discard	suspected intent in probe; leaks hint to user bot
+exp93	69d19af	0.702000	0.7459	0.6103	0.6259	0.6742	0.5263	0.7678	0.6326	169.8	discard	numbered interview turns; 3-run mean==baseline 0.702
+exp94	37d238b	0.685500	0.7235	0.6043	0.6432	0.6776	0.5696	0.7671	0.6062	167.7	discard	examine deception/persuasion framing; worse binary
+exp95	3716a02	0.679200	0.7440	0.5491	0.6340	0.6809	0.5369	0.7510	0.5966	162.5	discard	trust+safety analyst probe framing; categorical drops
+exp96	ba3fcd0	0.649600	0.6848	0.5743	0.6300	0.6833	0.5211	0.7077	0.5855	88.6	discard	1 probe iteration; much faster but binary f1 drops
+exp97	16f92b7	0.706500	0.7447	0.6249	0.6259	0.6766	0.5218	0.7695	0.6427	165.4	discard	follow-up clarify intent; mean 0.707 vs 0.702 baseline; inconclusive
+exp98	58c783a	0.685000	0.7615	0.5350	0.6218	0.6638	0.5339	0.7389	0.6224	154.9	discard	probe covering all intent types; cat drops
+exp99	0af1117	0.631500	0.6809	0.5299	0.6215	0.6638	0.5329	0.6481	0.6047	161.1	discard	content-first prompt order; hurts both metrics
+exp100	f2ceefa	0.664400	0.7251	0.5419	0.6286	0.6805	0.5224	0.7019	0.6211	164.5	discard	cleaner seed vote without empty interview; worse
+exp101	0d7fe43	0.700700	0.7439	0.6095	0.6277	0.6795	0.5218	0.7791	0.6216	166.2	discard	probe temp=0.9; 2-run mean==baseline
+exp102	823b68f	0.691000	0.7311	0.6074	0.6617	0.7102	0.5610	0.7633	0.6193	167.2	discard	skepticism framing; zs improves but full pipeline varies too much mean~0.691
+exp103	0a39398	0.654800	0.7132	0.5365	0.6183	0.6520	0.5463	0.6943	0.6159	167.3	discard	social platform context alone; worse
+exp104	2bc39fb	0.709200	0.7484	0.6267	0.6236	0.6695	0.5284	0.7930	0.6224	168.3	keep	seed vote temp=0.6; 3-run mean 0.709 vs 0.702 baseline
+exp105	1e5126c	0.670700	0.7463	0.5229	0.6245	0.6723	0.5256	0.7312	0.6083	168.9	discard	seed temp=0.8; f1_cat tanks vs 0.6
+exp106	e6104a7	0.670400	0.7336	0.5435	0.6282	0.6781	0.5256	0.7048	0.6359	166.7	discard	seed+refine both temp=0.6; worse than seed-only 0.6
+exp107	a73f470	0.692500	0.7519	0.5743	0.6241	0.6695	0.5298	0.7414	0.6376	170.6	discard	seed n=7 temp=0.6; mean 0.692 vs 0.709 with n=5 temp=0.6
